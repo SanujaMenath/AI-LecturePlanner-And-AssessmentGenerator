@@ -6,27 +6,27 @@ This project is an AI-powered platform designed to help universities automate le
 ### 🧠 Key Features
 - Student Portal
 
-  • View AI-generated notes and quizzes
-  • Track performance and progress
-  • Receive personalized study recommendations
+  • View AI-generated notes and quizzes  
+  • Track performance and progress  
+  • Receive personalized study recommendations  
 
-- Lecturer Portal
+- Lecturer Portal  
 
-  • Automatically generate lecture plans, notes, quizzes, and assignments
-  • Monitor syllabus coverage and teaching progress
-  • Analyze student performance trends
+  • Automatically generate lecture plans, notes, quizzes, and assignments  
+  • Monitor syllabus coverage and teaching progress  
+  • Analyze student performance trends  
 
-- Admin Panel
+- Admin Panel  
 
-  • Monitor lecturer activity
-  • View academic performance dashboards
-  • Identify at-risk students using predictive analytics
+  • Monitor lecturer activity  
+  • View academic performance dashboards  
+  • Identify at-risk students using predictive analytics  
 
-- AI Engine
+- AI Engine  
 
-  • NLP models for content generation
-  • ML models for student performance prediction
-  • Automated quiz and assignment generation
+  • NLP models for content generation  
+  • ML models for student performance prediction  
+  • Automated quiz and assignment generation  
   
 ### 🏗️ Tech Stack
 - **Frontend:** React.js + Tailwind CSS  
