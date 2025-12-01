@@ -1,7 +1,7 @@
 from datetime import datetime, timezone
 from typing import Optional
 from pydantic import BaseModel, EmailStr, Field
-from app.models.object_id import MongoBaseModel
+from app.models.object_id import PyObjectId, MongoBaseModel
 
 
 class UserBase(BaseModel):
@@ -20,6 +20,7 @@ class UserUpdate(BaseModel):
 
 
 class UserResponse(MongoBaseModel):
+    id: PyObjectId
     full_name: str
     email: EmailStr
     role: str
