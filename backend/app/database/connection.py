@@ -6,10 +6,10 @@ from app.config.settings import settings
 client = MongoClient(settings.MONGODB_URI)
 db = client[settings.DATABASE_NAME]
 
-if not client:
+if client is None:
     raise ValueError("MONGODB_URI is missing. Check your .env file.")
 
-if not db:
+if db is None:
     raise ValueError("DATABASE_NAME is missing. Check your .env file.")
 
 
