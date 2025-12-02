@@ -1,6 +1,6 @@
 from fastapi import HTTPException
 from app.database.connection import get_database
-from app.utils.security import hash_password, verify_password
+from app.services.auth_service import AuthService
 from app.utils.jwt_handler import create_access_token
 from app.models.user import UserCreate, UserUpdate
 from bson import ObjectId
@@ -17,7 +17,7 @@ class UserService:
         if users.find_one({"email": data.email}):
             raise HTTPException(status_code=400, detail="Email already registered")
 
-        hashed_pw = hash_password(data.password)
+        hashed_pw = AuthService.hash_password(data.password)
 
         new_user = {
             "full_name": data.full_name,
@@ -40,7 +40,7 @@ class UserService:
         if not user:
             raise HTTPException(status_code=404, detail="User not found")
 
-        if not verify_password(password, user["password"]):
+        if not AuthService.verify_password(password, user["password"]):
             raise HTTPException(status_code=401, detail="Invalid password")
 
         token = create_access_token({"user_id": str(user["_id"]), "role": user["role"]})
@@ -62,7 +62,7 @@ class UserService:
             update_data["full_name"] = data.full_name
 
         if data.password:
-            update_data["password"] = hash_password(data.password)
+            update_data["password"] = AuthService.hash_password(data.password)
 
         update_data["updated_at"] = datetime.now(timezone.utc)
 

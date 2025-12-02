@@ -1,7 +1,6 @@
 from bson import ObjectId
 from pydantic import BaseModel, Field
-from typing import Optional
-
+from typing import Any
 
 class PyObjectId(ObjectId):
     @classmethod
@@ -10,19 +9,22 @@ class PyObjectId(ObjectId):
 
     @classmethod
     def validate(cls, v):
+        if isinstance(v, ObjectId):
+            return v
         if not ObjectId.is_valid(v):
             raise ValueError("Invalid ObjectId")
         return ObjectId(v)
 
     @classmethod
-    def __modify_schema__(cls, field_schema):
-        field_schema.update(type="string")
+    def __get_pydantic_json_schema__(cls, core_schema, handler):
+        schema = handler(core_schema)
+        schema.update(type="string")
+        return schema
 
 
 class MongoBaseModel(BaseModel):
-    id: Optional[PyObjectId] = Field(alias="_id")
+    id: PyObjectId | None = Field(default=None, alias="_id")
 
     class Config:
         populate_by_name = True
-        arbitrary_types_allowed = True
         json_encoders = {ObjectId: str}
