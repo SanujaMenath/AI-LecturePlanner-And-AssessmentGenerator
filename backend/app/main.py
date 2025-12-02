@@ -27,7 +27,7 @@ def root():
 app.include_router(test_db_router, prefix="/system", tags=["System"])
 # Register all routers
 app.include_router(auth_router)
-app.include_router(user_router, prefix="/users", tags=["Users"])
+app.include_router(user_router)
 app.include_router(course_router, prefix="/courses", tags=["Courses"])
 app.include_router(module_router, prefix="/modules", tags=["Modules"])
 app.include_router(topic_router, prefix="/topics", tags=["Topics"])

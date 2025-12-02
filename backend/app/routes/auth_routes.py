@@ -2,7 +2,9 @@ from fastapi import APIRouter, Depends, HTTPException, status
 from pydantic import BaseModel, EmailStr
 from app.services.auth_service import AuthService
 from app.database.connection import get_database
-from app.models.object_id import PyObjectId
+from app.dependencies.auth_dependencies import get_current_user, require_role
+from app.models.user import UserResponse
+
 
 router = APIRouter(prefix="/auth", tags=["Authentication"])
 
@@ -30,12 +32,12 @@ def login(data: LoginRequest):
     if not AuthService.verify_password(data.password, user["password"]):
         raise HTTPException(status_code=400, detail="Invalid credentials")
 
-    token = AuthService.create_access_token({"sub": str(user["_id"]), "role": user["role"]})
+    token = AuthService.create_access_token(
+        {"sub": str(user["_id"]), "role": user["role"]}
+    )
 
     return LoginResponse(
-        access_token=token,
-        role=user["role"],
-        user_id=str(user["_id"])
+        access_token=token, role=user["role"], user_id=str(user["_id"])
     )
 
 
@@ -66,3 +68,12 @@ def create_admin(data: AdminCreate):
     result = db["users"].insert_one(new_admin)
 
     return {"message": "Admin created", "admin_id": str(result.inserted_id)}
+
+    
+@router.get("/me", response_model=UserResponse)
+async def get_me(current_user = Depends(get_current_user)):
+    return current_user
+
+@router.get("/admin-only")
+async def admin_only(current_user = Depends(require_role("admin"))):
+    return {"message": "Admin access granted"}

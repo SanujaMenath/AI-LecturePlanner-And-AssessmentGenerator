@@ -1,74 +1,87 @@
-from fastapi import HTTPException
+from typing import List, Optional
+from datetime import datetime, timezone
+from bson import ObjectId
+from fastapi import HTTPException, status
 from app.database.connection import get_database
 from app.services.auth_service import AuthService
-from app.utils.jwt_handler import create_access_token
 from app.models.user import UserCreate, UserUpdate
-from bson import ObjectId
-from datetime import datetime, timezone
 
 db = get_database()
-users = db["users"]
+users_col = db["users"]
 
 class UserService:
 
     @staticmethod
-    def create_user(data: UserCreate):
-        # Email exists check
-        if users.find_one({"email": data.email}):
+    def list_users(skip: int = 0, limit: int = 50) -> List[dict]:
+        docs = users_col.find({}, {"password": 0}).skip(skip).limit(limit)
+        return [UserService._clean_user(doc) for doc in docs]
+
+    @staticmethod
+    def create_user(payload: UserCreate) -> dict:
+        # email uniqueness
+        if users_col.find_one({"email": payload.email}):
             raise HTTPException(status_code=400, detail="Email already registered")
 
-        hashed_pw = AuthService.hash_password(data.password)
-
-        new_user = {
-            "full_name": data.full_name,
-            "email": data.email,
-            "password": hashed_pw,
-            "role": data.role,
-            "created_at": datetime.now(timezone.utc),
-            "updated_at": datetime.now(timezone.utc)
+        hashed = AuthService.hash_password(payload.password)
+        now = datetime.now(timezone.utc)
+        new_doc = {
+            "full_name": payload.full_name,
+            "email": payload.email,
+            "password": hashed,
+            "role": payload.role,
+            "created_at": now,
+            "updated_at": now
         }
-
-        result = users.insert_one(new_user)
-        new_user["id"] = str(result.inserted_id)
-        del new_user["password"]
-
-        return new_user
+        res = users_col.insert_one(new_doc)
+        new_doc["_id"] = res.inserted_id
+        return UserService._clean_user(new_doc)
 
     @staticmethod
-    def login(email: str, password: str):
-        user = users.find_one({"email": email})
-        if not user:
+    def get_user_by_id(user_id: str) -> dict:
+        if not ObjectId.is_valid(user_id):
+            raise HTTPException(status_code=400, detail="Invalid user id")
+        doc = users_col.find_one({"_id": ObjectId(user_id)})
+        if not doc:
             raise HTTPException(status_code=404, detail="User not found")
-
-        if not AuthService.verify_password(password, user["password"]):
-            raise HTTPException(status_code=401, detail="Invalid password")
-
-        token = create_access_token({"user_id": str(user["_id"]), "role": user["role"]})
-
-        return {"token": token}
+        return doc
 
     @staticmethod
-    def get_user_by_id(user_id: str):
-        user = users.find_one({"_id": ObjectId(user_id)}, {"password": 0})
-        if not user:
-            raise HTTPException(status_code=404, detail="User not found")
-        return user
+    def get_user_public(user_id: str) -> dict:
+        doc = UserService.get_user_by_id(user_id)
+        return UserService._clean_user(doc)
 
     @staticmethod
-    def update_user(user_id: str, data: UserUpdate):
+    def update_user(user_id: str, payload: UserUpdate) -> dict:
+        if not ObjectId.is_valid(user_id):
+            raise HTTPException(status_code=400, detail="Invalid user id")
+
         update_data = {}
-
-        if data.full_name:
-            update_data["full_name"] = data.full_name
-
-        if data.password:
-            update_data["password"] = AuthService.hash_password(data.password)
-
+        if payload.full_name:
+            update_data["full_name"] = payload.full_name
+        if payload.password:
+            update_data["password"] = AuthService.hash_password(payload.password)
         update_data["updated_at"] = datetime.now(timezone.utc)
 
-        result = users.update_one({"_id": ObjectId(user_id)}, {"$set": update_data})
+        res = users_col.update_one({"_id": ObjectId(user_id)}, {"$set": update_data})
+        if res.matched_count == 0:
+            raise HTTPException(status_code=404, detail="User not found")
+        doc = users_col.find_one({"_id": ObjectId(user_id)}, {"password": 0})
+        return UserService._clean_user(doc)
 
-        if result.modified_count == 0:
-            raise HTTPException(status_code=400, detail="Update failed")
+    @staticmethod
+    def delete_user(user_id: str) -> dict:
+        if not ObjectId.is_valid(user_id):
+            raise HTTPException(status_code=400, detail="Invalid user id")
+        res = users_col.delete_one({"_id": ObjectId(user_id)})
+        if res.deleted_count == 0:
+            raise HTTPException(status_code=404, detail="User not found")
+        return {"success": True, "deleted_id": user_id}
 
-        return {"success": True}
+    @staticmethod
+    def _clean_user(doc: dict) -> dict:
+        # convert _id and remove sensitive fields
+        user = dict(doc)
+        user["id"] = str(user["_id"])
+        user.pop("_id", None)
+        user.pop("password", None)
+        return user
