@@ -4,6 +4,8 @@ from app.routes.test_db import router as test_db_router
 from app.routes.auth_routes import router as auth_router
 
 from app.routes.user_routes import router as user_router
+from app.routes.lecturer_routes import router as lecturer_router
+from app.routes.student_routes import router as student_router
 from app.routes.course_routes import router as course_router
 from app.routes.module_routes import router as module_router
 from app.routes.topic_routes import router as topic_router
@@ -28,6 +30,8 @@ app.include_router(test_db_router, prefix="/system", tags=["System"])
 # Register all routers
 app.include_router(auth_router)
 app.include_router(user_router)
+app.include_router(lecturer_router)
+app.include_router(student_router)
 app.include_router(course_router, prefix="/courses", tags=["Courses"])
 app.include_router(module_router, prefix="/modules", tags=["Modules"])
 app.include_router(topic_router, prefix="/topics", tags=["Topics"])
