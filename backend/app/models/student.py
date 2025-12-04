@@ -1,24 +1,27 @@
-from pydantic import BaseModel, EmailStr
+from pydantic import BaseModel, EmailStr, Field
 from datetime import datetime, timezone
 from typing import Optional
 from app.models.object_id import PyObjectId, MongoBaseModel
 
-class LecturerCreate(BaseModel):
+class StudentCreate(BaseModel):
     full_name: str
     email: EmailStr
     password: str
     department: str
-    specialization: str
+    year: int
+    semester: int
 
-class LecturerUpdate(BaseModel):
+class StudentUpdate(BaseModel):
     department: Optional[str] = None
-    specialization: Optional[str] = None
+    year: Optional[int] = None
+    semester: Optional[int] = None
 
-class LecturerResponse(MongoBaseModel):
+class StudentResponse(MongoBaseModel):
     user_id: PyObjectId
     full_name: str
     email: EmailStr
     department: str
-    specialization: str
+    year: int
+    semester: int
     created_at: datetime
     updated_at: datetime
