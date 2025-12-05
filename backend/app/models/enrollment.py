@@ -1,20 +1,14 @@
+from pydantic import BaseModel
 from datetime import datetime, timezone
-from typing import Optional
-from pydantic import BaseModel, Field
 from app.models.object_id import PyObjectId, MongoBaseModel
+from typing import Optional
 
-class EnrollmentBase(BaseModel):
-    pass
-
-class EnrollmentCreate(EnrollmentBase):
+class EnrollmentCreate(BaseModel):
     student_id: PyObjectId
-    course_id: PyObjectId
-
-class EnrollmentUpdate(BaseModel):
-    pass
 
 class EnrollmentResponse(MongoBaseModel):
-    student_id: PyObjectId
+    id: PyObjectId = None
     course_id: PyObjectId
-    enrolled_date: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
-    status: str = "active"  # active | completed | dropped
+    student_id: PyObjectId
+    enrolled_at: datetime
+    status: Optional[str] = "active"  # active | dropped | completed

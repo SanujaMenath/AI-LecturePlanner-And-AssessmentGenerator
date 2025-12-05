@@ -1,22 +1,34 @@
-from datetime import datetime, timezone
-from typing import Optional, List
+# backend/app/models/course.py
 from pydantic import BaseModel, Field
+from typing import Optional
+from datetime import datetime, timezone
 from app.models.object_id import PyObjectId, MongoBaseModel
 
-class CourseBase(BaseModel):
+class CourseCreate(BaseModel):
+    course_code: str
     course_name: str
     description: Optional[str] = None
-
-class CourseCreate(CourseBase):
-    created_by: PyObjectId  # user id
+    department: Optional[str] = None
+    credits: Optional[int] = 0
+    year: Optional[int] = None
+    semester: Optional[int] = None
 
 class CourseUpdate(BaseModel):
     course_name: Optional[str] = None
     description: Optional[str] = None
+    department: Optional[str] = None
+    credits: Optional[int] = None
+    year: Optional[int] = None
+    semester: Optional[int] = None
 
 class CourseResponse(MongoBaseModel):
+    id: PyObjectId = Field(..., alias="id")
+    course_code: str
     course_name: str
     description: Optional[str]
-    created_by: PyObjectId
-    created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
-    updated_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
+    department: Optional[str]
+    credits: int
+    year: Optional[int]
+    semester: Optional[int]
+    created_at: datetime
+    updated_at: datetime
