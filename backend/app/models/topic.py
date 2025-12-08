@@ -1,22 +1,25 @@
-from typing import Optional
+# backend/app/models/topic.py
 from pydantic import BaseModel, Field
-from datetime import datetime, timezone
+from typing import Optional
+from datetime import datetime
 from app.models.object_id import PyObjectId, MongoBaseModel
 
-class TopicBase(BaseModel):
+class TopicCreate(BaseModel):
+    module_id: PyObjectId
     title: str
     description: Optional[str] = None
-
-class TopicCreate(TopicBase):
-    module_id: PyObjectId
+    estimated_duration_minutes: Optional[int] = None  # optional metadata
 
 class TopicUpdate(BaseModel):
     title: Optional[str] = None
     description: Optional[str] = None
+    estimated_duration_minutes: Optional[int] = None
 
 class TopicResponse(MongoBaseModel):
+    id: PyObjectId = Field(..., alias="id")
     module_id: PyObjectId
     title: str
     description: Optional[str]
-    created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
-    updated_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
+    estimated_duration_minutes: Optional[int]
+    created_at: datetime
+    updated_at: datetime
