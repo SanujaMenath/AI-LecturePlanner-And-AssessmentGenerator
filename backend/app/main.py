@@ -18,6 +18,7 @@ from app.routes.timetable_routes import router as timetable_router
 from app.routes.generated_material_routes import router as generated_material_router
 from app.routes.system_log_routes import router as system_log_router
 from app.routes.session_routes import router as session_router
+from app.routes.attendance_routes import router as attendance_router
 
 from app.config.settings import settings
 
@@ -45,3 +46,4 @@ app.include_router(timetable_router)
 app.include_router(generated_material_router)
 app.include_router(system_log_router)
 app.include_router(session_router)
+app.include_router(attendance_router)
