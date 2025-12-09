@@ -19,6 +19,8 @@ from app.routes.generated_material_routes import router as generated_material_ro
 from app.routes.system_log_routes import router as system_log_router
 from app.routes.session_routes import router as session_router
 from app.routes.attendance_routes import router as attendance_router
+from app.routes.quiz_routes import router as quiz_router
+from app.routes.exam_routes import router as exam_router
 
 from app.config.settings import settings
 
@@ -47,3 +49,5 @@ app.include_router(generated_material_router)
 app.include_router(system_log_router)
 app.include_router(session_router)
 app.include_router(attendance_router)
+app.include_router(quiz_router)
+app.include_router(exam_router)
