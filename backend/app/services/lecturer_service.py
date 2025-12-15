@@ -1,50 +1,21 @@
 from datetime import datetime, timezone 
 from app.database.connection import get_database
 from app.services.auth_service import AuthService
+from app.models.user import LecturerCreate
 from bson import ObjectId
 
+db = get_database()
 
 class LecturerService:
 
     @staticmethod
-    def create_lecturer(data):
-        db = get_database()
-
-        if db["users"].find_one({"email": data.email}):
-            raise ValueError("Email already exists")
-
-        hashed_pw = AuthService.hash_password(data.password)
-
-        # Create user
-        user_doc = {
-            "full_name": data.full_name,
-            "email": data.email,
-            "password": hashed_pw,
-            "role": "lecturer",
-            "created_at": datetime.now(timezone.utc),
-            "updated_at": datetime.now(timezone.utc),
-        }
-
-        user_id = db["users"].insert_one(user_doc).inserted_id
-
-        # Create lecturer profile
+    def _create_lecturer_profile(user_id, data: LecturerCreate):
         lecturer_doc = {
             "user_id": user_id,
             "department": data.department,
-            "specialization": data.specialization,
+            "specialization": data.specialization
         }
-
         db["lecturers"].insert_one(lecturer_doc)
-
-        return {
-            "user_id": str(user_id),
-            "full_name": data.full_name,
-            "email": data.email,
-            "department": data.department,
-            "specialization": data.specialization,
-            "created_at": user_doc["created_at"],
-            "updated_at": user_doc["updated_at"],
-        }
 
     @staticmethod
     def get_all():

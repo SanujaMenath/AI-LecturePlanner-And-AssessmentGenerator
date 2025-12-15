@@ -1,0 +1,122 @@
+@import "tailwindcss";
+
+@theme {
+  /* Primary Color - Indigo */
+  --color-primary-50: #eceefb;
+  --color-primary-100: #d9ddf7;
+  --color-primary-200: #b3bbf0;
+  --color-primary-300: #8d99e8;
+  --color-primary-400: #6777e0;
+  --color-primary-500: #4f46e5;
+  --color-primary-600: #3730dd;
+  --color-primary-700: #2820b8;
+  --color-primary-800: #1e188a;
+  --color-primary-900: #14105c;
+  --color-primary: #4f46e5;
+
+  /* Accent Color - Cyan */
+  --color-accent-50: #e0f2fe;
+  --color-accent-100: #bae6fd;
+  --color-accent-200: #7dd3fc;
+  --color-accent-300: #38bdf8;
+  --color-accent-400: #0ea5e9;
+  --color-accent-500: #0284c7;
+  --color-accent-600: #0369a1;
+  --color-accent-700: #075985;
+  --color-accent-800: #0c4a6e;
+  --color-accent-900: #0a3a56;
+  --color-accent: #0ea5e9;
+
+  /* Background Colors */
+  --color-background: #F3F3F4 ;
+  --color-background-dark: #111827;
+
+  /* Text Colors */
+  --color-text: #111827;
+  --color-text-light: #6b7280;
+  --color-text-lighter: #9ca3af;
+
+  /* Card Background */
+  --color-card: #ffffff;
+
+  /* Custom Shadows */
+  --shadow-card: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --shadow-card-hover: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-card-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+
+  /* Border Radius */
+  --radius-card: 0.75rem;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-background);
+    color: var(--color-text);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer components {
+  .card {
+    background-color: var(--color-card);
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-card);
+    padding: 1.5rem;
+  }
+  
+  .card-hover {
+    background-color: var(--color-card);
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-card);
+    padding: 1.5rem;
+    transition: box-shadow 200ms;
+  }
+  
+  .card-hover:hover {
+    box-shadow: var(--shadow-card-hover);
+  }
+  
+  .btn-primary {
+    background-color: var(--color-primary);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    transition: background-color 200ms;
+  }
+  
+  .btn-primary:hover {
+    background-color: var(--color-primary-600);
+  }
+  
+  .btn-primary:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px white, 0 0 0 4px var(--color-primary);
+  }
+  
+  .btn-accent {
+    background-color: var(--color-accent);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    transition: background-color 200ms;
+  }
+  
+  .btn-accent:hover {
+    background-color: var(--color-accent-500);
+  }
+  
+  .btn-accent:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px white, 0 0 0 4px var(--color-accent);
+  }
+  
+  .gradient-text {
+    background: linear-gradient(to right, var(--color-primary), var(--color-accent));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}

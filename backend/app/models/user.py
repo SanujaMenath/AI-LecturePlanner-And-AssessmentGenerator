@@ -4,15 +4,23 @@ from pydantic import BaseModel, EmailStr, Field
 from app.models.object_id import PyObjectId, MongoBaseModel
 
 
-class UserBase(BaseModel):
+class BaseUser(BaseModel):
     full_name: str
     email: EmailStr
-    role: str  # admin, lecturer, student
-
-
-class UserCreate(UserBase):
     password: str
+    role: str  # admin student lecturer
 
+class LecturerCreate(BaseUser):
+    department: str
+    specialization: str
+
+class StudentCreate(BaseUser):
+    department: str
+    year: int
+    semester: int
+
+class AdminCreate(BaseUser):
+    pass
 
 class UserUpdate(BaseModel):
     full_name: Optional[str] = None

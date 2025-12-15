@@ -1,79 +1,25 @@
 from app.database.connection import get_database
 from datetime import datetime, timezone 
 from app.services.auth_service import AuthService
+from app.models.user import StudentCreate
 from bson import ObjectId
+
+
+db = get_database()
 
 class StudentService:
 
     @staticmethod
-    def create_student(data):
-        db = get_database()
-
-        if db["users"].find_one({"email": data.email}):
-            raise ValueError("Email already exists")
-
-        hashed_pw = AuthService.hash_password(data.password)
-        now = datetime.now(timezone.utc)
-        # Create user record
-        user_doc = {
-            "full_name": data.full_name,
-            "email": data.email,
-            "password": hashed_pw,
-            "role": "student",
-            "created_at": now,
-            "updated_at": now
-        }
-
-        user_id = db["users"].insert_one(user_doc).inserted_id
-
-        # Create student profile
+    def _create_student_profile(user_id, data: StudentCreate):
         student_doc = {
             "user_id": user_id,
             "department": data.department,
             "year": data.year,
-            "semester": data.semester,
+            "semester": data.semester
         }
-
         db["students"].insert_one(student_doc)
 
-        # Combine response
-        return {
-            "user_id": str(user_id),
-            "full_name": data.full_name,
-            "email": data.email,
-            "department": data.department,
-            "year": data.year,
-            "semester": data.semester,
-            "created_at": user_doc["created_at"],
-            "updated_at": user_doc["updated_at"]
-
-        }
-
-    @staticmethod
-    def get_all():
-        db = get_database()
-        users = list(
-            db["users"].aggregate([
-                {
-                    "$lookup": {
-                        "from": "students",
-                        "localField": "_id",
-                        "foreignField": "user_id",
-                        "as": "profile"
-                    }
-                },
-                {"$unwind": "$profile"}
-            ])
-        )
-
-        # cleanup
-        for u in users:
-            u["user_id"] = str(u["_id"])
-            u.pop("_id", None)
-            u.pop("password", None)
-            u.update(u.pop("profile"))
-
-        return users
+    
 
     @staticmethod
     def get_by_id(user_id):
