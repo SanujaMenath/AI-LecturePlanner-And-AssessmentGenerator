@@ -18,6 +18,8 @@ class LoginResponse(BaseModel):
     access_token: str
     token_type: str = "bearer"
     role: str
+    email: str
+    full_name: str
     user_id: str
 
 
@@ -33,11 +35,20 @@ def login(data: LoginRequest):
         raise HTTPException(status_code=400, detail="Invalid credentials")
 
     token = AuthService.create_access_token(
-        {"sub": str(user["_id"]), "role": user["role"]}
+        {
+            "sub": str(user["_id"]),
+            "role": user["role"],
+            "email": user["email"],
+            "full_name": user["full_name"],
+        }
     )
 
     return LoginResponse(
-        access_token=token, role=user["role"], user_id=str(user["_id"])
+        access_token=token,
+        role=user["role"],
+        user_id=str(user["_id"]),
+        email=user["email"],
+        full_name=user["full_name"],
     )
 
 
@@ -69,11 +80,12 @@ def create_admin(data: AdminCreate):
 
     return {"message": "Admin created", "admin_id": str(result.inserted_id)}
 
-    
+
 @router.get("/me", response_model=UserResponse)
-async def get_me(current_user = Depends(get_current_user)):
+async def get_me(current_user=Depends(get_current_user)):
     return current_user
 
+
 @router.get("/admin-only")
-async def admin_only(current_user = Depends(require_role("admin"))):
+async def admin_only(current_user=Depends(require_role("admin"))):
     return {"message": "Admin access granted"}

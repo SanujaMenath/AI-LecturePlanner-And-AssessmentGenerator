@@ -1,16 +1,29 @@
 from typing import List
-from fastapi import APIRouter, Depends, Query, Path
-from app.models.user import UserCreate, UserUpdate, UserResponse
+from fastapi import APIRouter,HTTPException, Depends, Query, Path
+from app.models.user import UserUpdate, UserResponse
 from app.services.user_service import UserService
+from app.models.user import BaseUser, LecturerCreate, StudentCreate, AdminCreate
 from app.dependencies.auth_dependencies import require_role, get_current_user
 
 router = APIRouter(prefix="/users", tags=["Users"])
 
-# Create user
-# Admins can create lecturers or admins; self-registration can be a separate public route if needed
-@router.post("/", response_model=UserResponse, dependencies=[Depends(require_role("admin"))])
-def create_user(payload: UserCreate):
-    return UserService.create_user(payload)
+@router.post("/create")
+def create_user(payload: dict):
+    role = payload.get("role")
+
+    if role == "lecturer":
+        data = LecturerCreate(**payload)
+
+    elif role == "student":
+        data = StudentCreate(**payload)
+
+    elif role == "admin":
+        data = AdminCreate(**payload)
+
+    else:
+        raise HTTPException(status_code=400, detail="Invalid role")
+
+    return UserService.create_user(data)
 
 # List users (admin only)
 @router.get("/", response_model=List[UserResponse], dependencies=[Depends(require_role("admin"))])

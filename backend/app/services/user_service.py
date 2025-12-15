@@ -3,8 +3,10 @@ from datetime import datetime, timezone
 from bson import ObjectId
 from fastapi import HTTPException, status
 from app.database.connection import get_database
+from app.services.lecturer_service import LecturerService
+from app.services.student_service import StudentService
 from app.services.auth_service import AuthService
-from app.models.user import UserCreate, UserUpdate
+from app.models.user import BaseUser, UserUpdate
 
 db = get_database()
 users_col = db["users"]
@@ -17,24 +19,41 @@ class UserService:
         return [UserService._clean_user(doc) for doc in docs]
 
     @staticmethod
-    def create_user(payload: UserCreate) -> dict:
-        # email uniqueness
-        if users_col.find_one({"email": payload.email}):
-            raise HTTPException(status_code=400, detail="Email already registered")
+    def create_user(data: BaseUser):
+        # Email check
+        if db["users"].find_one({"email": data.email}):
+            raise HTTPException(status_code=400, detail="Email already exists")
 
-        hashed = AuthService.hash_password(payload.password)
+        hashed_pw = AuthService.hash_password(data.password)
         now = datetime.now(timezone.utc)
-        new_doc = {
-            "full_name": payload.full_name,
-            "email": payload.email,
-            "password": hashed,
-            "role": payload.role,
+
+        user_doc = {
+            "full_name": data.full_name,
+            "email": data.email,
+            "password": hashed_pw,
+            "role": data.role,
             "created_at": now,
             "updated_at": now
         }
-        res = users_col.insert_one(new_doc)
-        new_doc["_id"] = res.inserted_id
-        return UserService._clean_user(new_doc)
+
+        user_id = db["users"].insert_one(user_doc).inserted_id
+
+        # Role branching
+        if data.role == "lecturer":
+            LecturerService._create_lecturer_profile(user_id, data)
+
+        elif data.role == "student":
+            StudentService._create_student_profile(user_id, data)
+
+        # admin has no separate profile
+        return {
+            "user_id": str(user_id),
+            "full_name": data.full_name,
+            "email": data.email,
+            "role": data.role,
+            "created_at": now,
+            "updated_at": now
+        }
 
     @staticmethod
     def get_user_by_id(user_id: str) -> dict:

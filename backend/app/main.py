@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 
 from app.routes.test_db import router as test_db_router
 from app.routes.auth_routes import router as auth_router
@@ -26,9 +27,23 @@ from app.config.settings import settings
 
 app = FastAPI(title=settings.PROJECT_NAME)
 
+
 @app.get("/")
 def root():
     return {"message": "Backend API running"}
+
+
+origins = [
+    "http://localhost:5173",
+    "http://127.0.0.1:5173",
+]
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 app.include_router(test_db_router, prefix="/system", tags=["System"])
 
