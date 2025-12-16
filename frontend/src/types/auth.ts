@@ -13,7 +13,10 @@ export interface User {
 export interface AuthResponse {
   access_token: string
   token_type: string
-  user: User
+  user_id: string;
+  role: "admin" | "lecturer" | "student";
+  email: string;
+  full_name: string;
 }
 
 export interface AuthError {

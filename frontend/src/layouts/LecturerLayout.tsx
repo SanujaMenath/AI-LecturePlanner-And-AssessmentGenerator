@@ -1,24 +1,22 @@
 import { Outlet } from "react-router-dom";
-import AdminSidebar from "../components/ui/AdminSidebar";
+import LecturerSidebar from "../components/ui/LecturerSidebar";
 import TopNav from "../components/ui/TopNav";
 import Footer from "../components/ui/Footer";
 
-const AdminLayout = () => {
+const LecturerLayout = () => {
   return (
     <div className="flex min-h-screen bg-gray-100">
-      <AdminSidebar />
+      <LecturerSidebar />
 
       <div className="flex-1 flex flex-col">
         <TopNav />
-
         <main className="p-6 flex-1">
           <Outlet />
         </main>
-         <Footer />
+        <Footer />
       </div>
-      
     </div>
   );
 };
 
-export default AdminLayout;
+export default LecturerLayout;

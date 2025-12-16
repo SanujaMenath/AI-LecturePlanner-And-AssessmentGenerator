@@ -1,16 +1,20 @@
+import { useNavigate } from "react-router-dom";
+
 const AdminDashboard = () => {
+  const navigate = useNavigate();
+
   const stats = [
     { label: "Total Students", value: 120 },
     { label: "Lecturers", value: 18 },
     { label: "Courses", value: 32 },
-    { label: "Departments", value: 6 }
-  ]
+    { label: "Departments", value: 6 },
+  ];
 
   const recentUsers = [
     { name: "Student A", role: "Student", email: "stud@gmail.com" },
     { name: "Lecturer One", role: "Lecturer", email: "lec@gmail.com" },
-    { name: "Admin One", role: "Admin", email: "admin@gmail.com" }
-  ]
+    { name: "Admin One", role: "Admin", email: "admin@gmail.com" },
+  ];
 
   return (
     <div className="space-y-10">
@@ -24,7 +28,7 @@ const AdminDashboard = () => {
 
       {/* Stats */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        {stats.map(item => (
+        {stats.map((item) => (
           <div
             key={item.label}
             className="bg-white p-6 rounded-xl shadow hover:shadow-md transition"
@@ -39,13 +43,13 @@ const AdminDashboard = () => {
       <div className="bg-white p-6 rounded-xl shadow">
         <h2 className="text-xl font-semibold mb-4">Quick Actions</h2>
         <div className="flex flex-wrap gap-4">
-          <button className="btn-primary px-5 py-2 rounded-lg">
-            Create User
+          <button onClick={() => navigate("/admin/users")} className="btn-primary px-5 py-2 rounded-lg">
+            Manage User
           </button>
-          <button className="btn-secondary px-5 py-2 rounded-lg">
+          <button className="btn-primary px-5 py-2 rounded-lg">
             Add Course
           </button>
-          <button className="btn-secondary px-5 py-2 rounded-lg">
+          <button className="btn-primary px-5 py-2 rounded-lg">
             Manage Departments
           </button>
         </div>
@@ -81,13 +85,13 @@ const AdminDashboard = () => {
       <div className="bg-white p-6 rounded-xl shadow">
         <h2 className="text-xl font-semibold mb-3">System Overview</h2>
         <p className="text-gray-600 leading-relaxed">
-          This AI-driven LMS allows administrators to manage users,
-          courses, departments, and academic workflows efficiently.
-          Use the sidebar to navigate through admin features.
+          This AI-driven LMS allows administrators to manage users, courses,
+          departments, and academic workflows efficiently. Use the sidebar to
+          navigate through admin features.
         </p>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default AdminDashboard
+export default AdminDashboard;
