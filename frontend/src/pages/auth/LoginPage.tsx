@@ -30,8 +30,14 @@ const LoginPage: React.FC = () => {
     }
 
     try {
-      await login(email, password);
-      navigate("/admin");
+      const loggedUser = await login(email, password);
+      if (loggedUser.role === "admin") {
+        navigate("/admin");
+      } else if (loggedUser.role === "lecturer") {
+        navigate("/lecturer");
+      } else if (loggedUser.role === "student") {
+        navigate("/student");
+      }
     } catch (err: unknown) {
       if (err instanceof Error) {
         alert(err.message);
