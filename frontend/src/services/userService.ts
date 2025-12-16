@@ -1,20 +1,12 @@
-import type { CreateUserPayload } from "../types/user"
+import type { UserDTO, CreateUserPayload } from "../types/user";
+import api from "./api";
 
-const API = import.meta.env.VITE_BASE_URL
+export const createUserService = async (payload: CreateUserPayload) => {
+  const res = await api.post("/users/create", payload);
+  return res.data;
+};
 
-export const createUserService = async (
-  payload: CreateUserPayload,
-  token: string
-) => {
-  const res = await fetch(`${API}/users/create`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${token}`
-    },
-    body: JSON.stringify(payload)
-  })
-
-  if (!res.ok) throw await res.json()
-  return res.json()
-}
+export const getUsersService = async (): Promise<UserDTO[]> => {
+  const res = await api.get("/users");
+  return res.data;
+};

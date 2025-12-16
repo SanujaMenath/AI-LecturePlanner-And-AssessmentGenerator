@@ -43,14 +43,14 @@ const AdminDashboard = () => {
       <div className="bg-white p-6 rounded-xl shadow">
         <h2 className="text-xl font-semibold mb-4">Quick Actions</h2>
         <div className="flex flex-wrap gap-4">
-          <button onClick={() => navigate("/admin/users")} className="btn-primary px-5 py-2 rounded-lg">
-            Manage User
+          <button onClick={() => navigate("/admin/create-user")} className="btn-primary px-5 py-2 rounded-lg">
+            Add User
           </button>
           <button className="btn-primary px-5 py-2 rounded-lg">
             Add Course
           </button>
           <button className="btn-primary px-5 py-2 rounded-lg">
-            Manage Departments
+            Add Department
           </button>
         </div>
       </div>
