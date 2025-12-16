@@ -7,6 +7,13 @@ export interface BaseUserCreate {
   role: UserRole
 }
 
+export interface UserDTO {
+  id: string;
+  full_name: string;
+  email: string;
+  role: UserRole;
+}
+
 export interface AdminCreate extends BaseUserCreate {
   role: "admin"
 }

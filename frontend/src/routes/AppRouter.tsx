@@ -9,6 +9,7 @@ import LecturerLayout from "../layouts/LecturerLayout";
 import StudentLayout from "../layouts/StudentLayout";
 import LecturerDashboard from "../pages/lecturer/LecturerDashboard";
 import StudentDashboard from "../pages/student/StudentDashboard";
+import RegisterPage from "../pages/admin/RegisterPage";
 
 const AppRouter = () => {
   return (
@@ -26,6 +27,7 @@ const AppRouter = () => {
           }
         >
           <Route index element={<AdminDashboard />} />
+          <Route path="create-user" element={<RegisterPage />} />
           <Route path="users" element={<UsersPage />} />
         </Route>
 
