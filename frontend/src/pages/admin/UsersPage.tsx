@@ -1,9 +1,33 @@
+import { useEffect, useState } from "react";
+import { type UserDTO } from "../../types/user";
+import { getUsersService } from "../../services/userService";
+
 const UsersPage = () => {
-  const users = [
-    { name: "Admin One", role: "admin", email: "admin@test.com" },
-    { name: "Sanuja", role: "lecturer", email: "lec@test.com" },
-    { name: "Student A", role: "student", email: "stud@test.com" },
-  ];
+  const [users, setUsers] = useState<UserDTO[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    const loadUsers = async () => {
+      try {
+        const data = await getUsersService();
+        setUsers(data);
+      } catch {
+        setError("Failed to load users");
+      } finally {
+        setLoading(false);
+      }
+    };
+    loadUsers();
+  }, []);
+
+   if (loading) {
+    return <div className="text-gray-500">Loading users...</div>;
+  }
+
+  if (error) {
+    return <div className="text-red-500">{error}</div>;
+  }
 
   return (
     <div>
@@ -19,9 +43,9 @@ const UsersPage = () => {
             </tr>
           </thead>
           <tbody>
-            {users.map((u, i) => (
-              <tr key={i} className="border-b last:border-none">
-                <td className="py-3 font-medium">{u.name}</td>
+            {users.map((u) => (
+              <tr key={u.id} className="border-b last:border-none">
+                <td className="py-3 font-medium">{u.full_name}</td>
                 <td className="py-3 capitalize">{u.role}</td>
                 <td className="py-3 text-gray-600">{u.email}</td>
               </tr>
