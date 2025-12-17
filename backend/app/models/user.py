@@ -10,21 +10,29 @@ class BaseUser(BaseModel):
     password: str
     role: str  # admin student lecturer
 
+
 class LecturerCreate(BaseUser):
     department: str
     specialization: str
+
 
 class StudentCreate(BaseUser):
     department: str
     year: int
     semester: int
 
+
 class AdminCreate(BaseUser):
     pass
+
 
 class UserUpdate(BaseModel):
     full_name: Optional[str] = None
     password: Optional[str] = None
+
+class ChangePasswordPayload(BaseModel):
+    current_password: str
+    new_password: str
 
 
 class UserResponse(MongoBaseModel):
