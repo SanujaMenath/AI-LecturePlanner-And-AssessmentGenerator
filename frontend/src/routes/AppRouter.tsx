@@ -10,6 +10,7 @@ import StudentLayout from "../layouts/StudentLayout";
 import LecturerDashboard from "../pages/lecturer/LecturerDashboard";
 import StudentDashboard from "../pages/student/StudentDashboard";
 import RegisterPage from "../pages/admin/RegisterPage";
+import ProfilePage from "../pages/profile/ProfilePage";
 
 const AppRouter = () => {
   return (
@@ -29,6 +30,7 @@ const AppRouter = () => {
           <Route index element={<AdminDashboard />} />
           <Route path="create-user" element={<RegisterPage />} />
           <Route path="users" element={<UsersPage />} />
+          <Route path="profile" element={<ProfilePage />}/>
         </Route>
 
         <Route
@@ -40,6 +42,7 @@ const AppRouter = () => {
           }
         >
           <Route index element={<LecturerDashboard />} />
+          <Route path="profile" element={<ProfilePage />}/>
         </Route>
 
         <Route
@@ -51,6 +54,7 @@ const AppRouter = () => {
           }
         >
           <Route index element={<StudentDashboard />} />
+          <Route path="profile" element={<ProfilePage />}/>
         </Route>
 
         <Route path="*" element={<HomePage />} />
