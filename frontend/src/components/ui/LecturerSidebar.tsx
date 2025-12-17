@@ -2,6 +2,7 @@ import { NavLink } from "react-router-dom";
 
 const links = [
   { label: "Dashboard", to: "/lecturer" },
+  { label: "Profile", to: "/lecturer/profile" },
   { label: "My Courses", to: "/lecturer/courses" },
   { label: "Assessments", to: "/lecturer/assessments" },
   { label: "Students", to: "/lecturer/students" },
@@ -10,12 +11,12 @@ const links = [
 const LecturerSidebar = () => {
   return (
     <aside className="w-64 bg-white border-r min-h-screen">
-      <div className="p-6 border-b">
+      <div className="p-4 h-16  border-b-gray-200  shadow">
         <h1 className="text-xl font-bold text-primary">Lecturer Panel</h1>
       </div>
 
       <nav className="p-4 space-y-1">
-        {links.map(link => (
+        {links.map((link) => (
           <NavLink
             key={link.to}
             to={link.to}
