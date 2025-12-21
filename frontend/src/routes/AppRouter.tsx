@@ -11,6 +11,7 @@ import LecturerDashboard from "../pages/lecturer/LecturerDashboard";
 import StudentDashboard from "../pages/student/StudentDashboard";
 import RegisterPage from "../pages/admin/RegisterPage";
 import ProfilePage from "../pages/profile/ProfilePage";
+import CoursesPage from "../pages/course/CoursesPage";
 
 const AppRouter = () => {
   return (
@@ -31,6 +32,7 @@ const AppRouter = () => {
           <Route path="create-user" element={<RegisterPage />} />
           <Route path="users" element={<UsersPage />} />
           <Route path="profile" element={<ProfilePage />}/>
+          <Route path="courses" element={<CoursesPage />}/>
         </Route>
 
         <Route

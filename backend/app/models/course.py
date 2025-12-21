@@ -12,6 +12,7 @@ class CourseCreate(BaseModel):
     credits: Optional[int] = 0
     year: Optional[int] = None
     semester: Optional[int] = None
+    lecturer_id: Optional[PyObjectId] = None
 
 class CourseUpdate(BaseModel):
     course_name: Optional[str] = None
@@ -20,6 +21,15 @@ class CourseUpdate(BaseModel):
     credits: Optional[int] = None
     year: Optional[int] = None
     semester: Optional[int] = None
+    lecturer_id: Optional[PyObjectId] = None
+
+class CourseListItem(BaseModel):
+    id: str
+    course_code: str
+    course_name: str
+    is_enrolled: Optional[bool] = None
+    lecturer_id: Optional[str] = None
+
 
 class CourseResponse(MongoBaseModel):
     id: PyObjectId = Field(..., alias="id")
@@ -30,5 +40,6 @@ class CourseResponse(MongoBaseModel):
     credits: int
     year: Optional[int]
     semester: Optional[int]
+    lecturer_id: Optional[PyObjectId] = None
     created_at: datetime
     updated_at: datetime
