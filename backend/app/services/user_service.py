@@ -75,17 +75,62 @@ class UserService:
             raise HTTPException(status_code=400, detail="Invalid user id")
 
         update_data = {}
-        if payload.full_name:
+
+        if payload.full_name is not None:
             update_data["full_name"] = payload.full_name
-        if payload.password:
-            update_data["password"] = AuthService.hash_password(payload.password)
+
+        if not update_data:
+            raise HTTPException(status_code=400, detail="No data to update")
+
         update_data["updated_at"] = datetime.now(timezone.utc)
 
-        res = users_col.update_one({"_id": ObjectId(user_id)}, {"$set": update_data})
+        res = users_col.update_one(
+            {"_id": ObjectId(user_id)},
+            {"$set": update_data}
+        )
+
         if res.matched_count == 0:
             raise HTTPException(status_code=404, detail="User not found")
-        doc = users_col.find_one({"_id": ObjectId(user_id)}, {"password": 0})
+
+        doc = users_col.find_one(
+            {"_id": ObjectId(user_id)},
+            {"password": 0}
+        )
+
         return UserService._clean_user(doc)
+    
+    @staticmethod
+    def change_password(
+        user_id: str,
+        current_password: str,
+        new_password: str
+    ):
+        if not ObjectId.is_valid(user_id):
+            raise HTTPException(status_code=400, detail="Invalid user id")
+
+        user = users_col.find_one({"_id": ObjectId(user_id)})
+
+        if not user:
+            raise HTTPException(status_code=404, detail="User not found")
+
+        if not AuthService.verify_password(
+            current_password,
+            user["password"]
+        ):
+            raise HTTPException(status_code=400, detail="Current password is incorrect")
+
+        users_col.update_one(
+            {"_id": ObjectId(user_id)},
+            {
+                "$set": {
+                    "password": AuthService.hash_password(new_password),
+                    "updated_at": datetime.now(timezone.utc)
+                }
+            }
+        )
+
+        return {"message": "Password changed successfully"}
+
 
     @staticmethod
     def delete_user(user_id: str) -> dict:
