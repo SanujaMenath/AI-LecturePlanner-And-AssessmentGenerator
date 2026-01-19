@@ -21,6 +21,7 @@ from app.routes.session_routes import router as session_router
 from app.routes.attendance_routes import router as attendance_router
 from app.routes.quiz_routes import router as quiz_router
 from app.routes.exam_routes import router as exam_router
+from app.routes.predict_exam_score import router as predict_exam_score_router
 
 from app.config.settings import settings
 
@@ -64,3 +65,8 @@ app.include_router(session_router)
 app.include_router(attendance_router)
 app.include_router(quiz_router)
 app.include_router(exam_router)
+
+
+app.include_router(predict_exam_score_router)
+
+
