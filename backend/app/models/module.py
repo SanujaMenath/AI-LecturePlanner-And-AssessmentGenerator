@@ -2,14 +2,16 @@
 from pydantic import BaseModel, Field
 from typing import Optional
 from datetime import datetime
-from app.models.object_id import PyObjectId, MongoBaseModel
+from app.models.object_id import PyObjectId
+
 
 class ModuleCreate(BaseModel):
     course_id: PyObjectId
-    code: str              # e.g. CS101-1
+    code: str  # e.g. CS101-1
     title: str
     description: Optional[str] = None
     credits: Optional[int] = None
+
 
 class ModuleUpdate(BaseModel):
     code: Optional[str] = None
@@ -17,7 +19,8 @@ class ModuleUpdate(BaseModel):
     description: Optional[str] = None
     credits: Optional[int] = None
 
-class ModuleResponse(MongoBaseModel):
+
+class ModuleResponse(BaseModel):
     id: PyObjectId = Field(..., alias="id")
     course_id: PyObjectId
     code: str
@@ -26,3 +29,9 @@ class ModuleResponse(MongoBaseModel):
     credits: Optional[int]
     created_at: datetime
     updated_at: datetime
+
+    model_config = {
+        "populate_by_name": True,
+        "arbitrary_types_allowed": True,
+        "json_encoders": {PyObjectId: str},
+    }

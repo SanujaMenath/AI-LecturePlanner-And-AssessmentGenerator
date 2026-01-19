@@ -1,14 +1,19 @@
 from bson import ObjectId
-from pydantic import BaseModel
+from pydantic import GetJsonSchemaHandler
+from pydantic_core import core_schema
 from pydantic.json_schema import JsonSchemaValue
 
-class PyObjectId(ObjectId):
+
+class PyObjectId:
     @classmethod
-    def __get_validators__(cls):
-        yield cls.validate
+    def __get_pydantic_core_schema__(cls, source_type, handler):
+        return core_schema.no_info_plain_validator_function(
+            cls.validate,
+            serialization=core_schema.to_string_ser_schema(),
+        )
 
     @classmethod
-    def validate(cls, v, info=None):
+    def validate(cls, v):
         if isinstance(v, ObjectId):
             return v
         if not ObjectId.is_valid(v):
@@ -16,16 +21,7 @@ class PyObjectId(ObjectId):
         return ObjectId(v)
 
     @classmethod
-    def __get_pydantic_json_schema__(cls, core_schema, handler):
-        json_schema = handler(core_schema)
-        json_schema.update(type="string")
-        return json_schema
-
-
-class MongoBaseModel(BaseModel):
-    model_config = {
-        "arbitrary_types_allowed": True,
-        "json_encoders": {
-            ObjectId: lambda v: str(v)
-        }
-    }
+    def __get_pydantic_json_schema__(
+        cls, core_schema, handler: GetJsonSchemaHandler
+    ) -> JsonSchemaValue:
+        return {"type": "string"}

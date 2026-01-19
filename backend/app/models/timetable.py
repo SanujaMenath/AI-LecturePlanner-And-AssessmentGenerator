@@ -1,6 +1,6 @@
 from typing import Optional
 from pydantic import BaseModel, Field
-from app.models.object_id import PyObjectId, MongoBaseModel
+from app.models.object_id import PyObjectId
 
 
 class TimetableBase(BaseModel):
@@ -22,10 +22,16 @@ class TimetableUpdate(BaseModel):
     room: Optional[str] = None
 
 
-class TimetableResponse(MongoBaseModel):
+class TimetableResponse(BaseModel):
     module_id: PyObjectId
     lecturer_id: PyObjectId
     day_of_week: str
     start_time: str
     end_time: str
     room: Optional[str]
+
+    model_config = {
+        "populate_by_name": True,
+        "arbitrary_types_allowed": True,
+        "json_encoders": {PyObjectId: str},
+    }

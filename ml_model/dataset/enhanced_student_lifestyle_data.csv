@@ -1,0 +1,2001 @@
+Student_ID,Exam_Name,Exam_Score,Study_Hours_Per_Day,Extracurricular_Hours_Per_Day,Sleep_Hours_Per_Day,Social_Hours_Per_Day,Physical_Activity_Hours_Per_Day,GPA,Stress_Level
+1,OOP,69,6.9,3.8,8.7,2.8,1.8,2.99,Moderate
+2,Database Systems,63,5.3,3.5,8,4.2,3,2.75,Low
+3,SAD,70,5.1,3.9,9.2,1.2,4.6,2.67,Low
+4,MIS,70,6.5,2.1,7.2,1.7,6.5,2.88,Moderate
+5,OOP,83,8.1,0.6,6.5,2.2,6.6,3.51,High
+6,Computer Networks,74,6,2.1,8,0.3,7.6,2.85,Moderate
+7,DSA,78,8,0.7,5.3,5.7,4.3,3.08,High
+8,OOP,81,8.4,1.8,5.6,3,5.2,3.2,High
+9,SAD,73,5.2,3.6,6.3,4,4.9,2.82,Low
+10,MIS,65,7.7,0.7,9.8,4.5,1.3,2.76,Moderate
+11,Database Systems,81,9.7,3.6,8,2.5,0.2,3.43,High
+12,SAD,79,6.9,1.1,9.1,2.1,4.8,2.97,Moderate
+13,SAD,66,6.4,2.2,5.7,4.8,4.9,2.82,High
+14,DSA,68,5,3.3,8.5,4.4,2.8,2.87,Low
+15,Foundation of web technologies,82,8.9,0.3,6.8,0.7,7.3,3.4,High
+16,MIS,86,6.7,0.3,6.6,2,8.4,3.2,Moderate
+17,Data Science,85,8.6,2.6,9.4,1.6,1.8,3.36,High
+18,SAD,83,8.8,2.2,8.9,2,2.1,3.19,High
+19,Foundation of web technologies,80,7.6,1.7,5.1,0.6,9,3.16,High
+20,Data Science,71,6.6,2,9.5,1.5,4.4,2.93,Moderate
+21,MIS,74,7.1,3,6.1,0.5,7.3,2.9,Moderate
+22,Fundamentals of Programming,79,9.6,3.2,8.2,2.6,0.4,3.34,High
+23,Computer Networks,77,9,0.7,9.5,2.6,2.2,3.21,High
+24,Foundation of web technologies,73,6.1,1.7,9.1,5.2,1.9,2.85,Moderate
+25,Computer Organization,63,5,2,7.1,1.3,8.6,2.68,Low
+26,Fundamentals of Programming,82,9.7,1.3,7.6,3.8,1.6,3.29,High
+27,Computer Networks,66,6.8,3.9,9.8,0.9,2.6,2.64,Moderate
+28,DSA,72,6.4,0.1,8,3,6.5,2.95,Moderate
+29,OOP,64,5.3,1.1,9.5,1.4,6.7,2.79,Low
+30,Database Systems,79,9.9,1,8.4,3.6,1.1,3.25,High
+31,Computer Organization,74,6.2,2.9,6.8,3.8,4.3,3.05,Moderate
+32,DSA,82,5.5,3.3,6.6,1.1,7.5,3.26,Low
+33,MIS,62,5.2,2.4,8.4,0.1,7.9,2.47,Low
+34,DSA,82,8.2,0.7,8.5,2.3,4.3,3.24,High
+35,OOP,88,9.7,0.6,6.7,0.7,6.3,3.62,High
+36,MIS,80,9.1,2.2,7.6,1.2,3.9,3.12,High
+37,Computer Organization,60,5.5,3.6,9.5,3.4,2,2.58,Low
+38,OOP,70,8.6,3.6,9.4,1.9,0.5,3.03,High
+39,Data Science,75,8.2,0.3,5.8,5.4,4.3,3.29,High
+40,Database Systems,64,5,0.6,7.7,4.2,6.5,2.61,Low
+41,Computer Organization,85,8.3,0.9,8.6,1.4,4.8,3.48,High
+42,Data Science,79,8.2,3.4,8.3,2.3,1.8,3.07,High
+43,Computer Networks,68,5.5,1.5,6.3,1.5,9.2,2.81,Low
+44,Computer Organization,88,9.5,2.5,9,1.5,1.5,3.49,High
+45,Computer Networks,77,7.9,2,6,4.3,3.8,2.97,Moderate
+46,MIS,87,9.7,3.8,9.6,0.3,0.6,3.55,High
+47,Data Science,66,5.1,3.7,7.1,5.8,2.3,2.6,Low
+48,Database Systems,80,9.3,1.3,5.8,3.3,4.3,3.09,High
+49,OOP,83,9.7,2.8,7.9,0.3,3.3,3.47,High
+50,SAD,80,9.4,3,8.5,2.2,0.9,3.18,High
+51,DSA,76,6.8,1.2,9,4.9,2.1,3.12,Moderate
+52,Fundamentals of Programming,96,9,2.6,8.5,3.1,0.8,4,High
+53,Database Systems,79,9.5,1.4,6.9,0.6,5.6,3.33,High
+54,Data Science,74,7.3,2.2,6.4,3.5,4.6,3.11,Moderate
+55,SAD,70,5.2,0.1,9.1,2.2,7.4,2.79,Low
+56,Database Systems,73,8.8,0.9,8.1,0.5,5.7,3.1,High
+57,Data Science,58,5.3,2.1,7.7,3.8,5.1,2.39,Low
+58,Foundation of web technologies,87,9,1.1,7.2,0.5,6.2,3.39,High
+59,Foundation of web technologies,64,5.1,3.9,9.2,4,1.8,2.52,Low
+60,Computer Networks,68,5.8,1,7.7,4.3,5.2,2.8,Low
+61,Database Systems,97,8.3,1.1,9.8,3.5,1.3,3.67,High
+62,Foundation of web technologies,87,7.1,1,6.8,4.5,4.6,3.27,Moderate
+63,Data Science,71,5.1,0.5,5.2,0.2,13,2.85,High
+64,Computer Networks,74,7.4,0.4,7.5,2.8,5.9,3.26,Moderate
+65,Data Science,73,5.9,1.7,7,3.7,5.7,2.8,Low
+66,Computer Networks,70,6.9,2.5,7.5,5.1,2,3.06,Moderate
+67,Database Systems,86,8.3,0.7,5.4,3.9,5.7,3.26,High
+68,SAD,88,9.7,2.3,6.9,3.3,1.8,3.38,High
+69,OOP,84,7.3,2.2,9.7,1.9,2.9,3.15,Moderate
+70,Computer Organization,68,5.4,1.3,9.2,0.1,8,2.69,Low
+71,SAD,87,9.1,1.1,5.6,4.2,4,3.54,High
+72,MIS,83,8.7,3.2,6.4,1,4.7,3.37,High
+73,Data Science,88,8.8,3.2,10,0.8,1.2,3.58,High
+74,MIS,75,6.7,3.7,9.3,1.8,2.5,2.89,Moderate
+75,SAD,92,8.8,3,5.5,5.4,1.3,3.58,High
+76,Computer Networks,75,6.6,3.6,6.9,0.1,6.8,2.99,Moderate
+77,Computer Organization,84,9.5,0.4,6.6,5.7,1.8,3.44,High
+78,Computer Organization,92,8.2,1.8,6.5,2,5.5,3.35,High
+79,Fundamentals of Programming,84,8.4,3,9,2.8,0.8,3.26,High
+80,Computer Organization,61,5.3,2.2,7.2,5.3,4,2.62,Low
+81,OOP,70,6.8,0.5,5.7,4.6,6.4,2.86,High
+82,Computer Organization,74,5.4,2.8,5.4,4.9,5.5,2.86,High
+83,SAD,72,8.5,0.3,5.4,5.9,3.9,2.99,High
+84,Fundamentals of Programming,78,9.1,3.8,9.9,0.9,0.3,3.08,High
+85,SAD,83,6.9,0.3,8.9,3.4,4.5,3.21,Moderate
+86,SAD,60,5.6,2,5.1,2.8,8.5,2.81,High
+87,DSA,72,5.3,0.5,5.6,3.9,8.7,2.9,High
+88,Fundamentals of Programming,94,9.8,1.5,6.4,5.2,1.1,3.78,High
+89,SAD,73,6.1,3.9,5.1,5.8,3.1,2.96,High
+90,DSA,71,5.4,2.2,9.8,3.1,3.5,2.81,Low
+91,DSA,87,8.1,2.8,7.3,3.6,2.2,3.39,High
+92,Fundamentals of Programming,71,5.2,1.1,9.8,5.3,2.6,2.82,Low
+93,MIS,66,7.3,2.5,6.4,1.1,6.7,2.67,Moderate
+94,Computer Networks,79,7.9,0.3,9.9,5.8,0.1,3.08,Moderate
+95,OOP,78,8.5,2.1,6.5,4.9,2,3.1,High
+96,Computer Networks,88,9.6,3.3,9.7,1,0.4,3.54,High
+97,Computer Organization,82,8.1,1.7,9.7,3.9,0.6,3.45,High
+98,OOP,80,9.9,0.6,8,2.1,3.4,3.39,High
+99,Computer Organization,75,9.8,3.4,9.2,0.7,0.9,3.15,High
+100,SAD,68,5.3,3.5,9.1,6,0.1,2.68,Low
+101,Data Science,85,10,2.2,8.8,2.8,0.2,3.41,High
+102,Fundamentals of Programming,76,7.3,0.5,9.8,3.6,2.8,3.22,Moderate
+103,OOP,76,6.1,2.7,8.1,2.1,5,2.98,Moderate
+104,OOP,79,7.6,3.1,7.6,4.9,0.8,2.99,Moderate
+105,SAD,81,7.8,2.2,9.4,1.9,2.7,3.3,Moderate
+106,MIS,84,8.5,0.9,5.7,0.1,8.8,3.55,High
+107,DSA,72,6.8,2.4,7,2.6,5.2,2.97,Moderate
+108,SAD,85,7.6,3.1,7,3.7,2.6,3.28,Moderate
+109,Foundation of web technologies,78,9.3,3.8,5.7,4.8,0.4,3.05,High
+110,DSA,74,7.3,3.9,7.5,1.7,3.6,3.08,Moderate
+111,Fundamentals of Programming,87,8.2,1,5.4,0.8,8.6,3.3,High
+112,DSA,72,5.9,1.4,9.5,2.8,4.4,2.7,Low
+113,MIS,76,8.3,0.7,6,0.2,8.8,3.14,High
+114,DSA,66,5.9,0.4,5.6,2.8,9.3,2.73,High
+115,Fundamentals of Programming,67,6,1.5,7.5,4.1,4.9,2.76,Moderate
+116,MIS,85,9.4,3.7,5.3,1.6,4,3.45,High
+117,Computer Networks,85,9,3,5.9,1.3,4.8,3.29,High
+118,OOP,70,8.1,1.5,7.3,4.5,2.6,2.75,High
+119,OOP,88,5.2,1,8.6,5.4,3.8,3.4,Low
+120,Computer Organization,78,5.5,1.8,7.7,1.5,7.5,3.05,Low
+121,Computer Networks,76,6.3,1.5,5.1,1.9,9.2,2.82,High
+122,Computer Networks,62,5.6,3.6,8,4.1,2.7,2.62,Low
+123,DSA,92,8.9,2,5.4,3.2,4.5,3.64,High
+124,OOP,73,7.2,0.5,6.4,2.2,7.7,3.19,Moderate
+125,Fundamentals of Programming,70,8.2,2.3,6.8,5.9,0.8,2.95,High
+126,Database Systems,73,5.5,0.6,6.2,1,10.7,2.94,Low
+127,Database Systems,74,5.9,1.1,5.9,5.4,5.7,2.89,High
+128,MIS,72,7.1,3.9,5.6,2.4,5,2.9,High
+129,OOP,88,9.8,3.5,9.1,0.4,1.2,3.57,High
+130,OOP,80,9.6,2.2,7.9,1.2,3.1,3.24,High
+131,Database Systems,79,8.8,0.7,6.6,2.6,5.3,2.99,High
+132,OOP,70,5.6,2.4,6.4,3.5,6.1,2.85,Low
+133,DSA,73,5.8,1.9,7.7,0.3,8.3,2.7,Low
+134,Foundation of web technologies,70,5.3,4,6.6,4.9,3.2,2.72,Low
+135,Data Science,63,6.3,2.7,8.8,3.6,2.6,2.45,Moderate
+136,Computer Networks,68,6.7,3.7,9.2,4.2,0.2,2.85,Moderate
+137,Computer Organization,74,5.6,2.9,9.7,1.1,4.7,2.86,Low
+138,MIS,77,7.9,3.4,5.7,4.8,2.2,3.15,High
+139,Foundation of web technologies,70,6,0.7,5.8,4.9,6.6,2.96,High
+140,Database Systems,88,6.8,3.5,7,4.9,1.8,3.44,Moderate
+141,Computer Networks,73,7.2,1.5,7.3,1.8,6.2,3.08,Moderate
+142,OOP,79,6.2,3.6,6.9,3.3,4,3.27,Moderate
+143,Computer Organization,78,9.5,2.5,5.6,5.6,0.8,3.13,High
+144,OOP,84,5.7,3.2,8.1,3.2,3.8,3.08,Low
+145,Fundamentals of Programming,88,9.5,3.2,5.8,1.7,3.8,3.59,High
+146,Fundamentals of Programming,64,5.2,2.3,8.8,5.3,2.4,2.61,Low
+147,Computer Organization,76,6.7,3.3,5.6,5.1,3.3,2.95,High
+148,Computer Organization,75,9,0.6,6.1,4.3,4,3.15,High
+149,Database Systems,80,8.6,2.6,8.5,2.3,2,3.14,High
+150,Computer Organization,70,5.9,3.6,7.9,2.4,4.2,2.64,Low
+151,DSA,89,7.3,3.8,5.8,3.5,3.6,3.58,High
+152,OOP,73,5.1,3.5,9.7,3.2,2.5,2.79,Low
+153,Foundation of web technologies,92,8.5,3.7,8.5,0.5,2.8,3.65,High
+154,SAD,81,7.1,2.9,9.7,4,0.3,3.33,Moderate
+155,Computer Organization,77,7.3,0.5,9.9,5,1.3,3.11,Moderate
+156,MIS,84,8,1.6,5.3,2,7.1,3.42,High
+157,Fundamentals of Programming,87,9,0,6.7,2.4,5.9,3.51,High
+158,DSA,76,6.7,1.4,8.7,2.7,4.5,3.02,Moderate
+159,Computer Networks,61,6.1,1.8,5.7,1.1,9.3,2.38,High
+160,SAD,87,9.6,1.4,7.9,3.2,1.9,3.43,High
+161,Foundation of web technologies,60,5.1,2.7,5.9,5.8,4.5,2.71,High
+162,SAD,64,5.4,4,7.5,3.6,3.5,2.59,Low
+163,Computer Organization,62,5.3,3,6,5.4,4.3,2.68,Low
+164,Database Systems,66,5.2,1.9,7.8,0.4,8.7,2.67,Low
+165,Fundamentals of Programming,89,8.9,1.8,7.6,2.5,3.2,3.58,High
+166,Fundamentals of Programming,64,5.8,0.7,9.3,5.7,2.5,2.46,Low
+167,Computer Networks,80,6.9,1.1,8.2,2.5,5.3,3.22,Moderate
+168,Database Systems,76,5.1,0.9,6.2,4,7.8,3.02,Low
+169,OOP,65,5.1,0.4,9,1.1,8.4,2.52,Low
+170,Data Science,78,5.5,1,8.6,5.1,3.8,2.97,Low
+171,DSA,87,9.2,1.6,8.3,1,3.9,3.5,High
+172,Fundamentals of Programming,68,5.1,0.3,6,0.2,12.4,2.7,Low
+173,MIS,70,5.9,2.3,7.1,5.4,3.3,2.78,Low
+174,Fundamentals of Programming,77,6.3,1.5,8,1.6,6.6,3.15,Moderate
+175,SAD,79,8.1,1.6,7.8,2.6,3.9,3.26,High
+176,Fundamentals of Programming,76,8.8,0.6,9.3,2.6,2.7,3.3,High
+177,Fundamentals of Programming,84,9.5,3.2,7.1,0.1,4.1,3.49,High
+178,Data Science,67,8.2,1,5.7,5,4.1,2.89,High
+179,Data Science,92,9.9,2.1,5.9,1.6,4.5,3.52,High
+180,Foundation of web technologies,70,6.4,2.2,8.3,5,2.1,2.76,Moderate
+181,OOP,73,6,0,5.7,5.4,6.9,2.95,High
+182,MIS,83,8,2.7,5.9,5.5,1.9,3.4,High
+183,Fundamentals of Programming,79,7.1,1.5,7.6,0.3,7.5,3.17,Moderate
+184,Fundamentals of Programming,64,5.4,2.4,6.2,2.3,7.7,2.66,Low
+185,DSA,70,6.4,1.4,8.6,1.8,5.8,2.77,Moderate
+186,Data Science,95,8.3,3.7,8.7,0.7,2.6,3.77,High
+187,MIS,80,5.2,1,8,0.3,9.5,3.29,Low
+188,Computer Networks,72,6.7,3.1,5.5,0.5,8.2,2.99,High
+189,Foundation of web technologies,89,8.6,2,8.4,2.2,2.8,3.43,High
+190,OOP,81,9,2.8,6.4,3.4,2.4,3.24,High
+191,Database Systems,73,6.8,0.4,9.6,0.8,6.4,3.01,Moderate
+192,OOP,74,5.9,2.2,9.4,4.4,2.1,3.01,Low
+193,SAD,80,9,2.6,8.5,3.3,0.6,3.34,High
+194,Fundamentals of Programming,64,6.1,4,9.7,0.2,4,2.58,Moderate
+195,Foundation of web technologies,79,8.5,3.7,5.9,3.4,2.5,3.06,High
+196,SAD,91,9.6,3.9,9.7,0.4,0.4,3.65,High
+197,MIS,92,9.3,3.4,6.6,3.9,0.8,3.41,High
+198,Database Systems,72,6.2,0.5,5.4,4.2,7.7,2.84,High
+199,Data Science,83,6.7,2.9,5.3,1.9,7.2,3.29,High
+200,Foundation of web technologies,73,6.6,2.5,9.4,3.4,2.1,3.03,Moderate
+201,Foundation of web technologies,73,6.2,0.1,9.4,0.1,8.2,2.95,Moderate
+202,Fundamentals of Programming,89,9.7,3.2,10,0.4,0.7,3.67,High
+203,Computer Organization,74,8.8,1.6,7.4,3.8,2.4,3.23,High
+204,Foundation of web technologies,87,7.1,3,6.2,0.7,7,3.36,Moderate
+205,DSA,74,6.8,1.1,6.5,1.4,8.2,3.01,Moderate
+206,Database Systems,75,6.9,2.7,6.1,5.7,2.6,3.08,Moderate
+207,Database Systems,84,8.9,0.4,7.1,5.3,2.3,3.33,High
+208,DSA,85,8.1,0.7,10,1.2,4,3.35,High
+209,Computer Networks,82,9.7,2.6,8,1.9,1.8,3.33,High
+210,DSA,70,6.1,0.7,8.9,2.1,6.2,2.81,Moderate
+211,DSA,79,5.3,3.9,9.4,5,0.4,3.08,Low
+212,Database Systems,78,8.5,0.6,9.1,1.3,4.5,3.16,High
+213,OOP,71,6.1,2.1,8,3.5,4.3,2.79,Moderate
+214,Database Systems,78,9.4,3.8,9.3,1.2,0.3,3.33,High
+215,Computer Organization,71,8.3,2.2,5.4,2.5,5.6,2.97,High
+216,Fundamentals of Programming,80,8.6,2,5.4,1.3,6.7,3.14,High
+217,SAD,90,8.4,0.3,9.3,3,3,3.77,High
+218,OOP,82,9.1,1.4,8.4,2.9,2.2,3.26,High
+219,Data Science,77,6.3,3.5,9,3.4,1.8,3.11,Moderate
+220,SAD,83,8.5,2.7,8.1,3.5,1.2,3.38,High
+221,Fundamentals of Programming,69,5.8,3.5,9.4,0.2,5.1,2.84,Low
+222,Computer Organization,78,6.7,3,5.8,4.9,3.6,3.03,High
+223,Computer Organization,91,9.2,2,5,1.7,6.1,3.42,High
+224,Data Science,82,8.2,1,8.2,3.2,3.4,3.24,High
+225,OOP,84,8.9,0.4,8.8,3.2,2.7,3.32,High
+226,Computer Networks,80,8.2,3.7,5.5,5.6,1,3.29,High
+227,DSA,79,8.4,0.3,6.5,4.2,4.6,3.29,High
+228,OOP,71,6.7,2.5,5.2,5.2,4.4,2.86,High
+229,Computer Networks,92,9.9,3.9,8.7,0.2,1.3,3.8,High
+230,Computer Organization,76,8.4,1.8,6.4,6,1.4,3.25,High
+231,Database Systems,74,7.1,1.8,5.8,4.8,4.5,2.86,High
+232,Fundamentals of Programming,76,5.4,2.7,8.3,1.6,6,2.95,Low
+233,Data Science,93,9.8,0.6,7.2,5.7,0.7,3.84,High
+234,Fundamentals of Programming,72,7,1.1,9.9,2.5,3.5,2.84,Moderate
+235,MIS,82,9.5,0.9,6.1,0.2,7.3,3.17,High
+236,MIS,93,9.3,1.9,9.8,0.6,2.4,3.68,High
+237,OOP,84,9.3,3.1,8.9,2.3,0.4,3.52,High
+238,Computer Organization,77,5.7,0.1,9.6,3.7,4.9,3.12,Low
+239,Computer Organization,84,9,1.9,5.6,0.8,6.7,3.21,High
+240,DSA,82,6,2,5.3,3.5,7.2,3.26,High
+241,DSA,73,6.3,3.2,6.6,2.7,5.2,2.85,Moderate
+242,DSA,69,8,1.2,8.5,5.2,1.1,2.72,Moderate
+243,Database Systems,81,8.9,0.2,7.4,0.6,6.9,3.33,High
+244,SAD,73,8.1,2.8,7.8,0.1,5.2,2.98,High
+245,Foundation of web technologies,71,6.6,2.1,5.4,2.1,7.8,2.79,High
+246,SAD,80,7.8,2.8,9,0.9,3.5,3.11,Moderate
+247,Fundamentals of Programming,75,5.8,0.4,8.2,4.2,5.4,2.88,Low
+248,SAD,76,8.5,3.5,8.6,2.7,0.7,3.15,High
+249,Database Systems,83,6.7,3.3,5.4,5.4,3.2,3.27,High
+250,Fundamentals of Programming,82,7.3,2.6,7.6,4.4,2.1,3.13,Moderate
+251,SAD,66,5.4,0.2,6.2,1,11.2,2.75,Low
+252,Database Systems,94,9.9,1.3,5.9,4.7,2.2,3.57,High
+253,Foundation of web technologies,86,8.3,2,7.8,4.2,1.7,3.25,High
+254,SAD,81,6,2.7,5.4,0.2,9.7,2.92,High
+255,Database Systems,72,6.3,1.9,9.3,4.4,2.1,2.85,Moderate
+256,DSA,84,6.7,1.5,9.9,0.2,5.7,3.32,Moderate
+257,Computer Organization,93,9.3,2.3,7.2,3.8,1.4,3.61,High
+258,DSA,88,9.5,1.7,6.4,3.6,2.8,3.42,High
+259,Computer Organization,86,9.6,0.8,8.1,3.5,2,3.31,High
+260,Data Science,87,8.6,3.6,5.9,1.4,4.5,3.37,High
+261,Data Science,89,9.9,0.7,9.3,2,2.1,3.59,High
+262,Data Science,79,7.2,2.1,6.8,3.6,4.3,3.01,Moderate
+263,Foundation of web technologies,62,5.8,1.6,9.8,1.5,5.3,2.61,Low
+264,DSA,89,8.9,0.5,9.8,2.2,2.6,3.57,High
+265,Computer Organization,83,6.2,0.3,5.8,3.1,8.6,3.13,High
+266,Database Systems,71,7.2,1,8.1,4.2,3.5,2.98,Moderate
+267,Fundamentals of Programming,68,5.8,0.7,5.2,4.4,7.9,2.81,High
+268,Database Systems,97,9.2,3.2,7.9,3.2,0.5,3.8,High
+269,Fundamentals of Programming,77,6,0.4,6.3,0.3,11,3.05,Moderate
+270,MIS,67,5.2,0.5,7.3,5.6,5.4,2.79,Low
+271,Database Systems,78,6.6,2,5.2,0.9,9.3,3.17,High
+272,SAD,75,7.3,2.1,7.4,4,3.2,3.16,Moderate
+273,SAD,77,5.7,0.1,6.5,4.2,7.5,2.98,Low
+274,OOP,81,9.8,0.4,8.4,2.4,3,3.26,High
+275,DSA,91,9.3,0.7,8.5,4.6,0.9,3.43,High
+276,Fundamentals of Programming,80,7.5,2.5,9.3,2.7,2,3.2,Moderate
+277,Fundamentals of Programming,72,5.2,3.7,8.4,4.1,2.6,2.91,Low
+278,DSA,70,7,2.6,5.5,3.9,5,2.82,High
+279,Foundation of web technologies,88,10,0.2,9.9,1.6,2.3,3.56,High
+280,OOP,82,7.8,3,9.4,1.5,2.3,3.25,Moderate
+281,Foundation of web technologies,81,6.6,2.7,9,4.3,1.4,2.93,Moderate
+282,Foundation of web technologies,90,9.1,0.5,7.7,0,6.7,3.64,High
+283,Foundation of web technologies,69,6.6,1.5,7,4.2,4.7,2.79,Moderate
+284,DSA,63,6.2,1.5,6.1,0.4,9.8,2.5,Moderate
+285,Foundation of web technologies,88,8,2.7,8.1,2.4,2.8,3.4,Moderate
+286,SAD,73,7.6,1.9,5.1,2,7.4,3.08,High
+287,Data Science,84,6.9,1.6,7.9,3.2,4.4,3.31,Moderate
+288,MIS,85,9.1,2.9,9.8,0,2.2,3.48,High
+289,Fundamentals of Programming,75,6,0,8.2,5.4,4.4,2.92,Moderate
+290,Fundamentals of Programming,68,5.3,3.7,6.8,0.6,7.6,2.78,Low
+291,MIS,72,7.4,1,6.4,1.8,7.4,3.15,Moderate
+292,DSA,83,6.6,2.4,8.6,1.6,4.8,3.27,Moderate
+293,Database Systems,78,7.1,0.5,5.9,4.1,6.4,3.09,High
+294,DSA,74,8.5,0.4,7.8,1.5,5.8,3.01,High
+295,Fundamentals of Programming,86,9.8,1.9,9,1.8,1.5,3.5,High
+296,Fundamentals of Programming,81,9.8,2.4,9.1,2.4,0.3,3.38,High
+297,MIS,69,6.1,0.8,8.1,2.5,6.5,2.67,Moderate
+298,Foundation of web technologies,83,8.9,1.1,9.1,2.1,2.8,3.2,High
+299,DSA,73,8.3,0.4,8.1,2.7,4.5,3.01,High
+300,Computer Organization,83,8.7,3.5,6.1,0.5,5.2,3.37,High
+301,MIS,66,5.1,2.6,8,3.3,5,2.65,Low
+302,SAD,80,8,2,9.9,0.6,3.5,2.93,Moderate
+303,Fundamentals of Programming,86,8.5,1.6,7.1,4.3,2.5,3.39,High
+304,MIS,79,6.4,0.3,5.4,5.4,6.5,3.29,High
+305,DSA,74,6,1.3,6.1,2.1,8.5,2.91,Moderate
+306,Fundamentals of Programming,62,5.3,3.2,6.2,3.2,6.1,2.64,Low
+307,Database Systems,94,9.4,2.6,7.7,1.4,2.9,3.66,High
+308,MIS,87,10,2.6,7.8,2.6,1,3.26,High
+309,OOP,85,7.3,0.2,7.8,5.7,3,3.2,Moderate
+310,Fundamentals of Programming,70,6,2.1,5.5,2.7,7.7,2.72,High
+311,DSA,76,8.8,1.4,8.3,4.4,1.1,3.1,High
+312,Data Science,82,10,3.7,7.7,2.2,0.4,3.44,High
+313,Computer Organization,75,7.6,2.5,5.4,4.5,4,3.17,High
+314,Computer Networks,74,8.9,2.8,5.2,1.8,5.3,3.3,High
+315,Foundation of web technologies,67,6.3,1.4,5.4,5.6,5.3,2.58,High
+316,Computer Networks,78,7,1.8,8,3.1,4.1,3.15,Moderate
+317,DSA,89,9.6,2,10,2,0.4,3.46,High
+318,SAD,80,6.9,3.5,9.3,3.5,0.8,3.02,Moderate
+319,SAD,87,9,1.2,5.4,2.4,6,3.46,High
+320,Data Science,71,6.7,3.9,8.2,4.3,0.9,2.83,Moderate
+321,Foundation of web technologies,77,5.7,3.4,9.6,2.6,2.7,3.13,Low
+322,OOP,74,5.9,2,7,0.9,8.2,3,Low
+323,Data Science,78,6.8,0.3,5.1,0.8,11,3.03,High
+324,Computer Networks,89,9.8,1.7,6.6,3,2.9,3.58,High
+325,Data Science,84,7.2,0.4,8.2,1.3,6.9,3.39,Moderate
+326,Computer Networks,78,5.8,0.2,8.9,2.8,6.3,3.11,Low
+327,Fundamentals of Programming,69,5.3,4,5.3,4.2,5.2,2.67,High
+328,SAD,78,8.5,0.2,7.5,6,1.8,3.21,High
+329,Fundamentals of Programming,71,9.1,2.5,6.5,3.7,2.2,2.85,High
+330,Computer Organization,77,5.7,3.5,7.2,1.2,6.4,3.04,Low
+331,Foundation of web technologies,76,6.8,1.7,9.1,4.4,2,2.9,Moderate
+332,OOP,56,5.1,1,8.8,0.8,8.3,2.25,Low
+333,Computer Networks,77,7.7,0.9,5.1,1.4,8.9,3.15,High
+334,OOP,72,5.5,2.2,7.3,5.1,3.9,2.94,Low
+335,Computer Networks,73,5.5,2,5.8,1.9,8.8,2.79,High
+336,DSA,91,6.9,1.6,7.3,4.7,3.5,3.38,Moderate
+337,Data Science,79,9.5,3.8,8.9,0.6,1.2,3.3,High
+338,Computer Organization,79,6.3,3.4,5.2,5.4,3.7,3.31,High
+339,SAD,83,7.3,2.5,8.3,5.3,0.6,3.36,Moderate
+340,Computer Networks,78,5.3,2.1,5.8,4.4,6.4,3.11,High
+341,OOP,79,7.6,2.7,5.2,0.5,8,3.07,High
+342,Computer Organization,69,5.4,0,9.8,4.4,4.4,2.85,Low
+343,Database Systems,67,6.8,1.2,6.7,4.6,4.7,2.81,Moderate
+344,Database Systems,75,5.9,0.4,8.3,4.6,4.8,2.99,Low
+345,Fundamentals of Programming,78,6.3,0.1,5.4,5.8,6.4,3.14,High
+346,SAD,79,8.1,1.5,6,0.7,7.7,3.06,High
+347,DSA,79,8.1,3.1,8.2,2.4,2.2,3.09,High
+348,OOP,93,9.9,2.4,7.9,2.8,1,3.67,High
+349,Data Science,79,9.1,2.6,5.6,2,4.7,3.16,High
+350,Data Science,74,7.2,2.5,9.7,1.1,3.5,2.69,Moderate
+351,OOP,73,5.6,0.8,9.4,3.9,4.3,3.01,Low
+352,Foundation of web technologies,84,9.3,3.4,9.6,0.4,1.3,3.28,High
+353,DSA,82,8.8,1.8,9.2,3.1,1.1,3.45,High
+354,Computer Organization,75,5.9,2.2,9.9,5.6,0.4,3.12,Low
+355,Computer Networks,65,5.2,0.7,5.7,4.4,8,2.67,High
+356,Foundation of web technologies,86,7.5,3.4,8.7,2.4,2,3.24,Moderate
+357,Computer Networks,85,8,2,6.5,3.4,4.1,3.35,Moderate
+358,Computer Networks,81,8.2,3,5.8,2.8,4.2,3.31,High
+359,Foundation of web technologies,69,5,1,8.6,6,3.4,2.71,Low
+360,Fundamentals of Programming,80,9,0.8,7.8,4.4,2,3.18,High
+361,Database Systems,78,8.1,0.8,6.8,4.7,3.6,3.19,High
+362,Computer Networks,79,8.8,0.1,8.7,1.2,5.2,3.32,High
+363,Foundation of web technologies,95,9.8,1.5,6.6,0.9,5.2,3.61,High
+364,Foundation of web technologies,86,10,1.5,7.2,3.8,1.5,3.43,High
+365,MIS,84,9.4,2.4,7,2.1,3.1,3.1,High
+366,Fundamentals of Programming,93,9,0.4,7.9,2.9,3.8,3.6,High
+367,SAD,93,8.2,0.3,7.9,3.4,4.2,3.64,High
+368,MIS,86,8.4,3.2,6.3,5,1.1,3.5,High
+369,MIS,78,7.5,0.3,5.3,2,8.9,3.26,High
+370,OOP,88,8.9,2.1,7.2,0.9,4.9,3.53,High
+371,Database Systems,79,6.6,1.7,5.4,1.3,9,3.29,High
+372,Foundation of web technologies,93,10,3.7,8.2,0.9,1.2,3.63,High
+373,Database Systems,84,8.2,3.1,5.6,2.5,4.6,3.16,High
+374,DSA,84,7.9,2.4,5.9,2.2,5.6,3.4,High
+375,OOP,79,6.7,0.1,5.1,5,7.1,3.03,High
+376,SAD,63,6.5,3.8,6.3,2.6,4.8,2.62,Moderate
+377,Database Systems,79,9.4,3.4,5.9,4.3,1,3.18,High
+378,Data Science,55,5.7,0.3,8.6,3,6.4,2.28,Low
+379,Computer Networks,66,7.2,2.9,8.8,0.8,4.3,2.88,Moderate
+380,DSA,84,8.8,2.6,9.8,0.2,2.6,3.38,High
+381,Fundamentals of Programming,69,5.3,1.1,6.3,1.5,9.8,2.75,Low
+382,SAD,79,6.4,3,7.2,4.7,2.7,3.03,Moderate
+383,DSA,60,5.3,2,5.2,0.4,11.1,2.31,High
+384,Computer Networks,82,6.7,3.6,5.1,4,4.6,3.18,High
+385,OOP,76,9.8,2.2,9.7,0.1,2.2,3.16,High
+386,Computer Networks,81,8.7,3.9,6.3,3.3,1.8,3.2,High
+387,MIS,69,6,2.3,7.3,5.8,2.6,2.58,Moderate
+388,Computer Networks,78,5.6,0.6,6.1,1.5,10.2,3.07,Low
+389,MIS,92,9.3,2.2,7.6,0.6,4.3,3.48,High
+390,OOP,79,5.3,2.8,7.7,0.5,7.7,2.93,Low
+391,Computer Organization,79,7.3,1.9,5.8,5.7,3.3,3.18,High
+392,MIS,80,7.3,1.6,8.3,3.3,3.5,3.28,Moderate
+393,Fundamentals of Programming,64,5.3,2.1,9,2.8,4.8,2.67,Low
+394,Computer Networks,63,5.8,1.3,8.8,3.1,5,2.71,Low
+395,Computer Networks,69,6,3.5,9.4,4.4,0.7,2.84,Moderate
+396,Fundamentals of Programming,83,9.9,3.1,5.1,0.4,5.5,3.17,High
+397,Data Science,72,7.3,3.6,7.7,2.7,2.7,3.15,Moderate
+398,Foundation of web technologies,77,9.1,1.5,8.9,4.3,0.2,3.21,High
+399,Computer Organization,81,6,2.1,6.4,4.8,4.7,3.27,Moderate
+400,SAD,87,9,1.6,9.6,2,1.8,3.57,High
+401,MIS,68,5.8,2.8,9,1.9,4.5,2.8,Low
+402,Fundamentals of Programming,68,5.9,3.6,8.3,0.9,5.3,2.8,Low
+403,OOP,76,7.2,2.5,5.4,5.3,3.6,3.08,High
+404,MIS,92,9.8,1.7,9.9,1.7,0.9,3.75,High
+405,Foundation of web technologies,84,8.2,0.7,9.4,2.4,3.3,3.47,High
+406,OOP,98,8.6,3.6,5.4,4.4,2,3.81,High
+407,DSA,70,5.9,3.4,9.1,3,2.6,2.68,Low
+408,Computer Networks,79,7.4,3.3,7.3,2.1,3.9,3.34,Moderate
+409,DSA,74,7.5,3.3,6.7,1,5.5,3.29,Moderate
+410,MIS,76,5.5,1,5.7,2.1,9.7,2.93,High
+411,Foundation of web technologies,79,7.3,3,8.3,3.4,2,3.29,Moderate
+412,Computer Organization,76,7.4,3.9,8.2,0.6,3.9,3.02,Moderate
+413,MIS,78,8.4,1.3,8.4,0.4,5.5,3.32,High
+414,Fundamentals of Programming,75,6.1,3.3,6.4,3.9,4.3,2.86,Moderate
+415,Database Systems,92,8.5,2.1,6.5,1.3,5.6,3.38,High
+416,MIS,87,9.4,3.1,8.9,1.7,0.9,3.45,High
+417,Computer Networks,73,6.3,3.6,8.4,3.2,2.5,2.92,Moderate
+418,Computer Networks,72,7.3,3.5,7.7,2.1,3.4,2.9,Moderate
+419,MIS,91,9.9,0.4,7.1,0.3,6.3,3.55,High
+420,OOP,77,6.4,3.4,6.5,5.5,2.2,3,Moderate
+421,Database Systems,81,8.8,3.2,5.1,5.8,1.1,3.13,High
+422,Fundamentals of Programming,88,9.1,1.1,9.4,0.5,3.9,3.58,High
+423,MIS,83,8.5,2.2,5.5,1.5,6.3,3.27,High
+424,OOP,71,6.5,2.4,6.5,1.8,6.8,2.91,Moderate
+425,Computer Networks,84,8.7,0.2,9.5,4.8,0.8,3.5,High
+426,Computer Networks,94,9.5,0.7,5.4,1.4,7,3.77,High
+427,Foundation of web technologies,81,9,0.1,7.9,6,1,3.36,High
+428,MIS,79,5.3,3.3,8,0.7,6.7,3.03,Low
+429,Database Systems,69,5.5,3.6,8.3,5,1.6,2.86,Low
+430,Data Science,85,7.6,1.7,6.6,2.6,5.5,3.34,Moderate
+431,Database Systems,90,8.9,2.4,9.5,1.4,1.8,3.66,High
+432,Computer Networks,87,8,2.8,6.2,3.1,3.9,3.46,Moderate
+433,Computer Networks,70,5.5,1.5,7.4,3.9,5.7,2.85,Low
+434,DSA,82,8.7,2,8.2,0.4,4.7,3.42,High
+435,Computer Networks,73,6.3,1.4,7.4,0.3,8.6,2.86,Moderate
+436,Fundamentals of Programming,83,9.9,1.3,7.4,1.1,4.3,3.35,High
+437,SAD,80,8.1,1.1,6,3.1,5.7,3.15,High
+438,MIS,79,9,2.3,7.6,1.5,3.6,3.2,High
+439,Database Systems,81,9.7,1.6,5.4,3.7,3.6,3.39,High
+440,SAD,77,7.5,3.5,7.5,3.9,1.6,2.97,Moderate
+441,OOP,81,10,0.5,6.4,2.4,4.7,3.14,High
+442,Data Science,76,9.5,2.9,8,1.1,2.5,3.11,High
+443,Fundamentals of Programming,82,9.1,3.8,9.1,0,2,3.27,High
+444,Database Systems,77,6.3,0.2,8,4.1,5.4,2.97,Moderate
+445,SAD,69,5.6,1.5,7.3,2.2,7.4,2.8,Low
+446,Data Science,77,8.8,0.3,5.4,2.1,7.4,3.12,High
+447,DSA,87,9.7,2.7,8.4,1.2,2,3.44,High
+448,Fundamentals of Programming,79,8.2,3.7,8.1,3.5,0.5,3.23,High
+449,Fundamentals of Programming,79,8.6,0.5,9.5,0.4,5,3.06,High
+450,DSA,69,5.1,1.7,6.5,2.9,7.8,2.79,Low
+451,MIS,84,7.9,0.2,5.6,3.4,6.9,3.44,High
+452,DSA,79,8.3,3.4,8.5,1.6,2.2,3.07,High
+453,Fundamentals of Programming,85,8.4,1.1,6.5,4.7,3.3,3.54,High
+454,Fundamentals of Programming,89,9.1,3.4,9.6,0.8,1.1,3.31,High
+455,SAD,85,6.6,2.3,6.9,3.6,4.6,3.2,Moderate
+456,Computer Networks,83,6.9,0.7,7.2,0.9,8.3,3.26,Moderate
+457,Data Science,94,9.5,1.4,5.8,0.2,7.1,3.69,High
+458,DSA,83,6.7,0.3,7,1.9,8.1,3.28,Moderate
+459,Data Science,80,8.4,2.4,6.8,1.3,5.1,3.25,High
+460,DSA,84,8.4,0.6,7.4,0.2,7.4,3.32,High
+461,OOP,75,7.5,3.9,6.9,0.2,5.5,3.11,Moderate
+462,Fundamentals of Programming,72,5.8,0.1,8.8,2.8,6.5,2.8,Low
+463,Computer Networks,80,6.4,3.6,5.6,5.7,2.7,3.1,High
+464,SAD,77,8,3.3,9.9,0.8,2,3.13,Moderate
+465,Computer Networks,79,9.8,1.6,6.9,1.9,3.8,3.23,High
+466,Computer Networks,76,7.8,2.2,8.8,4.3,0.9,3.2,Moderate
+467,Computer Networks,81,7.2,1.2,6.3,1.2,8.1,3.05,Moderate
+468,Data Science,70,6.4,3.9,7.8,2,3.9,2.87,Moderate
+469,DSA,66,7.9,0.6,7.2,3.8,4.5,2.68,Moderate
+470,Computer Organization,87,10,3.5,8.1,1.4,1,3.44,High
+471,OOP,94,8.1,0.8,7,0.2,7.9,3.74,High
+472,Database Systems,67,6.1,3.9,9.5,3.2,1.3,2.61,Moderate
+473,Computer Networks,79,7.7,3.5,5.7,4.7,2.4,3.21,High
+474,MIS,69,6.4,3.5,9.7,0.7,3.7,2.89,Moderate
+475,Data Science,65,7.3,3.9,7.4,4.7,0.7,2.74,Moderate
+476,SAD,79,6.4,0.8,8.8,2.3,5.7,3.21,Moderate
+477,Database Systems,75,7.6,2,7.9,5.2,1.3,3.13,Moderate
+478,Computer Organization,85,9.1,3.1,7.9,3.7,0.2,3.42,High
+479,MIS,79,6,0.4,9.3,2.6,5.7,3.02,Moderate
+480,Computer Organization,65,8.1,3.7,5.1,2.9,4.2,2.63,High
+481,Database Systems,76,8.4,2.9,8.5,0.6,3.6,3.07,High
+482,Computer Networks,77,9,1.1,6.1,5.7,2.1,3.07,High
+483,MIS,71,5,4,8.4,5,1.6,2.9,Low
+484,Computer Organization,85,8.7,0.6,8.8,4.5,1.4,3.41,High
+485,SAD,83,8.3,3.1,9.2,2.1,1.3,3.24,High
+486,DSA,68,5.4,1.6,7,0.4,9.6,2.63,Low
+487,Fundamentals of Programming,69,6.7,0.4,9,5.7,2.2,2.63,Moderate
+488,DSA,77,5.4,2,9,4.2,3.4,2.85,Low
+489,Database Systems,68,5.3,0.3,7,1.8,9.6,2.64,Low
+490,Data Science,86,9,3.7,7,3.9,0.4,3.16,High
+491,Fundamentals of Programming,73,6.6,1.9,6.1,3.8,5.6,3,Moderate
+492,OOP,83,6.8,2.6,5.6,5.3,3.7,3.08,High
+493,SAD,78,7.5,1.8,7.9,3.7,3.1,3.17,Moderate
+494,OOP,70,6.2,2.9,9.1,4.7,1.1,2.83,Moderate
+495,MIS,79,7.8,2.1,5.7,4.7,3.7,3.16,High
+496,Fundamentals of Programming,65,6.4,0.5,8.1,0.3,8.7,2.61,Moderate
+497,OOP,81,8.7,1.3,5,3.1,5.9,3.24,High
+498,OOP,84,9.2,0,6.2,4.4,4.2,3.41,High
+499,Computer Organization,75,6.6,0.4,6.8,1.6,8.6,2.89,Moderate
+500,DSA,86,8.9,3.6,7.2,3.9,0.4,3.51,High
+501,Computer Organization,66,6.9,3.9,5.4,4.1,3.7,2.55,High
+502,Fundamentals of Programming,85,8.2,2.8,5,1,7,3.2,High
+503,Fundamentals of Programming,82,8.6,2.7,9.8,2.2,0.7,3.31,High
+504,Database Systems,78,6.5,0.4,8.9,3.9,4.3,3.01,Moderate
+505,Computer Organization,64,5.2,1.4,9.8,3,4.6,2.49,Low
+506,Foundation of web technologies,68,6,1.5,6.8,0.3,9.4,2.44,Moderate
+507,DSA,84,8.8,1.7,9.1,3.7,0.7,3.44,High
+508,Fundamentals of Programming,74,7.4,3.5,6.1,4.1,2.9,2.88,Moderate
+509,Database Systems,71,8,1.2,5.7,3.9,5.2,3.03,High
+510,Computer Organization,85,8.2,1.6,8.6,1.1,4.5,3.46,High
+511,DSA,87,9.5,1.1,6.8,0.3,6.3,3.43,High
+512,Computer Organization,73,6.3,3.3,5.1,2.3,7,2.74,High
+513,OOP,59,6.7,0.1,5.6,2.5,9.1,2.49,High
+514,Database Systems,80,7.7,2.4,5,2.8,6.1,3.12,High
+515,DSA,90,9.8,2.1,8.4,1.2,2.5,3.61,High
+516,Computer Networks,77,7.6,3.9,5.6,0.1,6.8,3.28,High
+517,MIS,85,8.9,3.2,5.6,1.6,4.7,3.36,High
+518,MIS,88,6.7,1.5,5,1.8,9,3.31,High
+519,DSA,78,8.2,3.9,9.2,0.1,2.6,3.26,High
+520,Computer Organization,84,8.9,1.8,7,1.8,4.5,3.38,High
+521,Database Systems,66,5.3,0.9,6.2,2.9,8.7,2.76,Low
+522,MIS,77,5.3,3.8,9.7,4.1,1.1,3.13,Low
+523,Database Systems,86,10,2.2,9.8,0.2,1.8,3.25,High
+524,MIS,69,6,0.6,8.1,4.7,4.6,2.78,Moderate
+525,OOP,92,7.9,0.6,9.1,3.8,2.6,3.5,Moderate
+526,Computer Organization,72,6.3,1.4,9.6,1.7,5,2.74,Moderate
+527,OOP,72,7.3,3.6,8.5,0.3,4.3,2.93,Moderate
+528,MIS,80,5.7,3.8,7.6,1.5,5.4,3.27,Low
+529,Computer Networks,75,7.5,2.7,5.4,1.6,6.8,3.09,High
+530,Computer Networks,83,7.7,1.7,5.2,1,8.4,3.43,High
+531,OOP,76,7.2,0.8,5.2,5.1,5.7,2.99,High
+532,Computer Networks,90,9.8,0.8,9.8,3.6,0,3.59,High
+533,MIS,90,8.6,3.9,7.8,1,2.7,3.69,High
+534,DSA,59,5.4,2.5,9.9,1.1,5.1,2.54,Low
+535,OOP,86,9,3.6,9.7,1.6,0.1,3.44,High
+536,Data Science,82,8.8,0.6,7.4,4.3,2.9,3.32,High
+537,Computer Organization,80,6.2,2.6,8.3,1,5.9,3.23,Moderate
+538,Computer Networks,81,7.5,0,5,2.1,9.4,3.2,High
+539,Computer Networks,83,9.6,0.9,8.2,1.2,4.1,3.62,High
+540,Fundamentals of Programming,75,8.6,0.4,7.1,0.2,7.7,3.2,High
+541,Foundation of web technologies,88,7.4,2.6,5.6,1.7,6.7,3.26,High
+542,OOP,85,10,0.2,8.8,1.9,3.1,3.46,High
+543,SAD,59,7,3,9.6,4.2,0.2,2.68,Moderate
+544,Computer Networks,84,8.9,1,7.8,2.2,4.1,3.54,High
+545,Computer Organization,89,8.3,1,6,5.5,3.2,3.25,High
+546,Data Science,66,6.1,0.2,5.2,1.1,11.4,2.72,High
+547,Computer Networks,98,9.3,1.1,9.8,2.2,1.6,3.79,High
+548,Data Science,71,7.6,3,6.4,2.1,4.9,2.83,Moderate
+549,MIS,84,9.5,3.8,9.5,0.5,0.7,3.4,High
+550,MIS,88,7.5,0.8,8,1.1,6.6,3.43,Moderate
+551,Foundation of web technologies,55,6.7,3.4,6,0.4,7.5,2.48,Moderate
+552,DSA,81,9.1,3.3,6.7,3.4,1.5,3.4,High
+553,SAD,73,8.9,2.6,5.8,5.3,1.4,2.98,High
+554,Fundamentals of Programming,74,7.1,0.2,5.6,4.6,6.5,3.13,High
+555,Foundation of web technologies,62,5,1.7,7.6,0.3,9.4,2.53,Low
+556,Database Systems,70,6.2,0,8.6,5.8,3.4,2.71,Moderate
+557,Fundamentals of Programming,65,6.1,2.7,8.7,5.1,1.4,2.57,Moderate
+558,OOP,75,6.6,2.9,9.1,1,4.4,2.85,Moderate
+559,Computer Organization,74,6.9,3.6,9,4.4,0.1,2.92,Moderate
+560,Database Systems,90,8,2.6,5.4,3.3,4.7,3.48,High
+561,Database Systems,85,8.5,0.7,8.9,3.4,2.5,3.41,High
+562,Foundation of web technologies,65,6.5,2.9,8.8,0.6,5.2,2.67,Moderate
+563,DSA,86,7.6,2,6.8,5.6,2,3.25,Moderate
+564,Foundation of web technologies,85,8.6,1.8,9.6,2.8,1.2,3.47,High
+565,OOP,81,8.6,3.4,6.4,4.5,1.1,3.18,High
+566,Computer Networks,72,6.7,3.9,9.3,2.9,1.2,2.78,Moderate
+567,Computer Networks,79,8.6,2.2,9.7,1.7,1.8,3.07,High
+568,DSA,78,8.9,2.9,6.9,0.1,5.2,3.26,High
+569,OOP,80,9.2,0,8.5,5.8,0.5,3.08,High
+570,DSA,77,8.5,3.3,7.7,4.4,0.1,3.2,High
+571,Data Science,75,5.3,2,8.6,5.2,2.9,2.89,Low
+572,Computer Networks,78,7.8,1.6,5.7,5.2,3.7,3.06,High
+573,Database Systems,79,5.8,1.2,6.5,5.2,5.3,3.08,Low
+574,SAD,73,6.3,2.5,7.9,5,2.3,3.07,Moderate
+575,Computer Organization,79,9.5,0,8.4,0.3,5.8,3.07,High
+576,OOP,80,6.5,1.4,8.1,2,6,3.06,Moderate
+577,Fundamentals of Programming,81,8.7,1.6,5.3,4.7,3.7,3.2,High
+578,DSA,71,8.4,1.3,5.3,2.2,6.8,2.92,High
+579,Computer Organization,87,9.7,2.6,8.4,2.1,1.2,3.38,High
+580,Fundamentals of Programming,77,8.8,0.4,6.4,1.7,6.7,3.05,High
+581,Computer Organization,71,7.2,3.9,5.3,3.1,4.5,3.03,High
+582,SAD,75,8.7,2.8,7.1,1.9,3.5,3.12,High
+583,Fundamentals of Programming,70,7,1.1,6,2.9,7,2.87,Moderate
+584,Foundation of web technologies,81,8.3,3.9,8,0.3,3.5,3.04,High
+585,MIS,82,5.4,3.8,6.5,0.6,7.7,3.14,Low
+586,Foundation of web technologies,91,8.2,1.1,5.1,5.8,3.8,3.5,High
+587,Computer Networks,69,6.3,2.7,8.5,3.7,2.8,2.72,Moderate
+588,MIS,78,8,3.5,9.7,0.3,2.5,3.02,Moderate
+589,Foundation of web technologies,70,5.8,3.8,8.7,5,0.7,2.95,Low
+590,MIS,75,8.5,2.7,7,0.1,5.7,3.01,High
+591,MIS,87,7.9,1,7.3,5.7,2.1,3.41,Moderate
+592,Database Systems,67,5.9,2.7,9.9,0.6,4.9,2.82,Low
+593,DSA,69,5,1.7,5.5,4.5,7.3,2.72,High
+594,DSA,83,6.3,1.7,8.6,0.1,7.3,3.11,Moderate
+595,Database Systems,79,7.9,2.5,8.2,1.3,4.1,3.08,Moderate
+596,Computer Organization,77,6,3.5,8.7,0.1,5.7,2.95,Moderate
+597,Data Science,66,6.2,0.9,6.4,1.5,9,2.92,Moderate
+598,Computer Organization,84,8.7,2.4,8.4,0.4,4.1,3.16,High
+599,Fundamentals of Programming,87,9.8,3.4,9,1.5,0.3,3.49,High
+600,Fundamentals of Programming,74,6,2.5,8.7,4.4,2.4,3.05,Moderate
+601,MIS,83,7.6,0.3,6.9,5.5,3.7,3.35,Moderate
+602,Foundation of web technologies,81,6.3,1.5,9.5,4,2.7,3.42,Moderate
+603,Foundation of web technologies,83,8.9,1.8,8.2,1.3,3.8,3.21,High
+604,DSA,84,7.2,2.6,9.7,0.3,4.2,3.42,Moderate
+605,OOP,82,9.1,1.2,7.2,0.1,6.4,3.37,High
+606,Computer Organization,60,5.3,2,9.6,0.6,6.5,2.41,Low
+607,Computer Networks,85,8.8,1.6,8.3,1.4,3.9,3.26,High
+608,SAD,69,5.4,0.7,8.3,5.3,4.3,2.75,Low
+609,Foundation of web technologies,75,9.1,2.7,5.6,1.7,4.9,3.15,High
+610,SAD,76,7.6,2.1,6.8,2.1,5.4,2.97,Moderate
+611,MIS,81,9.1,3.2,6.5,4.8,0.4,3.34,High
+612,SAD,71,6.8,2,9.7,4.8,0.7,3.09,Moderate
+613,Computer Networks,77,5.5,1.6,7.8,3,6.1,2.9,Low
+614,Database Systems,81,8.4,3.4,9.3,2.2,0.7,3.2,High
+615,Computer Networks,80,7.2,2.4,5.8,4,4.6,3.19,High
+616,SAD,67,6.1,0.5,5.8,0,11.6,2.73,High
+617,Computer Networks,83,8.6,2.9,7.6,0.8,4.1,3.15,High
+618,Data Science,74,5.5,0.9,7.6,3.6,6.4,2.57,Low
+619,MIS,80,6.2,0.2,7,1.4,9.2,3.13,Moderate
+620,Computer Organization,84,7.1,1.7,7.7,4.2,3.3,3.48,Moderate
+621,Database Systems,83,8.5,0.7,7.5,2.5,4.8,3.34,High
+622,Foundation of web technologies,85,7.7,0.5,8,0.7,7.1,3.34,Moderate
+623,Fundamentals of Programming,72,6.7,0.6,8.5,1.2,7,3.18,Moderate
+624,Computer Organization,72,6,2,7.1,0.1,8.8,2.85,Moderate
+625,Fundamentals of Programming,92,9,0.3,7.4,3.4,3.9,3.64,High
+626,MIS,82,6.3,0,8.6,3.2,5.9,3.14,Moderate
+627,Database Systems,94,9.2,3.3,9.2,1.1,1.2,3.6,High
+628,DSA,75,7.3,0.7,9.3,5.3,1.4,2.97,Moderate
+629,Foundation of web technologies,82,7.3,0.3,6.9,4.8,4.7,3.09,Moderate
+630,Data Science,76,5.3,3.5,6.9,3.3,5,2.81,Low
+631,DSA,93,9.8,0.3,8.2,0.4,5.3,3.71,High
+632,MIS,76,7.2,4,7.8,1.6,3.4,2.98,Moderate
+633,Computer Organization,64,6.1,1.4,6.9,0.4,9.2,2.79,Moderate
+634,Data Science,67,8.6,2.6,8.5,0,4.3,2.85,High
+635,Computer Networks,73,6.1,2.6,7.4,0,7.9,3.03,Moderate
+636,SAD,81,7.7,0.3,8.8,3.5,3.7,3.29,Moderate
+637,Data Science,82,8.9,3,9,1.6,1.5,3.42,High
+638,MIS,76,8.1,3,5.8,1.2,5.9,3.04,High
+639,OOP,93,9.5,3,9.5,1.5,0.5,3.76,High
+640,SAD,94,9.4,2.3,8.2,0.6,3.5,3.62,High
+641,Fundamentals of Programming,71,7.4,2.9,6.4,1.2,6.1,2.89,Moderate
+642,Foundation of web technologies,62,6.1,1.7,9.5,3,3.7,2.76,Moderate
+643,Fundamentals of Programming,75,5.9,0.3,8.5,2.3,7,2.99,Low
+644,Data Science,89,9,1.1,8.5,1.4,4,3.56,High
+645,Fundamentals of Programming,87,9.7,2.5,6.6,1.4,3.8,3.57,High
+646,MIS,69,6.1,2.4,6.3,4,5.2,2.73,Moderate
+647,Computer Networks,82,9.1,3.1,8.8,0.6,2.4,3.42,High
+648,Computer Organization,74,6.8,1.7,5.2,1.6,8.7,2.91,High
+649,Foundation of web technologies,78,5.2,3.5,6.2,3.3,5.8,2.8,Low
+650,Fundamentals of Programming,68,6.6,3.6,9.4,1.4,3,2.94,Moderate
+651,Fundamentals of Programming,86,9.5,4,9.1,1.2,0.2,3.52,High
+652,Data Science,60,5.3,0.4,10,2,6.3,2.49,Low
+653,Computer Organization,76,8.7,3.2,9.3,2.8,0,3.1,High
+654,DSA,71,5.1,1.4,8.9,3.4,5.2,2.72,Low
+655,Fundamentals of Programming,79,6.6,2.6,6.2,0.1,8.5,3.11,Moderate
+656,MIS,92,8.8,0.2,9.2,3.6,2.2,3.59,High
+657,OOP,80,7.8,2.5,9.3,2.6,1.8,3.2,Moderate
+658,Foundation of web technologies,79,8.8,1.8,8.5,1.9,3,3.32,High
+659,Fundamentals of Programming,71,6.1,2.4,9.6,5.5,0.4,2.99,Moderate
+660,MIS,64,6.1,4,9.9,2.6,1.4,2.49,Moderate
+661,MIS,94,9,2.9,8,0.2,3.9,3.74,High
+662,Foundation of web technologies,83,8.4,1.5,9.7,0.7,3.7,3.16,High
+663,DSA,75,7.5,2.8,8.5,3.4,1.8,2.98,Moderate
+664,MIS,75,8.2,2.4,5.9,4.2,3.3,3.13,High
+665,OOP,84,7.3,2.7,9.2,0.8,4,3.41,Moderate
+666,MIS,90,9.2,3.2,9.8,1,0.8,3.55,High
+667,MIS,82,7.4,1.6,5.8,3.4,5.8,3.19,High
+668,MIS,81,7.9,2.4,6.8,0.3,6.6,3.14,Moderate
+669,Computer Networks,61,5.2,1.7,5.4,3.6,8.1,2.55,High
+670,Computer Networks,84,9.3,3.5,6,3.8,1.4,3.52,High
+671,DSA,75,6.4,3.2,10,0.1,4.3,3.01,Moderate
+672,Fundamentals of Programming,96,9.9,1.9,9.2,0.2,2.8,3.65,High
+673,MIS,72,6.7,0.3,9.9,4.9,2.2,2.96,Moderate
+674,Computer Organization,68,5.4,0.8,6.1,2.8,8.9,2.66,Low
+675,Fundamentals of Programming,75,6.3,0.4,5.8,0.9,10.6,2.93,High
+676,DSA,79,6.4,3.2,6.6,1.8,6,3.06,Moderate
+677,Database Systems,76,6.2,0.5,6.3,2.1,8.9,2.84,Moderate
+678,Fundamentals of Programming,78,6.1,3.2,5.7,2.1,6.9,2.95,High
+679,Fundamentals of Programming,86,9.3,0.6,5.4,2.9,5.8,3.51,High
+680,SAD,68,9,0.5,7.9,3,3.6,2.99,High
+681,Data Science,69,5.7,2.5,6.4,2.9,6.5,2.84,Low
+682,SAD,70,6.5,3.3,5.3,2.5,6.4,2.81,High
+683,OOP,79,7.3,2.9,7.9,3.9,2,3.19,Moderate
+684,Computer Networks,82,6.6,2.2,9.2,5.9,0.1,3.06,Moderate
+685,Computer Networks,85,9.4,1.5,6,2.9,4.2,3.4,High
+686,Data Science,88,7.4,3.4,6.8,5.2,1.2,3.45,Moderate
+687,Foundation of web technologies,76,7,1.3,7.3,4.6,3.8,3,Moderate
+688,Foundation of web technologies,84,9.8,0.7,7.8,3.3,2.4,3.41,High
+689,DSA,79,7.4,2.6,6.1,3.3,4.6,3.41,Moderate
+690,Data Science,65,5.7,2.3,5.9,1.7,8.4,2.62,High
+691,Fundamentals of Programming,77,6.1,0.7,9.1,1.7,6.4,2.69,Moderate
+692,Foundation of web technologies,73,6.9,3.2,6.8,0.5,6.6,3.08,Moderate
+693,MIS,68,7.8,3.4,9,0.7,3.1,2.95,Moderate
+694,Computer Organization,82,6.1,3.5,6.2,1.6,6.6,3.05,Moderate
+695,Fundamentals of Programming,68,5,3.5,9,3.8,2.7,2.62,Low
+696,OOP,80,7.3,1.4,5.5,2.9,6.9,3.19,High
+697,MIS,92,9.6,0.2,6.5,1.2,6.5,3.5,High
+698,MIS,74,7.3,1.9,8.8,0.9,5.1,3.06,Moderate
+699,Data Science,75,7.4,1.7,8,6,0.9,3,Moderate
+700,DSA,94,9.1,0.7,5.2,1.2,7.8,3.64,High
+701,OOP,84,6.7,2,8.1,5.5,1.7,3.11,Moderate
+702,Foundation of web technologies,86,5.3,0.1,7.8,2.6,8.2,3.58,Low
+703,Data Science,86,9.2,0.6,5.1,2.7,6.4,3.27,High
+704,Foundation of web technologies,83,8,1.1,5.9,2.3,6.7,3.27,High
+705,Data Science,80,9,1.6,8.8,0.6,4,3.2,High
+706,Data Science,85,8.4,2.3,9.6,1.4,2.3,3.41,High
+707,Data Science,62,5.3,0.1,9.1,3.1,6.4,2.65,Low
+708,DSA,82,6.7,0.1,9.8,4,3.4,3.15,Moderate
+709,Data Science,88,9.7,1.1,8.1,3.5,1.6,3.63,High
+710,Database Systems,81,9.7,3.5,8.7,0.6,1.5,3.36,High
+711,Computer Organization,81,6.4,3.9,5.1,4.3,4.3,3.14,High
+712,Foundation of web technologies,97,10,1.2,6.7,0.5,5.6,3.79,High
+713,Fundamentals of Programming,80,7.2,1,6.7,5,4.1,3.21,Moderate
+714,SAD,72,5.3,0.4,5.8,3.6,8.9,2.76,High
+715,OOP,75,5.8,3.9,7.2,3,4.1,2.83,Low
+716,Computer Networks,77,8.3,3,8.8,2.3,1.6,2.92,High
+717,DSA,79,9.5,3.3,8.8,0.1,2.3,3.24,High
+718,Fundamentals of Programming,88,7,3.5,9.5,3.6,0.4,3.4,Moderate
+719,MIS,73,6.6,2.8,6.4,1.1,7.1,2.88,Moderate
+720,Database Systems,76,7.1,3.3,5.6,4.4,3.6,2.85,High
+721,Computer Networks,72,7.7,1.2,7.5,1.8,5.8,2.88,Moderate
+722,SAD,81,5.8,0.5,7.7,5.4,4.6,3.27,Low
+723,Fundamentals of Programming,75,6.7,2.9,8.3,5.6,0.5,3.06,Moderate
+724,Computer Networks,88,8.3,3.6,7,1.7,3.4,3.5,High
+725,Fundamentals of Programming,65,5.1,3.3,9,0.6,6,2.54,Low
+726,Database Systems,84,5.6,3.9,6.1,0.4,8,3.32,Low
+727,SAD,76,8,3,5.2,4,3.8,3.01,High
+728,MIS,75,5.9,2.3,6.5,5.6,3.7,2.9,Low
+729,Data Science,74,9.1,3.9,6.3,4.6,0.1,2.98,High
+730,Foundation of web technologies,63,5.3,0.2,8.5,2.7,7.3,2.62,Low
+731,MIS,75,6.1,2.5,6.3,3.5,5.6,3.13,Moderate
+732,Data Science,85,9.1,1.9,6.8,2.2,4,3.27,High
+733,DSA,78,9,1.3,6,0.5,7.2,3.05,High
+734,Computer Organization,65,9.2,0.9,6.9,4.9,2.1,2.81,High
+735,OOP,88,9.1,1.5,7.3,1.8,4.3,3.4,High
+736,OOP,87,7.7,0.1,7.4,2.4,6.4,3.24,Moderate
+737,Foundation of web technologies,68,5.8,2.6,9.9,3.2,2.5,2.8,Low
+738,SAD,79,7.1,0.5,8.1,5.6,2.7,3.1,Moderate
+739,Database Systems,86,8.3,0.3,6.8,3.3,5.3,3.48,High
+740,SAD,84,9.1,2.4,6.9,1.4,4.2,3.3,High
+741,Database Systems,64,5.5,1.4,7.1,4.1,5.9,2.71,Low
+742,SAD,77,7,0.7,5.8,5,5.5,3.09,High
+743,Computer Organization,65,5.2,1.7,5.8,5.3,6,2.48,High
+744,DSA,83,7.5,2.9,9.8,0.8,3,3.19,Moderate
+745,DSA,80,9.4,3.7,9.6,0.8,0.5,3.16,High
+746,Data Science,90,8.8,2.1,8.4,2,2.7,3.66,High
+747,Computer Networks,84,8.7,3.3,5.7,5,1.3,3.55,High
+748,DSA,75,7.2,1.5,9.6,1.4,4.3,3.11,Moderate
+749,DSA,74,9.2,1.9,7.6,1.6,3.7,3.02,High
+750,MIS,71,5.2,1.1,5,5.9,6.8,2.93,High
+751,MIS,92,9.8,1.6,8.6,1.4,2.6,3.68,High
+752,Data Science,88,9.7,1.6,8.9,1,2.8,3.57,High
+753,Computer Networks,84,10,0.1,8,3.9,2,3.35,High
+754,Foundation of web technologies,92,9.7,0.7,8.1,1.2,4.3,3.53,High
+755,MIS,72,6.5,2.2,7.1,1,7.2,2.91,Moderate
+756,Foundation of web technologies,73,8.8,3.6,5.4,2.4,3.8,3.08,High
+757,Fundamentals of Programming,66,5.5,0.1,8.3,3.6,6.5,2.73,Low
+758,MIS,68,5.1,3.3,9.9,0.8,4.9,2.64,Low
+759,Computer Organization,66,6.2,3.5,9.6,2,2.7,2.55,Moderate
+760,Computer Networks,77,5.1,2.3,5.1,4.7,6.8,3.03,High
+761,Data Science,78,6.5,0.2,7.9,2.4,7,2.98,Moderate
+762,Fundamentals of Programming,76,6.4,2.8,6.4,5.4,3,3.05,Moderate
+763,Computer Networks,84,6.9,2.2,5.3,2.6,7,3.12,High
+764,Computer Organization,78,6.1,0.9,9.1,5.6,2.3,3.01,Moderate
+765,Computer Networks,48,5.5,1.8,6.7,5.2,4.8,2.24,Low
+766,Computer Organization,79,6.7,1.6,7.6,1,7.1,2.93,Moderate
+767,Computer Organization,75,7.9,3.2,8.8,0.6,3.5,3.09,Moderate
+768,Foundation of web technologies,69,6.8,1.6,8.4,0.3,6.9,2.88,Moderate
+769,SAD,65,5.2,1.6,8.5,1.2,7.5,2.52,Low
+770,Fundamentals of Programming,84,9.4,3.6,6.5,1,3.5,3.57,High
+771,Computer Networks,79,7.1,1,8.4,5,2.5,3.26,Moderate
+772,Database Systems,83,7,0.6,8.7,2.2,5.5,3.15,Moderate
+773,Fundamentals of Programming,88,8.4,1.1,5.4,6,3.1,3.44,High
+774,SAD,96,9.3,1.2,7.3,3.7,2.5,3.76,High
+775,Fundamentals of Programming,73,7.1,1.7,6.7,3.4,5.1,2.99,Moderate
+776,DSA,84,9.7,2.8,9.1,1.3,1.1,3.54,High
+777,Database Systems,81,8.9,0.1,9.1,0.2,5.7,3.14,High
+778,SAD,82,8.8,1,9.3,0.5,4.4,3.18,High
+779,Foundation of web technologies,80,5.6,3.9,8.4,5.1,1,3.08,Low
+780,Computer Networks,75,8,2.4,8.4,3,2.2,2.96,Moderate
+781,OOP,68,7.1,1.1,8.8,1.4,5.6,2.85,Moderate
+782,SAD,92,8.1,3,6.1,0.4,6.4,3.37,High
+783,Data Science,69,5.7,2.4,9.2,0.3,6.4,2.69,Low
+784,Computer Networks,83,7.4,3.7,6.7,2.8,3.4,3.36,Moderate
+785,SAD,63,5.1,0.3,6.3,0.2,12.1,2.55,Low
+786,DSA,89,7.7,0.7,6.5,4,5.1,3.54,Moderate
+787,OOP,90,9.8,0.2,9.5,2.6,1.9,3.47,High
+788,DSA,85,5.3,0.4,8,2,8.3,3.37,Low
+789,OOP,90,9.6,1.6,5.7,4.3,2.8,3.49,High
+790,Data Science,73,8.5,3.6,9,2,0.9,2.9,High
+791,Computer Networks,77,8.4,3.8,6.5,0,5.3,3.08,High
+792,Foundation of web technologies,79,8.3,2.5,8,0.1,5.1,3.1,High
+793,DSA,80,8.6,1.3,8.3,3.2,2.6,3.11,High
+794,DSA,68,5.5,3.3,9.6,3.6,2,2.75,Low
+795,Computer Organization,64,5.5,1.6,8.6,4.7,3.6,2.64,Low
+796,OOP,82,6.3,0.1,7.7,5.1,4.8,3.22,Moderate
+797,MIS,76,9.8,2.3,7.6,0.4,3.9,3.04,High
+798,Computer Networks,83,8,1.6,6.2,0.6,7.6,3.38,Moderate
+799,OOP,79,6.6,0.4,5.9,5.9,5.2,3.27,High
+800,Computer Organization,74,9.4,4,7.9,2.2,0.5,2.91,High
+801,Fundamentals of Programming,71,6.6,1.2,7,4,5.2,2.76,Moderate
+802,OOP,76,5.7,2.5,5.6,3.5,6.7,3.08,High
+803,Foundation of web technologies,89,8.5,2.8,8.8,3.4,0.5,3.63,High
+804,Computer Networks,78,8.1,0.7,5.1,1.7,8.4,3.21,High
+805,Computer Organization,78,7.2,2.5,9.2,1,4.1,3.07,Moderate
+806,Fundamentals of Programming,72,7.9,2.2,5.4,0.3,8.2,2.99,High
+807,Database Systems,83,5.5,2.3,7.7,1.4,7.1,3.05,Low
+808,Computer Organization,71,5.2,2,8.4,1.5,6.9,2.88,Low
+809,Database Systems,75,6.5,2.5,9.5,4.5,1,3.29,Moderate
+810,Computer Networks,78,6.8,2.6,7.3,1.1,6.2,3.13,Moderate
+811,DSA,77,8.5,2.2,6.8,5.5,1,3.07,High
+812,Computer Organization,91,8.4,1.6,8.8,2.4,2.8,3.51,High
+813,Data Science,80,7.1,3.7,6.3,0.7,6.2,3.15,Moderate
+814,Database Systems,74,6.9,0.2,6.7,3,7.2,3.05,Moderate
+815,Foundation of web technologies,65,5.8,2.6,10,2.5,3.1,2.64,Low
+816,Data Science,63,5.6,3.5,7.1,2.3,5.5,2.5,Low
+817,SAD,77,8.3,1.8,8.2,0.4,5.3,3.33,High
+818,SAD,77,5.8,1.9,8,3.5,4.8,2.9,Low
+819,Fundamentals of Programming,76,7,1.4,5.6,2.4,7.6,3.15,High
+820,DSA,73,6,0.2,7.8,3.6,6.4,2.75,Moderate
+821,Computer Networks,82,9.4,2.3,6.7,4.5,1.1,3.25,High
+822,Computer Organization,82,7.8,3.6,7,1.7,3.9,3.19,Moderate
+823,MIS,77,5.7,0.6,7.2,3.6,6.9,2.96,Low
+824,Foundation of web technologies,93,9.1,0.3,7.4,3.8,3.4,3.66,High
+825,Database Systems,88,9.1,3.1,6.4,5.1,0.3,3.45,High
+826,Computer Networks,67,7.9,3.7,8.4,1.9,2.1,2.68,Moderate
+827,Data Science,82,9,3.8,5.1,5.9,0.2,3.22,High
+828,SAD,73,7.2,2.6,6.9,0.3,7,3,Moderate
+829,Foundation of web technologies,76,8,3.6,6.9,1.2,4.3,3.08,Moderate
+830,MIS,90,9.1,3.3,7.9,1.3,2.4,3.35,High
+831,Computer Organization,84,9,2.2,9.1,2.3,1.4,3.44,High
+832,Fundamentals of Programming,84,7.1,3.8,7.7,3.3,2.1,3.33,Moderate
+833,MIS,74,6.1,2.5,7.9,1.1,6.4,2.94,Moderate
+834,Foundation of web technologies,79,8.8,2.1,6.1,4,3,3.2,High
+835,MIS,69,5.4,1.8,5.8,1.1,9.9,2.71,High
+836,Foundation of web technologies,65,5.3,1.6,7.6,2.9,6.6,2.54,Low
+837,Foundation of web technologies,81,6.9,3.4,5.7,3,5,3.37,High
+838,OOP,95,9.4,2.2,9.8,0.1,2.5,3.79,High
+839,Database Systems,65,5.5,0.2,5.9,3.2,9.2,2.74,High
+840,SAD,89,9.7,3.4,6.5,0.3,4.1,3.48,High
+841,OOP,69,5.8,0.5,5.6,3.1,9,2.73,High
+842,Computer Organization,81,9.9,2.7,9.7,0.2,1.5,3.23,High
+843,OOP,84,6.9,2.2,5.4,0,9.5,3.27,High
+844,DSA,83,7.1,2,7.1,0.1,7.7,3.34,Moderate
+845,DSA,85,6.7,0.7,5.5,5.7,5.4,3.31,High
+846,SAD,75,6.6,1.6,6.2,0.6,9,3.12,Moderate
+847,MIS,80,5.9,3.2,8.4,3.3,3.2,3.05,Low
+848,Database Systems,68,5.4,1.1,6.7,4.7,6.1,2.8,Low
+849,SAD,80,10,1,9.4,3,0.6,3.4,High
+850,Foundation of web technologies,69,7,3.9,5.9,4.8,2.4,2.78,High
+851,Data Science,76,6.7,2.9,7.1,3.5,3.8,3.09,Moderate
+852,Database Systems,86,9.3,0.2,8.5,0.8,5.2,3.49,High
+853,Database Systems,72,7.1,2.2,7,3.1,4.6,2.87,Moderate
+854,Foundation of web technologies,83,5.7,0.6,9.7,5.3,2.7,3.18,Low
+855,Foundation of web technologies,84,9.5,4,6,1.6,2.9,3.39,High
+856,Fundamentals of Programming,85,7.1,1.4,8,3.5,4,3.48,Moderate
+857,SAD,72,5.8,1.9,7.8,3.4,5.1,3.01,Low
+858,Foundation of web technologies,64,5.1,1.4,8.9,3.4,5.2,2.6,Low
+859,DSA,71,6.3,2.8,7.8,4.8,2.3,3.08,Moderate
+860,Computer Organization,83,7.4,0.5,6.3,2.5,7.3,3.4,Moderate
+861,Data Science,74,8,2.1,6.4,0,7.5,2.83,Moderate
+862,SAD,80,8.7,0.1,7.9,5.6,1.7,3.3,High
+863,Computer Networks,63,5.9,1.9,5.5,3.8,6.9,2.45,High
+864,DSA,81,7.6,3.6,6,0.1,6.7,3.38,Moderate
+865,MIS,89,9.3,2.3,9.5,1.7,1.2,3.34,High
+866,Foundation of web technologies,95,8.7,3.7,7.9,0.7,3,3.57,High
+867,Computer Networks,86,6.3,0.8,6.2,1.8,8.9,3.37,Moderate
+868,Foundation of web technologies,89,7.1,2.5,5.4,0.5,8.5,3.33,High
+869,Database Systems,79,5.9,2.1,6.1,1.7,8.2,3.13,Low
+870,DSA,70,5.1,2.6,8.3,4.8,3.2,2.69,Low
+871,Database Systems,100,9.7,0.1,5.8,5.3,3.1,3.92,High
+872,Fundamentals of Programming,74,8.3,2.7,9.7,3.3,0,2.95,High
+873,Database Systems,79,8.6,1.1,9.4,0.2,4.7,3.36,High
+874,Fundamentals of Programming,75,6.3,0.9,5.7,5.2,5.9,2.9,High
+875,Fundamentals of Programming,73,7.5,2.7,6.2,4.5,3.1,2.97,Moderate
+876,Computer Networks,81,7.1,0.8,9.9,3.9,2.3,3.28,Moderate
+877,Foundation of web technologies,82,9.7,1.2,8.9,3.2,1,3.26,High
+878,MIS,82,8.4,2.9,7.9,1,3.8,3.2,High
+879,Database Systems,74,7.5,1.2,7.1,3.9,4.3,2.96,Moderate
+880,DSA,82,7,1.1,6,4.7,5.2,3.2,Moderate
+881,Fundamentals of Programming,82,9.5,1.5,8.8,3.8,0.4,3.36,High
+882,Foundation of web technologies,88,9.8,1.5,6.7,0.4,5.6,3.54,High
+883,Data Science,82,7.4,0.4,6.2,1.9,8.1,3.16,Moderate
+884,SAD,81,6.5,3.4,9.3,3.7,1.1,3.02,Moderate
+885,Computer Networks,78,5.7,2.8,9.7,4,1.8,2.86,Low
+886,MIS,72,8.2,2,5.6,1.9,6.3,2.81,High
+887,OOP,92,9,3.4,5.7,5.6,0.3,3.59,High
+888,Computer Networks,83,8.8,3.2,9.7,0.7,1.6,3.07,High
+889,Data Science,77,9.3,0.5,8.5,4.2,1.5,3.17,High
+890,SAD,91,9.4,0.7,5.3,4.3,4.3,3.57,High
+891,Data Science,81,7.4,3.4,6.9,1,5.3,3.15,Moderate
+892,Database Systems,83,5.9,2.9,7.6,3.6,4,3.13,Low
+893,Fundamentals of Programming,80,7.3,3.3,9.1,3.1,1.2,3.34,Moderate
+894,MIS,78,6.8,3.5,8.6,0.6,4.5,3.23,Moderate
+895,Computer Organization,82,7,3.5,5.2,5.8,2.5,3.26,High
+896,Fundamentals of Programming,82,6.4,1,9.7,1.8,5.1,3.25,Moderate
+897,Computer Organization,89,8.9,1.6,5.7,0.1,7.7,3.42,High
+898,SAD,77,6.8,1.4,6.7,3.1,6,3.03,Moderate
+899,Foundation of web technologies,76,7.2,3.5,7.5,2.9,2.9,3.04,Moderate
+900,OOP,82,8.3,2.4,7.1,2.5,3.7,3.22,High
+901,DSA,78,8.9,0.8,9.1,3.4,1.8,3.1,High
+902,Fundamentals of Programming,67,6.3,3,7.6,1.9,5.2,2.48,Moderate
+903,MIS,78,8,4,7.2,4.4,0.4,3.11,Moderate
+904,Data Science,71,6,1.7,6.1,0,10.2,2.87,Moderate
+905,MIS,89,9.6,3.4,8.7,0.4,1.9,3.5,High
+906,SAD,78,7.2,0.5,7.6,2.1,6.6,3.11,Moderate
+907,Computer Organization,78,6.9,2.5,8.6,0.7,5.3,3.29,Moderate
+908,Data Science,73,6.7,1.8,8.4,3.1,4,2.92,Moderate
+909,DSA,86,9.3,3.5,5,4.7,1.5,3.45,High
+910,DSA,76,7.4,3.9,8.8,1,2.9,3.11,Moderate
+911,Fundamentals of Programming,77,7.7,4,9.3,0.3,2.7,2.96,Moderate
+912,SAD,73,5,1.6,6.2,4.9,6.3,3.01,Low
+913,Foundation of web technologies,73,6.7,3.3,5,1.8,7.2,2.85,High
+914,SAD,66,5.3,0.7,7.8,1.7,8.5,2.64,Low
+915,Computer Organization,67,7.1,1.5,9.4,5.4,0.6,2.65,Moderate
+916,MIS,71,5.5,3.8,5.3,1.8,7.6,2.81,High
+917,DSA,72,6.5,1.3,5.8,4.7,5.7,3.04,High
+918,MIS,67,5.6,0.3,9.5,1.1,7.5,2.66,Low
+919,MIS,94,9.1,2.2,5.4,5.7,1.6,3.48,High
+920,MIS,65,5.8,3.4,5.1,3.1,6.6,2.79,High
+921,DSA,82,8.8,3.7,9.5,1.6,0.4,3.29,High
+922,Computer Networks,78,6.4,1.2,6.9,2.4,7.1,3,Moderate
+923,Database Systems,80,7.7,0.6,8.5,1,6.2,3.16,Moderate
+924,Computer Organization,76,9,3,8.2,0.6,3.2,2.96,High
+925,Computer Networks,70,7.7,0.3,6.9,2.5,6.6,3.08,Moderate
+926,Computer Organization,73,5.9,1.6,9.7,0.8,6,2.86,Low
+927,Data Science,77,8.8,0.4,9.9,1.9,3,3.19,High
+928,SAD,87,8.1,0.8,5.7,5.6,3.8,3.45,High
+929,SAD,85,9.6,3.5,8.1,2.3,0.5,3.4,High
+930,OOP,79,6.6,2.5,6.8,0.9,7.2,2.88,Moderate
+931,SAD,79,8,3.3,6.9,0.8,5,3.08,Moderate
+932,DSA,70,6.5,2.6,8,4.2,2.7,2.83,Moderate
+933,Foundation of web technologies,68,6.8,3.3,6,2.8,5.1,2.92,Moderate
+934,Fundamentals of Programming,73,5.5,3.5,6.7,4.1,4.2,2.92,Low
+935,OOP,65,5.1,2.8,6.6,0.3,9.2,2.49,Low
+936,Fundamentals of Programming,79,6.9,0.3,5.7,1.8,9.3,3.15,High
+937,Computer Organization,67,5.4,3.6,5,2.9,7.1,2.74,High
+938,Fundamentals of Programming,81,9.6,0.6,9.8,0.8,3.2,3.29,High
+939,Fundamentals of Programming,77,8.7,2.2,9.4,2,1.7,3.03,High
+940,OOP,75,5.8,3.7,6.6,2.2,5.7,2.9,Low
+941,Data Science,92,8.8,1.4,9.8,3,1,3.51,High
+942,MIS,68,5.2,1,7.3,1.4,9.1,2.83,Low
+943,SAD,84,8.7,3.7,7.1,1.5,3,3.29,High
+944,SAD,80,7.4,1.4,9.5,3.2,2.5,3.22,Moderate
+945,DSA,81,8.8,3.2,6.7,2.3,3,3.24,High
+946,OOP,90,9,3.8,8.1,2.3,0.8,3.55,High
+947,DSA,93,9,3.4,7,0.2,4.4,3.68,High
+948,Foundation of web technologies,74,7.3,3,6.8,3.8,3.1,2.91,Moderate
+949,Foundation of web technologies,74,5.9,3,7.7,1.2,6.2,3.09,Low
+950,DSA,71,7.4,0.9,9.8,4.2,1.7,2.94,Moderate
+951,OOP,100,9.8,1.7,7.4,4.6,0.5,3.84,High
+952,DSA,74,6.3,1.8,5.6,1.2,9.1,2.99,High
+953,SAD,74,5,0.2,9.9,1.5,7.4,2.94,Low
+954,Computer Networks,85,7.8,0.6,8.6,3.6,3.4,3.26,Moderate
+955,Database Systems,90,8.7,3.1,9.9,1.3,1,3.55,High
+956,Fundamentals of Programming,65,5.3,3.6,5.6,2,7.5,2.53,High
+957,Database Systems,85,9.1,2.4,7,2.6,2.9,3.28,High
+958,OOP,83,9.3,0.4,8.9,4.6,0.8,3.58,High
+959,Database Systems,82,5.9,1.7,5.8,4.2,6.4,3.32,High
+960,Foundation of web technologies,77,6,0.8,5.2,1.9,10.1,3.01,High
+961,Computer Organization,84,7.8,3.4,8.3,2,2.5,3.18,Moderate
+962,Fundamentals of Programming,78,6.3,0.2,8.6,0.7,8.2,3.1,Moderate
+963,MIS,70,6.5,2.1,7.8,3.6,4,2.9,Moderate
+964,OOP,72,8.1,3.9,8.6,3.1,0.3,2.99,High
+965,Fundamentals of Programming,92,8.8,2.4,6,4,2.8,3.59,High
+966,Database Systems,85,7.4,2.1,6.7,3.1,4.7,3.44,Moderate
+967,Foundation of web technologies,82,6,3.2,5.9,0.5,8.4,3.28,High
+968,Data Science,75,7.2,1.1,7.8,2.1,5.8,2.93,Moderate
+969,Computer Networks,67,9.7,3.7,7.5,1,2.1,3.04,High
+970,MIS,91,9.6,0,7.8,4.4,2.2,3.38,High
+971,Computer Networks,69,7.4,0.3,9.9,3.1,3.3,2.84,Moderate
+972,Fundamentals of Programming,81,7.4,1.7,5.4,0.6,8.9,3.23,High
+973,Foundation of web technologies,74,9.2,1,6,3,4.8,3.18,High
+974,Foundation of web technologies,69,5.2,0.2,9.2,0.7,8.7,2.82,Low
+975,Database Systems,71,5.2,1.8,9.2,1.6,6.2,2.68,Low
+976,SAD,71,7.2,2.3,7.9,2,4.6,3.06,Moderate
+977,Database Systems,86,6.6,0.4,6.8,0.6,9.6,3.31,Moderate
+978,SAD,77,6.4,2.5,7.3,2.9,4.9,3.12,Moderate
+979,SAD,84,8.8,1.1,6.6,5.5,2,3.32,High
+980,MIS,84,9.6,2.4,7.7,1.1,3.2,3.3,High
+981,Database Systems,76,6.7,3.4,7.8,3.1,3,2.98,Moderate
+982,Data Science,79,8,0.3,8.4,5.6,1.7,3.28,Moderate
+983,DSA,83,7.9,0.5,7.9,4.6,3.1,3.38,Moderate
+984,DSA,75,8.2,3.6,8.1,0.5,3.6,3.18,High
+985,Database Systems,70,6.5,0.8,9.5,4.6,2.6,2.74,Moderate
+986,Database Systems,83,5.9,3,7.4,1.4,6.3,3.1,Low
+987,Computer Networks,73,8.1,0.2,6.6,2.8,6.3,3.14,High
+988,MIS,69,6,3.1,7.1,3.4,4.4,2.84,Moderate
+989,Database Systems,73,5.1,0.1,7.2,4.9,6.7,2.94,Low
+990,Computer Networks,77,6.9,3.3,5.7,5.6,2.5,3.05,High
+991,SAD,85,8.8,3.8,8.4,1.1,1.9,3.3,High
+992,Foundation of web technologies,76,6.7,2.8,8.8,5.3,0.4,3.05,Moderate
+993,Foundation of web technologies,64,6,3.2,8.7,0.4,5.7,2.6,Moderate
+994,SAD,74,6.5,3.9,8.2,3.9,1.5,2.82,Moderate
+995,OOP,88,9.9,1.5,9,1.6,2,3.44,High
+996,Computer Networks,89,9.7,0.9,6.6,4.5,2.3,3.5,High
+997,Computer Networks,75,7,2.4,7.2,4.5,2.9,3,Moderate
+998,SAD,65,5.8,1.4,7,0.3,9.5,2.49,Low
+999,Data Science,73,7.9,3.5,5.8,3.6,3.2,3.01,High
+1000,Computer Organization,88,8.5,1.6,7.5,0,6.4,3.63,High
+1001,Fundamentals of Programming,84,8.5,2.6,5.2,2.2,5.5,3.26,High
+1002,SAD,75,7.5,3.6,8.6,2.5,1.8,3.19,Moderate
+1003,Database Systems,86,9,3.5,7.3,2,2.2,3.43,High
+1004,Database Systems,81,8.5,0.3,9.3,2.8,3.1,3.26,High
+1005,MIS,68,5.3,2.2,7.1,5.3,4.1,2.9,Low
+1006,SAD,74,7.8,0.2,9.9,3.1,3,3.07,Moderate
+1007,MIS,73,6.5,1.9,9.3,1.8,4.5,2.92,Moderate
+1008,SAD,76,6.5,3.1,7.4,1.4,5.6,2.93,Moderate
+1009,Computer Networks,70,5.8,1.3,9.7,2.1,5.1,2.87,Low
+1010,Fundamentals of Programming,77,5.9,3.6,7.3,4.3,2.9,2.95,Low
+1011,Computer Networks,83,9.9,0.2,5.5,4.3,4.1,3.32,High
+1012,Computer Organization,70,5.2,0.1,8.9,0.8,9,2.66,Low
+1013,Foundation of web technologies,77,7.3,2.4,7.1,0.2,7,3.17,Moderate
+1014,DSA,78,7.2,2.1,7.4,2.3,5,3.13,Moderate
+1015,SAD,71,9.4,3.6,6.7,2.6,1.7,2.81,High
+1016,Computer Organization,76,6.4,3.8,5.7,3.5,4.6,3.07,High
+1017,Foundation of web technologies,77,6.4,1.1,7,6,3.5,2.98,Moderate
+1018,OOP,60,5.4,0.6,7.2,3.1,7.7,2.68,Low
+1019,Fundamentals of Programming,85,6.3,1.3,5.4,1.8,9.2,3.1,High
+1020,MIS,79,9.5,0,9.1,5.1,0.3,3.05,High
+1021,MIS,79,5.5,0.6,9.8,3.2,4.9,3.2,Low
+1022,Computer Networks,79,8.7,4,6.4,2.6,2.3,3.21,High
+1023,Database Systems,76,7.7,1.6,5.8,5.9,3,3.15,High
+1024,Foundation of web technologies,88,8,0.9,7.7,4.2,3.2,3.44,Moderate
+1025,OOP,78,7.6,4,8.1,1.6,2.7,3.02,Moderate
+1026,Computer Organization,78,6.9,1.4,7.2,4.7,3.8,3.14,Moderate
+1027,Fundamentals of Programming,78,7.4,3.2,7.9,1.9,3.6,2.99,Moderate
+1028,Foundation of web technologies,74,6.1,2,6.3,0.1,9.5,3.05,Moderate
+1029,OOP,83,8.2,2,7.2,5.8,0.8,3.45,High
+1030,DSA,78,5.7,2.3,9.3,3.5,3.2,2.9,Low
+1031,SAD,89,8.6,1.5,5.5,2.7,5.7,3.49,High
+1032,MIS,76,6.2,3.9,9.8,1,3.1,2.87,Moderate
+1033,Computer Organization,74,6.7,3.6,9.8,1.7,2.2,3.06,Moderate
+1034,MIS,69,8.4,1.1,8.7,0.3,5.5,2.86,High
+1035,Computer Organization,58,5.2,1.5,6.8,1.9,8.6,2.38,Low
+1036,Computer Networks,70,6,1.2,9.9,2.5,4.4,2.88,Moderate
+1037,Database Systems,85,7.2,2.3,9.9,1.1,3.5,3.31,Moderate
+1038,Computer Organization,82,8,0.4,8.4,0.4,6.8,3.39,Moderate
+1039,MIS,69,8,3,6.1,5,1.9,2.9,Moderate
+1040,Computer Networks,71,5.7,3.8,5.4,1.2,7.9,2.81,High
+1041,Computer Organization,66,6.7,2.5,7.7,0.8,6.3,2.81,Moderate
+1042,DSA,64,6.1,1.6,8.5,1.3,6.5,2.76,Moderate
+1043,Database Systems,73,6.8,1.6,9.9,5.4,0.3,2.89,Moderate
+1044,Computer Organization,68,5.3,1.3,6.3,3,8.1,2.94,Low
+1045,Computer Networks,80,8.9,3.4,9.2,0.9,1.6,3.11,High
+1046,Foundation of web technologies,71,5.3,2.8,5,2.5,8.4,3.02,High
+1047,Data Science,65,6.6,2.8,8.8,1.8,4,2.87,Moderate
+1048,OOP,81,7.2,2.9,8.5,5.3,0.1,3.26,Moderate
+1049,Data Science,76,6.1,2.6,8,5.5,1.8,3.01,Moderate
+1050,Data Science,77,7.8,1.1,7.4,2,5.7,3.04,Moderate
+1051,Fundamentals of Programming,77,7.9,3.6,7.8,3,1.7,3.05,Moderate
+1052,DSA,70,6.2,2,6.6,1.1,8.1,2.94,Moderate
+1053,Foundation of web technologies,82,7.5,1.3,6.3,2.8,6.1,3.21,Moderate
+1054,SAD,77,5.5,3.1,9,4.6,1.8,2.97,Low
+1055,Computer Organization,64,5.6,2.6,9.2,3.5,3.1,2.72,Low
+1056,OOP,88,7.6,0.1,8.2,0.5,7.6,3.56,Moderate
+1057,Database Systems,81,7.2,1.2,7.7,0.8,7.1,3.28,Moderate
+1058,Foundation of web technologies,76,5.8,0.4,5.7,5.3,6.8,3,High
+1059,MIS,79,7.6,1.9,5.5,3.9,5.1,3.17,High
+1060,SAD,81,8.1,0.3,5.6,0.3,9.7,3.25,High
+1061,Fundamentals of Programming,76,6.3,0.5,6.3,2.3,8.6,2.97,Moderate
+1062,Fundamentals of Programming,84,9.2,2.8,5.6,4.4,2,3.5,High
+1063,Foundation of web technologies,72,6.4,2.6,6.7,6,2.3,2.78,Moderate
+1064,Computer Networks,85,9.7,0.1,8.5,4.1,1.6,3.26,High
+1065,Data Science,92,9.2,3.9,9.9,0.1,0.9,3.48,High
+1066,MIS,80,8.2,0.5,8.3,5.9,1.1,3.44,High
+1067,Fundamentals of Programming,88,9.6,1.8,5.2,2.2,5.2,3.55,High
+1068,OOP,76,7.3,0.2,7.1,2.8,6.6,3.27,Moderate
+1069,Fundamentals of Programming,77,9.6,2.6,6.6,2.7,2.5,3.37,High
+1070,Database Systems,65,6.8,2.7,8.3,4.3,1.9,2.58,Moderate
+1071,Computer Organization,73,6.3,1.3,5.6,3.9,6.9,2.97,High
+1072,Fundamentals of Programming,83,9.3,3.6,7.2,1.8,2.1,3.3,High
+1073,Database Systems,77,5.4,2.7,9.1,1.5,5.3,3.04,Low
+1074,Foundation of web technologies,88,9.4,1,7.8,1.1,4.7,3.36,High
+1075,Foundation of web technologies,61,5.5,3.6,9.1,4.4,1.4,2.44,Low
+1076,SAD,84,7.7,0.4,8.8,3.5,3.6,3,Moderate
+1077,Fundamentals of Programming,79,5.9,0.8,5.9,0.3,11.1,3.11,High
+1078,OOP,76,5.1,0.2,7.9,4.9,5.9,2.82,Low
+1079,Fundamentals of Programming,74,6.6,1.4,8,1.6,6.4,3.23,Moderate
+1080,OOP,96,8.7,2.7,6,2.1,4.5,3.67,High
+1081,DSA,71,5.6,0.5,8.4,5.2,4.3,2.86,Low
+1082,SAD,68,5.9,0.4,9.1,3.5,5.1,2.96,Low
+1083,DSA,79,8.1,3.1,8.5,3.6,0.7,3.12,High
+1084,Fundamentals of Programming,84,8.2,1.3,9.8,0.2,4.5,3.38,High
+1085,SAD,81,7.9,0.7,8.6,1.1,5.7,3.18,Moderate
+1086,DSA,81,9.6,0.8,5.7,4.6,3.3,3.12,High
+1087,Data Science,71,7.5,3.6,5.7,3.9,3.3,3.01,High
+1088,Fundamentals of Programming,82,8.4,2.4,8.8,1.4,3,3.17,High
+1089,DSA,72,7.2,1.6,9.9,1.5,3.8,2.89,Moderate
+1090,Data Science,77,7.8,1,9.6,1.5,4.1,2.9,Moderate
+1091,Data Science,88,9.5,0.4,8.3,5.3,0.5,3.56,High
+1092,Foundation of web technologies,80,8.4,1.2,5.9,1.8,6.7,3.25,High
+1093,Fundamentals of Programming,69,5.5,0.6,5.5,2.5,9.9,2.74,High
+1094,Data Science,73,5.7,2.6,6,0.6,9.1,2.92,Low
+1095,Foundation of web technologies,72,5.8,3.7,9.1,1.9,3.5,2.97,Low
+1096,DSA,91,8.4,2.7,8.1,1.3,3.5,3.68,High
+1097,Database Systems,68,5.2,1.8,9.5,3.4,4.1,2.88,Low
+1098,Fundamentals of Programming,76,8.4,3.9,9.9,1.2,0.6,3.08,High
+1099,SAD,74,6.2,3.2,5.5,4.7,4.4,2.89,High
+1100,OOP,84,8.2,1.7,7.2,1.9,5,3.38,High
+1101,OOP,88,8.8,3.7,9.7,0.3,1.5,3.39,High
+1102,DSA,76,6.3,0.3,6.3,5.5,5.6,3.06,Moderate
+1103,Computer Networks,76,8.2,2.9,6.3,4.3,2.3,3.21,High
+1104,Computer Networks,81,8.1,0.6,9.1,1.4,4.8,3.15,High
+1105,DSA,83,8.3,1.6,8,0.6,5.5,3.4,High
+1106,Data Science,84,10,0.8,6.3,4,2.9,3.39,High
+1107,Fundamentals of Programming,87,9.8,3.7,7.5,2.4,0.6,3.35,High
+1108,OOP,69,6.4,3.3,6.9,0.5,6.9,2.9,Moderate
+1109,OOP,73,6.7,3.9,8.1,2.2,3.1,2.89,Moderate
+1110,Data Science,74,5.4,0.2,5.6,3.5,9.3,2.98,High
+1111,OOP,93,9.6,2,9.2,1.4,1.8,3.64,High
+1112,SAD,79,5.9,1.4,8.2,0.4,8.1,3.07,Low
+1113,Fundamentals of Programming,75,6.8,2.1,10,2.4,2.7,2.96,Moderate
+1114,Computer Organization,89,9,2.4,9.4,1.3,1.9,3.61,High
+1115,OOP,80,8,2.5,7.1,0.9,5.5,3.13,Moderate
+1116,DSA,79,6.1,2.9,6.6,3,5.4,3.01,Moderate
+1117,SAD,79,5.8,3.8,9.3,4.4,0.7,3.16,Low
+1118,OOP,68,5.7,0,5.1,3.5,9.7,2.75,High
+1119,SAD,76,7.3,2.1,5,2.5,7.1,3,High
+1120,Foundation of web technologies,91,8.7,0.9,9.1,3.1,2.2,3.65,High
+1121,Computer Organization,61,6.1,0.9,8.1,5,3.9,2.61,Moderate
+1122,MIS,83,9.3,2.7,7.2,2.3,2.5,3.29,High
+1123,DSA,58,6,2.5,6.8,6,2.7,2.5,Moderate
+1124,DSA,66,7.8,3.7,9,1.6,1.9,2.6,Moderate
+1125,Fundamentals of Programming,72,8.6,2.3,7.5,1.1,4.5,2.97,High
+1126,SAD,85,9.6,1.3,9.8,1.8,1.5,3.39,High
+1127,Data Science,83,8.2,2.2,5.6,2.3,5.7,3.28,High
+1128,DSA,80,7.2,3.1,6.1,1,6.6,2.92,Moderate
+1129,SAD,74,7,3.7,8.6,2,2.7,2.88,Moderate
+1130,SAD,91,9.9,2.7,6.4,2.9,2.1,3.49,High
+1131,Database Systems,80,5.5,3.9,5.9,3.9,4.8,2.99,High
+1132,Database Systems,80,8.9,2.7,8.1,3.8,0.5,3.14,High
+1133,MIS,78,5.4,1.3,6.2,5.9,5.2,3.1,Low
+1134,Foundation of web technologies,75,8.4,0.8,6.2,1.7,6.9,3.12,High
+1135,MIS,76,7.1,0.9,5.1,5.3,5.6,3.05,High
+1136,OOP,74,6.7,0,8.4,5,3.9,3.05,Moderate
+1137,Data Science,71,5.7,0.6,9,3.7,5,2.88,Low
+1138,OOP,78,6.5,1.5,8.8,4.9,2.3,2.88,Moderate
+1139,Computer Networks,81,7,3.8,7,4.6,1.6,3.24,Moderate
+1140,OOP,83,9.5,0.3,9.7,3.7,0.8,3.42,High
+1141,Fundamentals of Programming,88,9,0.8,9,4.4,0.8,3.37,High
+1142,OOP,72,5.2,0.6,7.7,3.5,7,2.77,Low
+1143,MIS,87,8.2,0.1,9.8,0.3,5.6,3.37,High
+1144,DSA,76,8.3,3.3,5.1,3.3,4,3.27,High
+1145,DSA,91,7.3,2,5.4,4.1,5.2,3.41,High
+1146,Database Systems,76,7.4,0.6,8.2,1,6.8,3.11,Moderate
+1147,Data Science,84,9.4,2.5,5.8,5.8,0.5,3.25,High
+1148,Data Science,88,8.1,1,9,4.8,1.1,3.22,High
+1149,Fundamentals of Programming,94,9.9,2,7.3,3.6,1.2,3.51,High
+1150,MIS,71,7.7,0.4,7.1,5.1,3.7,2.94,Moderate
+1151,Database Systems,78,9.3,0.4,5.5,1.6,7.2,3.29,High
+1152,Computer Networks,86,8.1,1.4,8.9,1.3,4.3,3.27,High
+1153,Data Science,76,8.2,0.9,8.6,5.2,1.1,3.03,High
+1154,DSA,76,7.1,0.6,8.5,4.6,3.2,3.11,Moderate
+1155,OOP,76,5.5,2,9.1,5.6,1.8,2.95,Low
+1156,OOP,79,7.7,1.6,9.2,2.7,2.8,3.16,Moderate
+1157,Database Systems,71,7.4,2,9.2,4.5,0.9,2.77,Moderate
+1158,MIS,73,7.5,2.3,6.2,4.8,3.2,2.93,Moderate
+1159,MIS,79,7.4,1.3,5.5,1.4,8.4,3.09,High
+1160,Foundation of web technologies,70,5.8,1.8,6.5,0.2,9.7,2.92,Low
+1161,Computer Organization,82,6.6,2.2,7.8,2.1,5.3,3.09,Moderate
+1162,Data Science,78,6.9,1,6.2,2.7,7.2,3.02,Moderate
+1163,MIS,92,8.8,0.8,8.5,0.1,5.8,3.61,High
+1164,DSA,70,6.7,2.3,6,4.5,4.5,2.92,Moderate
+1165,Database Systems,82,5.3,3.4,6,5.2,4.1,3.06,Low
+1166,Computer Networks,70,6.6,3.6,5.6,1.1,7.1,2.82,High
+1167,Foundation of web technologies,80,7.5,0.3,6,5.7,4.5,3.11,Moderate
+1168,SAD,86,9.6,2.2,6.3,4.1,1.8,3.49,High
+1169,Fundamentals of Programming,85,8.3,4,6.3,3.6,1.8,3.36,High
+1170,Computer Networks,82,7.5,1.2,5.8,1.7,7.8,3.25,High
+1171,SAD,71,6.9,3,7.7,0.5,5.9,3.17,Moderate
+1172,OOP,82,8.2,3.2,7.3,1.9,3.4,3.2,High
+1173,Fundamentals of Programming,63,5.5,3.5,8.9,1,5.1,2.3,Low
+1174,Data Science,95,8.1,3.8,7.9,2.3,1.9,3.72,High
+1175,DSA,71,5.3,0.3,5.9,0.2,12.3,2.97,High
+1176,Fundamentals of Programming,78,5.7,3.3,5.8,1.8,7.4,3.04,High
+1177,Computer Organization,77,6.2,1.5,6.3,2.9,7.1,2.97,Moderate
+1178,SAD,71,5.3,0.6,5.3,3.8,9,2.79,High
+1179,Data Science,64,5.3,3.3,7.6,3.2,4.6,2.55,Low
+1180,Computer Organization,73,6,1.3,8,1.3,7.4,2.95,Moderate
+1181,OOP,67,5.6,3.9,5.1,4.8,4.6,2.7,High
+1182,Computer Organization,78,5.7,0.6,8.5,3.9,5.3,3.05,Low
+1183,Foundation of web technologies,82,8.9,3.7,8.5,0.5,2.4,3.46,High
+1184,Foundation of web technologies,69,6,0.3,8.5,2.4,6.8,2.81,Moderate
+1185,Database Systems,87,9.6,2.6,5.5,5.7,0.6,3.28,High
+1186,Computer Networks,75,7,0.2,7.5,0.7,8.6,2.81,Moderate
+1187,Computer Networks,70,7,1.4,8.9,4.8,1.9,2.97,Moderate
+1188,Data Science,67,6.9,0.6,9,4.2,3.3,2.83,Moderate
+1189,OOP,69,6,1.5,5.5,3.8,7.2,2.8,High
+1190,MIS,89,7.9,3.6,7.8,0.8,3.9,3.45,Moderate
+1191,Foundation of web technologies,79,6.9,3.4,8.2,3.6,1.9,3.37,Moderate
+1192,Data Science,84,8.8,2.4,5.8,4.8,2.2,3.38,High
+1193,MIS,86,8.6,0.3,7.3,1,6.8,3.51,High
+1194,Computer Networks,73,8.1,2.7,9.2,0.9,3.1,2.78,High
+1195,Database Systems,66,5.6,3.4,5.8,5.8,3.4,2.84,High
+1196,Computer Organization,94,9.9,0.4,6.5,3.8,3.4,3.73,High
+1197,Foundation of web technologies,83,6.8,3.7,5.3,3.3,4.9,3.37,High
+1198,Data Science,83,6.3,1.5,9.2,1.2,5.8,3.15,Moderate
+1199,Fundamentals of Programming,88,9.1,2.3,8.8,2.7,1.1,3.43,High
+1200,MIS,76,9.3,1.7,9.8,1.4,1.8,3.12,High
+1201,Computer Organization,71,5.7,1.6,9.8,1.9,5,2.72,Low
+1202,Foundation of web technologies,80,8.6,1.2,8.9,2.3,3,3.24,High
+1203,Computer Networks,73,7.4,3.1,6.9,2.7,3.9,2.82,Moderate
+1204,OOP,71,7.6,3.2,6.8,3.1,3.3,2.87,Moderate
+1205,MIS,87,8.4,1.1,6.4,5.6,2.5,3.37,High
+1206,Computer Networks,90,8.2,0.1,8.1,3.1,4.5,3.56,High
+1207,Foundation of web technologies,88,7.7,1.4,5.4,1.2,8.3,3.13,High
+1208,MIS,80,7.3,0.2,5.2,4.3,7,3.21,High
+1209,Computer Organization,78,7.7,2,6.2,4.5,3.6,3.07,Moderate
+1210,Foundation of web technologies,74,7.3,1.1,6.2,3.9,5.5,3,Moderate
+1211,SAD,89,8.3,3.3,7.1,0.4,4.9,3.56,High
+1212,Data Science,64,5,2.1,5.2,3.4,8.3,2.9,High
+1213,Computer Organization,88,9.6,3.9,7.7,1.3,1.5,3.47,High
+1214,MIS,76,5.3,1.9,6.2,2.8,7.8,2.87,Low
+1215,OOP,85,7.3,2.3,6.8,1,6.6,3.35,Moderate
+1216,Computer Networks,77,8.3,1.4,9.7,4.2,0.4,3.25,High
+1217,Fundamentals of Programming,74,6,0.2,8.7,5,4.1,3.04,Moderate
+1218,Computer Networks,74,5.1,1,7.3,3.8,6.8,3.24,Low
+1219,MIS,81,7.8,3,6.4,3.4,3.4,3.14,Moderate
+1220,Computer Networks,76,8.8,2.8,10,0.7,1.7,3.16,High
+1221,Data Science,82,7.5,1.3,7.2,5.1,2.9,3.27,Moderate
+1222,Foundation of web technologies,74,6,3.5,5.3,5.3,3.9,2.97,High
+1223,Fundamentals of Programming,78,6.6,1.3,7.6,5.6,2.9,2.96,Moderate
+1224,DSA,83,9.3,1.6,6,2.5,4.6,3.31,High
+1225,MIS,78,6.9,3.7,8.8,2.3,2.3,3.03,Moderate
+1226,Database Systems,73,5.3,1,7.2,0.9,9.6,2.85,Low
+1227,DSA,92,9.7,3.1,6.3,2.9,2,3.5,High
+1228,Computer Networks,85,9.4,2.1,8.9,2,1.6,3.43,High
+1229,MIS,90,7.8,0.5,5.6,3.2,6.9,3.36,High
+1230,SAD,92,9.8,1.9,5.3,3.3,3.7,3.93,High
+1231,Database Systems,80,9.2,4,7.2,1.2,2.4,3.1,High
+1232,Fundamentals of Programming,75,5.2,1.4,6.3,4.1,7,3.12,Low
+1233,OOP,81,9.7,1.1,9.1,0.2,3.9,3.3,High
+1234,SAD,88,9.7,3.1,8.3,2.4,0.5,3.47,High
+1235,DSA,77,8.2,3.9,8.6,3.1,0.2,3.02,High
+1236,Foundation of web technologies,81,7.6,0.5,8,2.9,5,3.15,Moderate
+1237,Data Science,76,8.1,0,6,2.9,7,3.19,High
+1238,OOP,84,7.1,2.9,8,1.8,4.2,3.17,Moderate
+1239,SAD,73,7.1,0.9,9.8,0.8,5.4,3.01,Moderate
+1240,Foundation of web technologies,70,6.1,3.1,6,0.5,8.3,2.9,Moderate
+1241,Foundation of web technologies,80,7.4,0,5.4,4.8,6.4,3.14,High
+1242,MIS,84,9.3,2.7,5.3,4.7,2,3.41,High
+1243,SAD,88,9.2,3.2,7.5,1,3.1,3.48,High
+1244,Fundamentals of Programming,84,9.9,0.6,6.1,1.3,6.1,3.63,High
+1245,Computer Networks,90,9,0.7,5.3,6,3,3.56,High
+1246,Database Systems,78,7.8,3.6,9.6,0,3,3.09,Moderate
+1247,Database Systems,80,5.4,1,8.3,5.3,4,3.27,Low
+1248,DSA,62,5.9,3.2,9.8,1.4,3.7,2.71,Low
+1249,DSA,77,7.5,0.3,7.8,3,5.4,3.09,Moderate
+1250,Database Systems,69,6.7,2.1,7.9,0.1,7.2,2.78,Moderate
+1251,Fundamentals of Programming,78,8.8,2.9,6.8,0.3,5.2,3.17,High
+1252,Data Science,61,5.9,2.3,5.8,2.1,7.9,2.66,High
+1253,Computer Organization,86,8.5,2.2,6.9,2.5,3.9,3.25,High
+1254,Computer Networks,68,5.4,3.5,5.4,4.2,5.5,2.81,High
+1255,Data Science,84,9.6,1.1,6.9,3.4,3,3.37,High
+1256,MIS,75,8.3,1.6,7.4,0.3,6.4,3.29,High
+1257,Computer Organization,83,6,3.2,7.3,1.8,5.7,3.11,Moderate
+1258,Computer Organization,80,8.7,1.1,5.6,1.5,7.1,3.24,High
+1259,SAD,92,9.6,2.3,7.7,2.6,1.8,3.67,High
+1260,Fundamentals of Programming,79,7.6,0.5,5.6,3.2,7.1,3.04,High
+1261,Fundamentals of Programming,86,9.7,1.2,9.3,2.9,0.9,3.51,High
+1262,Computer Organization,73,6,1.5,7.5,4.4,4.6,2.8,Moderate
+1263,SAD,63,5.6,1.6,7.4,3.2,6.2,2.75,Low
+1264,Computer Networks,87,9,2.8,7.8,3.1,1.3,3.43,High
+1265,Computer Organization,74,7.1,0.6,8.3,3.1,4.9,2.79,Moderate
+1266,OOP,90,9.5,2.3,5.4,2.7,4.1,3.67,High
+1267,DSA,83,8.8,3.2,7.5,4,0.5,3.2,High
+1268,DSA,83,9.5,3.6,8.4,2.1,0.4,3.11,High
+1269,Data Science,67,5.4,3.5,6.6,1.1,7.4,2.72,Low
+1270,MIS,65,6.3,1.3,5.7,1.8,8.9,2.65,High
+1271,DSA,78,7.9,1.8,6.7,4.5,3.1,3.24,Moderate
+1272,Foundation of web technologies,76,6.7,3,5.8,0.8,7.7,3.09,High
+1273,Data Science,66,6.7,3.2,6.2,0.4,7.5,2.74,Moderate
+1274,DSA,80,7.8,2.1,8.3,1.4,4.4,3.31,Moderate
+1275,MIS,81,9.3,1.2,8.5,0.1,4.9,3.1,High
+1276,Fundamentals of Programming,70,7.7,0.3,9,1.3,5.7,2.9,Moderate
+1277,Fundamentals of Programming,76,8.4,3.2,7.8,3.4,1.2,3.02,High
+1278,Computer Networks,91,9,1.2,7.9,4.4,1.5,3.62,High
+1279,Computer Organization,81,6.9,1.2,7.3,4.9,3.7,3.05,Moderate
+1280,OOP,83,8.3,3.6,5.5,1.4,5.2,3.4,High
+1281,Fundamentals of Programming,82,8.5,3.3,9.3,1.2,1.7,3.25,High
+1282,SAD,71,6.2,1.2,8.9,0.5,7.2,2.76,Moderate
+1283,DSA,85,9.1,1.7,8,0.5,4.7,3.23,High
+1284,SAD,84,9.8,3.2,7.3,0.8,2.9,3.42,High
+1285,MIS,90,9.7,1.4,5.8,3.4,3.7,3.67,High
+1286,Fundamentals of Programming,76,7.4,4,8.4,0.3,3.9,3.15,Moderate
+1287,OOP,91,10,1.6,6.4,3.3,2.7,3.39,High
+1288,MIS,72,5,1.8,9.2,3.4,4.6,2.7,Low
+1289,Foundation of web technologies,85,10,1.1,6.4,1,5.5,3.4,High
+1290,Foundation of web technologies,86,9,3.6,9.9,0.3,1.2,3.19,High
+1291,SAD,80,9.4,1.3,5.6,5.2,2.5,3.2,High
+1292,Computer Organization,81,7.1,1.1,8.7,2.7,4.4,3.15,Moderate
+1293,Data Science,77,9.9,0.2,6.8,2.9,4.2,3.09,High
+1294,Computer Organization,84,8.6,3.5,9.7,1.8,0.4,3.3,High
+1295,Computer Networks,78,9.3,2.2,9.1,1,2.4,3.07,High
+1296,Computer Organization,71,7.3,1.1,9.8,1.8,4,2.91,Moderate
+1297,Computer Networks,73,5.5,2.1,5.3,0.7,10.4,2.79,High
+1298,Computer Networks,72,7.2,3.2,8.7,2.1,2.8,2.78,Moderate
+1299,OOP,73,6.7,1.3,8.9,0.3,6.8,2.79,Moderate
+1300,Fundamentals of Programming,74,6.2,3.7,9.3,3.4,1.4,2.92,Moderate
+1301,OOP,78,7.4,2.1,9.9,4.4,0.2,3.23,Moderate
+1302,Computer Networks,75,6,0.9,8.4,2.4,6.3,2.79,Moderate
+1303,MIS,92,9.7,0.4,7.6,5.5,0.8,3.73,High
+1304,Foundation of web technologies,65,5.8,3.9,9.6,0.8,3.9,2.57,Low
+1305,Computer Networks,66,5.6,0.3,9.5,1.2,7.4,2.57,Low
+1306,OOP,70,8,0.3,6.1,5.6,4,2.76,Moderate
+1307,MIS,81,9.5,3.1,5.1,2,4.3,3.14,High
+1308,OOP,93,9.5,2.5,5.4,5.5,1.1,3.59,High
+1309,Computer Organization,80,9.8,0.3,7.7,1.8,4.4,3.23,High
+1310,DSA,83,7.9,3.8,7.5,0.4,4.4,3.11,Moderate
+1311,SAD,77,8.1,1.4,9.3,2.3,2.9,3.11,High
+1312,Data Science,82,8.8,1.1,8.8,1.1,4.2,3.22,High
+1313,OOP,71,6.6,1.9,9.7,5.4,0.4,2.88,Moderate
+1314,Data Science,63,5.7,2,7.3,5.4,3.6,2.62,Low
+1315,Database Systems,86,9.7,1.5,7.5,4.8,0.5,3.3,High
+1316,OOP,73,6.1,0.8,5.2,3.9,8,2.56,High
+1317,DSA,72,6.3,0.2,6.2,4.8,6.5,2.93,Moderate
+1318,Data Science,86,7.1,3.9,6,1.3,5.7,3.3,Moderate
+1319,Computer Networks,67,6.5,0.7,6.9,5.5,4.4,2.71,Moderate
+1320,OOP,95,9.7,0.2,6.1,3.4,4.6,3.81,High
+1321,Fundamentals of Programming,91,8.1,0.2,7,3.9,4.8,3.41,High
+1322,SAD,79,6.6,0.4,7.1,0.8,9.1,3.27,Moderate
+1323,DSA,72,9.7,1.9,6.6,4.4,1.4,3.06,High
+1324,Data Science,84,9.1,3.5,8.4,0.1,2.9,3.36,High
+1325,DSA,80,7.8,3.1,5.7,1.4,6,3.14,High
+1326,MIS,87,7.2,0,9.1,2.2,5.5,3.41,Moderate
+1327,SAD,68,7.7,2.7,8.5,4.9,0.2,2.68,Moderate
+1328,Computer Networks,91,9.8,2.6,6.5,0.6,4.5,3.62,High
+1329,OOP,89,9.2,1.4,8.3,2.4,2.7,3.47,High
+1330,OOP,55,5.3,1.7,7.7,2.6,6.7,2.54,Low
+1331,OOP,81,8.7,3.3,8.9,0.1,3,3.34,High
+1332,SAD,79,9.7,3.3,9.2,0.5,1.3,3.18,High
+1333,Fundamentals of Programming,78,7.1,1.9,5.8,0.2,9,3.02,High
+1334,Database Systems,90,9.6,2.3,8.3,3.5,0.3,3.41,High
+1335,Foundation of web technologies,75,6.7,2.5,5.2,1.1,8.5,3.11,High
+1336,Computer Organization,83,6.8,1.5,7.7,0,8,3.15,Moderate
+1337,Data Science,68,6.2,0.8,6.3,4.8,5.9,2.76,Moderate
+1338,Fundamentals of Programming,75,7.5,3.5,6.2,0.5,6.3,3,Moderate
+1339,Computer Networks,76,6.8,3,7.8,4.9,1.5,2.99,Moderate
+1340,Data Science,81,5.2,3.9,6.9,0.9,7.1,3.28,Low
+1341,OOP,91,8.3,1.1,7.9,3.5,3.2,3.49,High
+1342,DSA,72,6.3,1.8,7.7,4,4.2,2.91,Moderate
+1343,Computer Networks,81,8.9,1.6,8.2,0.8,4.5,3.3,High
+1344,Data Science,89,8.6,0.1,6,2.9,6.4,3.42,High
+1345,OOP,78,9.4,2.1,9.6,1.4,1.5,3.2,High
+1346,Data Science,84,9,1,9.5,4.1,0.4,3.34,High
+1347,DSA,83,9.7,2.1,8.4,3,0.8,3.51,High
+1348,OOP,70,5.2,2,5.8,1.1,9.9,2.58,High
+1349,Database Systems,72,6.8,1.7,8.1,0.4,7,2.75,Moderate
+1350,Fundamentals of Programming,88,7.9,2.5,7.8,4.3,1.5,3.19,Moderate
+1351,MIS,85,6.7,3.1,7.2,2.9,4.1,3.24,Moderate
+1352,Computer Organization,79,6.5,0.3,5.5,5.5,6.2,3.28,High
+1353,SAD,86,8.4,0.5,6.8,3.6,4.7,3.34,High
+1354,Computer Organization,64,5,0.8,9.8,3.7,4.7,2.69,Low
+1355,Computer Networks,77,6.3,0.3,5.1,1.5,10.8,2.9,High
+1356,Computer Organization,84,8.6,3.7,7,0.9,3.8,3.48,High
+1357,OOP,78,7.6,3.6,9,0.3,3.5,3.27,Moderate
+1358,Database Systems,90,9.5,0.5,7.7,5.3,1,3.78,High
+1359,MIS,77,7.1,1.9,5.4,1.7,7.9,3.14,High
+1360,Fundamentals of Programming,71,6.4,1.8,8.4,1,6.4,2.93,Moderate
+1361,Fundamentals of Programming,70,7.4,3,9.3,2.7,1.6,2.95,Moderate
+1362,DSA,94,9.7,0.5,8.9,1.3,3.6,3.53,High
+1363,SAD,98,9.7,2.9,8.8,0.6,2,3.87,High
+1364,Data Science,79,8.8,0.4,9.8,4.5,0.5,3.12,High
+1365,Database Systems,83,6.4,3.3,7.6,2.8,3.9,3.11,Moderate
+1366,Data Science,74,8.6,1.6,8.1,4,1.7,2.94,High
+1367,MIS,76,8.6,0.2,9.3,2.7,3.2,3.11,High
+1368,Computer Organization,69,7.4,3.5,6.9,4.5,1.7,2.95,Moderate
+1369,Fundamentals of Programming,68,5.5,1.9,10,4.6,2,2.83,Low
+1370,MIS,70,6.2,1.6,8.9,4.6,2.7,2.63,Moderate
+1371,Computer Organization,81,6.1,3.7,8,2.3,3.9,3.41,Moderate
+1372,Fundamentals of Programming,81,7.8,1.9,7.5,1.1,5.7,3.18,Moderate
+1373,Computer Organization,82,9.1,2.2,5.7,4.6,2.4,3.17,High
+1374,SAD,78,7.6,0.5,9.7,1.1,5.1,3.07,Moderate
+1375,Database Systems,68,6.3,1.6,6.9,4.8,4.4,2.69,Moderate
+1376,Computer Networks,75,6.3,2,5.7,3.7,6.3,2.91,High
+1377,MIS,78,7.8,2.9,9.7,3.3,0.3,3.09,Moderate
+1378,MIS,87,9.5,3.9,9.3,0.1,1.2,3.28,High
+1379,Foundation of web technologies,84,9.7,1.7,5,2.7,4.9,3.47,High
+1380,OOP,73,6.7,1.9,8.1,5.2,2.1,2.88,Moderate
+1381,SAD,76,8.3,1.7,9.1,4.4,0.5,3.26,High
+1382,SAD,63,6.4,0.2,8.3,5.2,3.9,2.75,Moderate
+1383,Data Science,74,5.8,3.2,9.3,5.2,0.5,2.96,Low
+1384,Computer Organization,75,6.6,2.2,5.3,0.3,9.6,2.94,High
+1385,OOP,85,8.6,1.8,6.3,1.1,6.2,3.2,High
+1386,Database Systems,79,7.4,1.4,6.6,5.8,2.8,2.87,Moderate
+1387,Database Systems,82,8.2,0.1,7.2,5.3,3.2,3.12,High
+1388,SAD,84,8.8,2.4,7.9,0.3,4.6,3.26,High
+1389,Database Systems,63,5.7,2.5,6,3,6.8,2.5,Low
+1390,Foundation of web technologies,84,9.7,3.4,8.6,0.2,2.1,3.53,High
+1391,MIS,70,5.5,2,5.8,5.9,4.8,2.82,High
+1392,DSA,73,6.8,2.6,5.6,2.6,6.4,2.77,High
+1393,Computer Networks,74,6.4,3.6,5.2,5.5,3.3,2.86,High
+1394,Data Science,84,8.9,0.1,9.8,2.7,2.5,3.51,High
+1395,Computer Organization,77,6.5,1.5,5.3,5.9,4.8,3,High
+1396,Computer Networks,77,7.2,3.8,6.2,3.2,3.6,3.02,Moderate
+1397,Computer Organization,82,7.4,2.8,5.3,1.2,7.3,3.25,High
+1398,Fundamentals of Programming,68,5.9,2.3,6.1,5.2,4.5,2.72,Low
+1399,Computer Networks,91,9.7,2.1,6.8,1.3,4.1,3.55,High
+1400,DSA,99,9.7,1.6,8.5,2.1,2.1,3.87,High
+1401,SAD,78,7.6,1.1,7.3,2.8,5.2,3.2,Moderate
+1402,Foundation of web technologies,77,6.6,0.2,7.5,3.3,6.4,3.02,Moderate
+1403,MIS,73,5.8,3,9.9,5,0.3,2.93,Low
+1404,MIS,76,8.5,1.8,7.7,5.1,0.9,3.23,High
+1405,Foundation of web technologies,82,7.4,1.5,7.5,3.5,4.1,3.33,Moderate
+1406,OOP,73,5.5,2.4,5.6,0.5,10,3.11,High
+1407,Fundamentals of Programming,75,7.6,1.6,7.9,0.5,6.4,2.89,Moderate
+1408,Computer Organization,87,9.9,2.2,8.4,1.1,2.4,3.43,High
+1409,DSA,69,5.5,3.9,6.4,2.5,5.7,2.8,Low
+1410,Database Systems,89,9.1,2.1,6.4,0.4,6,3.37,High
+1411,Computer Networks,73,5.8,3.6,8.4,1.5,4.7,2.91,Low
+1412,Fundamentals of Programming,73,7.9,1.6,6.8,1.3,6.4,3.1,Moderate
+1413,Computer Networks,72,8.3,3.9,5.9,3.5,2.4,2.95,High
+1414,DSA,68,6.3,3.3,7.4,3.3,3.7,2.52,Moderate
+1415,Data Science,75,6.5,0.7,5.4,4.3,7.1,3.1,High
+1416,Data Science,72,7,1.7,7.3,2.2,5.8,2.85,Moderate
+1417,Fundamentals of Programming,71,5.5,1.2,8.3,4,5,2.76,Low
+1418,SAD,65,6,0.8,5.1,5.4,6.7,2.54,High
+1419,DSA,77,6.1,0.9,6.4,0.8,9.8,2.79,Moderate
+1420,DSA,69,5.7,2.6,6.7,4.2,4.8,2.9,Low
+1421,Foundation of web technologies,64,7.8,1,8.3,0.7,6.2,2.69,Moderate
+1422,SAD,77,6.3,2.4,9.4,5.9,0,3.22,Moderate
+1423,Computer Organization,68,8,1.6,6.1,1.5,6.8,2.75,Moderate
+1424,Computer Organization,88,9.6,1.5,6.9,2.3,3.7,3.37,High
+1425,Database Systems,82,9.2,2.6,8.1,1.4,2.7,3.39,High
+1426,MIS,85,7,2,8.3,0.1,6.6,3.27,Moderate
+1427,Data Science,84,9.4,1.8,6.7,0.8,5.3,3.37,High
+1428,Computer Organization,58,7,2.7,7.1,5.8,1.4,2.47,Moderate
+1429,SAD,79,8,3.2,5.5,2.4,4.9,3.36,High
+1430,DSA,71,9.3,0.3,5.4,5.1,3.9,3.02,High
+1431,Computer Organization,74,6.1,2.7,7.7,5,2.5,3.04,Moderate
+1432,DSA,76,7.1,1.3,8,5.6,2,3.08,Moderate
+1433,Computer Organization,95,9.2,4,5.1,0.6,5.1,3.62,High
+1434,Data Science,78,6.4,1,8.9,0.3,7.4,3.04,Moderate
+1435,Computer Networks,79,6.8,2,7.8,4.4,3,3.27,Moderate
+1436,Computer Organization,73,7.9,2.2,8.2,1.5,4.2,2.87,Moderate
+1437,SAD,78,5.4,0.5,6.1,3,9,2.91,Low
+1438,Computer Organization,93,8.9,1.4,7,2.4,4.3,3.5,High
+1439,MIS,68,6,0.2,8,5.9,3.9,2.76,Moderate
+1440,Data Science,91,9.1,2.8,9.7,1,1.4,3.53,High
+1441,SAD,85,8.3,1.9,8.2,2.5,3.1,3.25,High
+1442,Foundation of web technologies,67,7.6,3.2,8.7,3,1.5,2.86,Moderate
+1443,SAD,73,5.6,2.9,7.5,5.4,2.6,2.98,Low
+1444,MIS,67,5.7,3,5,1,9.3,2.42,High
+1445,Computer Networks,74,7.9,2.9,9.6,2.5,1.1,2.99,Moderate
+1446,Data Science,68,5,0.5,7.7,4.1,6.7,3.07,Low
+1447,Foundation of web technologies,78,7.1,2.9,7.6,0.4,6,3.15,Moderate
+1448,MIS,84,8.6,3.6,5.6,5.9,0.3,3.21,High
+1449,MIS,68,6,0,10,1.7,6.3,2.7,Moderate
+1450,Fundamentals of Programming,84,7.9,3.6,6.6,4,1.9,3.29,Moderate
+1451,Data Science,70,5.9,2.5,6.7,1.3,7.6,2.7,Low
+1452,SAD,82,9.5,1.6,6.2,2.7,4,3.32,High
+1453,DSA,74,6.6,3,9.9,2,2.5,3.03,Moderate
+1454,Computer Networks,78,5.8,2.8,7.6,3.9,3.9,3.09,Low
+1455,DSA,98,9.4,1.8,9.5,2.5,0.8,3.91,High
+1456,SAD,73,6.6,3.9,8.3,0.2,5,2.93,Moderate
+1457,SAD,65,6.6,2.5,5.3,0.1,9.5,2.6,High
+1458,Data Science,72,7.2,1.1,5.8,4.1,5.8,2.96,High
+1459,SAD,85,7.6,0.8,6.6,3.6,5.4,3.3,Moderate
+1460,Fundamentals of Programming,88,8.6,2.7,7.4,3.4,1.9,3.45,High
+1461,Foundation of web technologies,59,5.2,2.5,8.9,3,4.4,2.51,Low
+1462,SAD,75,8.2,2.8,9.4,1.2,2.4,3.06,High
+1463,DSA,97,8.8,2.2,9.4,1.9,1.7,3.85,High
+1464,SAD,84,8.7,3.9,5.4,0.3,5.7,3.42,High
+1465,Fundamentals of Programming,89,9.7,2.1,8.1,2,2.1,3.49,High
+1466,Computer Organization,81,8.7,1.2,6.5,5,2.6,3.25,High
+1467,Computer Organization,72,5.4,3.5,6.3,3.6,5.2,2.85,Low
+1468,MIS,78,7.1,2.8,6.7,1.7,5.7,3.16,Moderate
+1469,Computer Networks,89,10,3,8.2,1,1.8,3.81,High
+1470,Database Systems,74,7.7,3.4,5.2,2.2,5.5,3.22,High
+1471,Foundation of web technologies,76,6.2,1.8,5.4,5.7,4.9,2.98,High
+1472,OOP,80,7.8,3.7,5,4.5,3,3.16,High
+1473,MIS,87,9.5,0.6,5.5,2.5,5.9,3.44,High
+1474,Computer Networks,83,7.6,0.6,5,4.9,5.9,3.29,High
+1475,Computer Organization,68,5.4,2.5,9.6,1.3,5.2,2.69,Low
+1476,DSA,84,8,0.7,8.7,1.8,4.8,3.25,Moderate
+1477,OOP,84,7.3,2.4,5.9,4.4,4,3.3,High
+1478,Computer Networks,69,5.8,2.8,5.6,2.6,7.2,2.62,High
+1479,Computer Networks,73,6.2,3,6.3,5.3,3.2,2.91,Moderate
+1480,MIS,80,8.1,0.4,7,4.3,4.2,3.24,High
+1481,OOP,83,8.3,2.5,6.4,2.3,4.5,3.31,High
+1482,Data Science,73,7.5,2.8,6.2,1.9,5.6,3.02,Moderate
+1483,Database Systems,74,6.7,0.1,6.7,4.8,5.7,3.01,Moderate
+1484,Data Science,83,7.3,0.1,9.4,0.1,7.1,3.29,Moderate
+1485,OOP,87,9.7,2,6.7,5.2,0.4,3.47,High
+1486,Data Science,77,7.7,0.9,7.1,3.9,4.4,3.08,Moderate
+1487,Fundamentals of Programming,74,8.6,0,9.7,0.9,4.8,3.14,High
+1488,Computer Organization,67,5.2,0.5,9.9,1.9,6.5,2.61,Low
+1489,Fundamentals of Programming,73,5.6,0.4,8.6,5.1,4.3,2.81,Low
+1490,SAD,73,6.1,2.1,6.3,5.6,3.9,2.73,Moderate
+1491,Data Science,95,9.5,2.3,6.8,2.1,3.3,3.74,High
+1492,SAD,74,7.3,3.4,9.7,1.2,2.4,2.97,Moderate
+1493,DSA,78,7.8,0.4,6,2.5,7.3,3.24,Moderate
+1494,Foundation of web technologies,75,5.8,1.8,8,4.2,4.2,2.82,Low
+1495,DSA,76,6.9,3.5,7.8,2.5,3.3,3.02,Moderate
+1496,OOP,81,9.1,2.5,9.2,1.6,1.6,3.22,High
+1497,Computer Networks,67,5.6,0.1,6.5,4.2,7.6,2.71,Low
+1498,Computer Organization,82,7.5,1.7,7.1,1.4,6.3,3.32,Moderate
+1499,Data Science,71,5.7,0.8,5.3,1.2,11,2.74,High
+1500,MIS,67,6.8,0,9.2,0.2,7.8,2.8,Moderate
+1501,Foundation of web technologies,85,9.7,3.6,7.7,1.6,1.4,3.22,High
+1502,Database Systems,93,8.2,0.2,5.3,2.7,7.6,3.55,High
+1503,Database Systems,75,7.7,3.6,5.5,4.9,2.3,3.06,High
+1504,Database Systems,66,6.6,1.6,5.8,3,7,2.73,High
+1505,Data Science,77,9,1.8,7.5,4.8,0.9,3.33,High
+1506,Database Systems,79,6.3,3.5,7.9,1.3,5,3.32,Moderate
+1507,Fundamentals of Programming,77,6.3,3.2,5.2,6,3.3,3,High
+1508,Foundation of web technologies,75,7,2,9.4,2.3,3.3,2.98,Moderate
+1509,Fundamentals of Programming,76,7.7,0.2,5,1.5,9.6,3,High
+1510,Computer Networks,67,5.6,1.6,8.2,4.3,4.3,2.91,Low
+1511,Foundation of web technologies,68,5.9,0.3,9.7,1.6,6.5,2.76,Low
+1512,Fundamentals of Programming,91,9.1,3.1,8,1.3,2.5,3.46,High
+1513,Foundation of web technologies,71,6.3,0.5,7.5,3.5,6.2,2.87,Moderate
+1514,Computer Networks,61,6.8,2.6,9.5,0.8,4.3,2.58,Moderate
+1515,SAD,75,6.9,0.6,8.1,4.4,4,3,Moderate
+1516,Data Science,86,9.8,0.3,8,0.3,5.6,3.53,High
+1517,Data Science,85,9.5,2.1,8.3,3.4,0.7,3.35,High
+1518,Database Systems,75,5.6,1.9,8,0.2,8.3,2.99,Low
+1519,DSA,70,6.4,0.1,7.1,5.4,5,2.72,Moderate
+1520,Database Systems,83,9.6,3,8.7,1.9,0.8,3.45,High
+1521,OOP,78,6,0.8,8.4,1.3,7.5,3.19,Moderate
+1522,Fundamentals of Programming,85,8.9,1.8,9,3.6,0.7,3.27,High
+1523,Foundation of web technologies,75,8.3,0.9,6.4,1.9,6.5,3.18,High
+1524,DSA,66,6,1.8,9.5,0.6,6.1,2.78,Moderate
+1525,Computer Networks,73,8.6,2.7,5.5,5.5,1.7,2.9,High
+1526,OOP,89,8.8,1,8.5,0.2,5.5,3.52,High
+1527,Computer Networks,89,9.2,1.8,8.2,1.1,3.7,3.6,High
+1528,Data Science,80,7.4,2.5,7.3,5.4,1.4,3.25,Moderate
+1529,Data Science,77,7.5,3.4,9,1.7,2.4,3.03,Moderate
+1530,Database Systems,80,9.1,0.9,7.6,4.8,1.6,3.08,High
+1531,Fundamentals of Programming,72,6.8,2.6,6.2,0.7,7.7,3,Moderate
+1532,DSA,76,6.4,3.4,6.7,5.8,1.7,2.98,Moderate
+1533,Computer Organization,87,9.9,1.1,5.2,4.2,3.6,3.3,High
+1534,OOP,81,8.5,0.1,9.4,0.8,5.2,3.25,High
+1535,OOP,66,5.6,0.7,9.8,4.2,3.7,2.75,Low
+1536,Database Systems,78,6.7,0.9,7.4,3.3,5.7,3.26,Moderate
+1537,Data Science,70,8.2,1,9.7,0.9,4.2,2.81,High
+1538,Database Systems,79,7.2,2.3,7.2,2.5,4.8,3.03,Moderate
+1539,Foundation of web technologies,89,8.7,2.7,9.2,0.8,2.6,3.58,High
+1540,DSA,85,6.8,1.9,6.6,0.9,7.8,3.38,Moderate
+1541,Fundamentals of Programming,69,6.1,0.4,8.4,4,5.1,2.88,Moderate
+1542,SAD,88,7.9,3.9,7.7,4.1,0.4,3.4,Moderate
+1543,MIS,64,5.4,0.8,7.2,3.5,7.1,2.71,Low
+1544,MIS,81,9,2.4,6,3,3.6,3.32,High
+1545,Database Systems,77,8.7,3.1,7.5,1.4,3.3,2.99,High
+1546,Foundation of web technologies,73,8.7,1,5.9,3.2,5.2,3.17,High
+1547,DSA,73,6.4,2.5,5.6,3.9,5.6,2.89,High
+1548,Computer Organization,83,8.9,2.4,9.9,1,1.8,3.44,High
+1549,MIS,73,8.4,0.3,7,5.8,2.5,2.9,High
+1550,DSA,72,5.6,2.8,8.2,2.2,5.2,2.91,Low
+1551,Fundamentals of Programming,87,9.8,0.1,6.5,5.5,2.1,3.24,High
+1552,Computer Networks,74,7.7,3.3,5.5,5.7,1.8,2.99,High
+1553,Foundation of web technologies,96,9,0.7,8.6,2.2,3.5,3.62,High
+1554,Data Science,86,9.8,0.5,7.1,2.9,3.7,3.38,High
+1555,DSA,67,6.9,1.5,5.3,4.1,6.2,2.77,High
+1556,Fundamentals of Programming,84,9.1,3.2,7.4,1.3,3,3.31,High
+1557,Computer Organization,76,8.2,1.2,6.2,4.4,4,3.08,High
+1558,SAD,72,6.2,3.7,7.6,2.2,4.3,2.84,Moderate
+1559,Data Science,76,9.4,1.6,6.7,1.2,5.1,3.11,High
+1560,SAD,82,8.4,1.2,7.9,0.4,6.1,3.06,High
+1561,Computer Organization,69,6,1.6,9.7,2.3,4.4,2.66,Moderate
+1562,Fundamentals of Programming,75,5.6,0.2,6.5,0.9,10.8,3,Low
+1563,MIS,78,5.9,3,5.1,3.3,6.7,2.91,High
+1564,SAD,67,7.8,1.3,6.5,4.4,4,2.69,Moderate
+1565,Data Science,92,9.4,0.8,5.5,5.4,2.9,3.55,High
+1566,Database Systems,65,6.8,0.5,7.9,3.2,5.6,2.61,Moderate
+1567,OOP,74,6,1.8,9,3.5,3.7,2.92,Moderate
+1568,DSA,77,8.5,3.2,8.1,0.6,3.6,3.09,High
+1569,MIS,89,8.6,2.7,5.1,2.5,5.1,3.54,High
+1570,SAD,67,6.1,2.4,9.6,4.7,1.2,2.67,Moderate
+1571,Computer Networks,89,9.6,3.9,5.1,3.4,2,3.65,High
+1572,DSA,71,6.3,3.9,8.1,4.5,1.2,2.89,Moderate
+1573,Database Systems,64,5.4,0.7,8.8,0.1,9,2.57,Low
+1574,Computer Organization,88,8.1,2.8,6.7,0.6,5.8,3.5,High
+1575,OOP,56,5.3,2.4,7.6,4.5,4.2,2.25,Low
+1576,Fundamentals of Programming,82,7,0.1,6.7,5.9,4.3,3.12,Moderate
+1577,Database Systems,86,9.4,1.3,7.9,4.6,0.8,3.34,High
+1578,Database Systems,69,5.4,2,9.8,4.2,2.6,2.8,Low
+1579,Computer Organization,82,5.4,0.8,8.9,5,3.9,3.12,Low
+1580,Foundation of web technologies,81,5.1,3.3,8.9,1.6,5.1,3.02,Low
+1581,Computer Organization,73,8.5,0.9,5.2,1.2,8.2,3.17,High
+1582,Foundation of web technologies,74,7.1,2,7.4,1.6,5.9,2.86,Moderate
+1583,Foundation of web technologies,69,5.1,2.4,7,1.8,7.7,2.84,Low
+1584,MIS,90,9.3,2,5.7,4.2,2.8,3.51,High
+1585,MIS,76,6,1.8,5.3,5,5.9,2.88,High
+1586,Data Science,86,8.7,2.5,9,1.6,2.2,3.53,High
+1587,SAD,85,8.9,1.8,9.7,1.8,1.8,3.63,High
+1588,SAD,86,9.1,2.2,5.9,2.8,4,3.33,High
+1589,Fundamentals of Programming,98,9.8,3,9.1,0.1,2,3.9,High
+1590,SAD,77,9.2,0.2,9.3,2.9,2.4,3.29,High
+1591,MIS,79,6,1.3,6.4,3.2,7.1,2.84,Moderate
+1592,Data Science,76,6.2,1.8,7.6,4.6,3.8,2.98,Moderate
+1593,Data Science,78,7.2,3.2,8.1,0.6,4.9,3.04,Moderate
+1594,Foundation of web technologies,74,7,3,7.9,2.3,3.8,2.81,Moderate
+1595,Computer Organization,64,5.9,0.9,7.9,2.5,6.8,2.63,Low
+1596,Fundamentals of Programming,82,8.3,3.4,6.3,2.9,3.1,3.26,High
+1597,Foundation of web technologies,79,9.9,1.3,8,0.4,4.4,3.33,High
+1598,Computer Organization,86,9.8,2.9,8.9,1.7,0.7,3.51,High
+1599,SAD,85,7.9,1.8,9.3,4.8,0.2,3.34,Moderate
+1600,Foundation of web technologies,75,7.9,2.2,7.3,1.3,5.3,3.18,Moderate
+1601,DSA,69,5,1,7.5,2.3,8.2,2.82,Low
+1602,SAD,72,6.8,1.8,5.7,0.3,9.4,3.01,High
+1603,Computer Organization,76,8.9,2.3,8.8,0.6,3.4,3.02,High
+1604,Fundamentals of Programming,77,6.1,0,5.7,1.9,10.3,3.01,High
+1605,Computer Organization,75,5.6,3.9,6.5,0.8,7.2,2.92,Low
+1606,Foundation of web technologies,66,5.3,3.4,9.8,1.4,4.1,2.53,Low
+1607,Foundation of web technologies,77,7.3,0.1,8.2,2.5,5.9,2.92,Moderate
+1608,Database Systems,80,8.3,1.7,5.9,4.1,4,3.11,High
+1609,Fundamentals of Programming,81,7.8,3.4,5.6,4.7,2.5,3.02,High
+1610,Computer Networks,84,8.5,1.8,9.7,0.6,3.4,3.34,High
+1611,SAD,84,8.2,1.5,9.8,1.5,3,3.4,High
+1612,Data Science,86,10,1,7.2,3,2.8,3.37,High
+1613,Fundamentals of Programming,67,6.5,0.1,6.1,1.7,9.6,2.72,Moderate
+1614,Data Science,90,9.4,2.8,5.4,3.9,2.5,3.37,High
+1615,Fundamentals of Programming,89,8.3,3.8,5,1.5,5.4,3.43,High
+1616,Fundamentals of Programming,77,5.5,2.1,6.2,1.1,9.1,2.98,Low
+1617,Computer Organization,85,9.1,0.5,7.3,5.6,1.5,3.37,High
+1618,Fundamentals of Programming,72,5.9,1.3,7.1,1.9,7.8,2.91,Low
+1619,Database Systems,75,6.4,3.9,5.8,4.4,3.5,2.91,High
+1620,Computer Networks,71,5.9,2.6,8.6,4.1,2.8,2.98,Low
+1621,Foundation of web technologies,85,6.6,1,9.8,5.5,1.1,3.23,Moderate
+1622,OOP,76,7.3,1.7,5.8,2.6,6.6,3.07,High
+1623,Data Science,85,7.7,0.1,7.2,4.7,4.3,3.37,Moderate
+1624,Foundation of web technologies,90,9.5,0.1,7.8,4.7,1.9,3.71,High
+1625,OOP,86,7.7,1.3,5.7,5.3,4,3.36,High
+1626,Computer Networks,78,7.9,2.7,9,2.9,1.5,3.17,Moderate
+1627,Computer Networks,74,7,2.1,9,2.2,3.7,2.89,Moderate
+1628,Data Science,87,9.6,0.4,8.2,2.4,3.4,3.4,High
+1629,Data Science,77,7,2.7,5.3,3.6,5.4,3.17,High
+1630,Computer Networks,71,5.9,3.6,8.3,5.3,0.9,2.99,Low
+1631,OOP,74,7.4,2.2,9.6,4.3,0.5,2.77,Moderate
+1632,Fundamentals of Programming,74,7,1.6,6.4,1.6,7.4,2.97,Moderate
+1633,SAD,83,9.3,0.3,8.4,1,5,3.29,High
+1634,DSA,74,6.3,3.1,9.4,1.2,4,2.91,Moderate
+1635,Foundation of web technologies,84,7.3,1.9,9.4,4.1,1.3,3.51,Moderate
+1636,Computer Organization,87,9.2,0,7,5.4,2.4,3.41,High
+1637,Foundation of web technologies,94,8.7,2.2,7.6,1.9,3.6,3.73,High
+1638,Computer Organization,76,7.1,2.9,9.3,0.7,4,3.12,Moderate
+1639,OOP,78,7.3,1.6,8.4,1.5,5.2,3.27,Moderate
+1640,Computer Organization,80,7.1,3.6,10,0.4,2.9,3.13,Moderate
+1641,Data Science,83,6.2,3.8,9.8,0.4,3.8,3.17,Moderate
+1642,SAD,70,5.1,2.4,6.4,5.2,4.9,2.77,Low
+1643,SAD,69,6.4,2.7,8.4,1.3,5.2,2.94,Moderate
+1644,Data Science,69,6.4,3.2,9,2.5,2.9,2.87,Moderate
+1645,Database Systems,74,8,2.4,9.1,1.9,2.6,3.01,Moderate
+1646,OOP,79,7.7,1.8,7.2,0.5,6.8,2.97,Moderate
+1647,Database Systems,84,8.6,0.9,6,2.5,6,3.38,High
+1648,Database Systems,67,6.9,1.8,7.7,1.2,6.4,2.75,Moderate
+1649,Foundation of web technologies,67,5.8,3.5,7.2,2.5,5,2.87,Low
+1650,Computer Networks,75,7.8,2.2,8.5,1,4.5,3.06,Moderate
+1651,Foundation of web technologies,63,6.3,3.2,9.7,0.7,4.1,2.65,Moderate
+1652,Computer Networks,67,5.3,1.3,5.7,4.3,7.4,2.79,High
+1653,DSA,81,7.7,0.6,5,4.8,5.9,3.23,High
+1654,Computer Organization,68,6.7,2.3,6.6,0.5,7.9,2.77,Moderate
+1655,Computer Networks,90,6.1,0.8,7.1,3.9,6.1,3.4,Moderate
+1656,Data Science,92,9.8,2.4,7.4,2.5,1.9,3.56,High
+1657,Foundation of web technologies,84,9.6,3.3,6.6,1.1,3.4,3.45,High
+1658,OOP,71,8.7,2,5.3,4.3,3.7,2.96,High
+1659,Computer Organization,98,9,1.2,8.3,2.3,3.2,3.74,High
+1660,DSA,91,9.4,2,6.6,4.5,1.5,3.46,High
+1661,Computer Networks,60,6.1,1.6,9.3,4.3,2.7,2.65,Moderate
+1662,DSA,74,6.8,1.1,5.9,4.5,5.7,2.93,High
+1663,OOP,69,6.3,1.8,6.9,5.9,3.1,2.8,Moderate
+1664,Database Systems,71,5.4,2.4,8,2.5,5.7,2.77,Low
+1665,SAD,77,7.2,0.2,7.6,3,6,2.83,Moderate
+1666,OOP,74,6.3,0.7,9.8,5.1,2.1,3.03,Moderate
+1667,MIS,72,6.2,1.3,6,3,7.5,3.12,Moderate
+1668,OOP,74,5.8,3.2,9,0.8,5.2,2.88,Low
+1669,DSA,70,7,0.7,6.3,1.6,8.4,2.63,Moderate
+1670,Data Science,92,9.7,0.5,9.9,0.9,3,3.72,High
+1671,Foundation of web technologies,87,8.9,1.4,5.7,5.1,2.9,3.55,High
+1672,Data Science,71,7.8,1.9,7.5,4.4,2.4,2.91,Moderate
+1673,DSA,75,5.4,2.7,9.5,0.3,6.1,2.9,Low
+1674,Foundation of web technologies,72,7.2,1.6,5.7,3,6.5,2.94,High
+1675,MIS,73,5.6,1.9,8.8,1.5,6.2,2.89,Low
+1676,SAD,82,8.4,3.4,7.1,3.9,1.2,3.26,High
+1677,Computer Organization,67,5.2,0.5,6,2.4,9.9,2.69,Low
+1678,DSA,88,8.3,2.8,7.9,1.8,3.2,3.44,High
+1679,Computer Networks,76,7.9,1.4,5.4,6,3.3,3.11,High
+1680,DSA,83,8.3,1.3,7,1.6,5.8,3.39,High
+1681,DSA,91,6.7,1.6,8.6,3.1,4,3.54,Moderate
+1682,Foundation of web technologies,84,9.6,0.2,7.9,5.1,1.2,3.46,High
+1683,Fundamentals of Programming,72,6.2,3.5,5.1,4.4,4.8,2.97,High
+1684,OOP,76,7.2,0.2,9.6,2.8,4.2,3.19,Moderate
+1685,Fundamentals of Programming,81,5.1,2.8,7.4,0.7,8,3.15,Low
+1686,MIS,84,7.5,3.3,9.3,2.4,1.5,3.36,Moderate
+1687,Computer Networks,59,5.1,2.8,7.1,3.4,5.6,2.5,Low
+1688,SAD,95,9.6,0.5,8.4,0,5.5,3.7,High
+1689,Database Systems,78,9.6,0.5,5.5,2,6.4,3.19,High
+1690,MIS,74,7.9,1.8,5.2,1.9,7.2,3.07,High
+1691,Database Systems,80,9.1,2.8,8.6,2.4,1.1,3.24,High
+1692,Database Systems,77,6.4,3.3,9.9,2.2,2.2,2.9,Moderate
+1693,SAD,71,5,0.6,6.6,3.5,8.3,2.89,Low
+1694,Data Science,84,8.9,3,8,2.6,1.5,3.29,High
+1695,Fundamentals of Programming,87,8.2,2.5,7.8,5.4,0.1,3.4,High
+1696,DSA,90,9.4,0.9,5.4,2.9,5.4,3.56,High
+1697,Computer Organization,80,7.6,3.3,7.2,3.4,2.5,3.03,Moderate
+1698,Database Systems,78,8.1,3.3,5.8,3.6,3.2,3.22,High
+1699,Computer Networks,70,8,0.7,5.6,5.9,3.8,2.93,High
+1700,MIS,66,5.9,2.7,8,3.9,3.5,2.78,Low
+1701,Data Science,58,5.4,3.6,6.9,1.9,6.2,2.35,Low
+1702,Database Systems,78,9.3,3.7,6.5,3.9,0.6,3.24,High
+1703,Data Science,88,8.9,3.7,6.2,3,2.2,3.49,High
+1704,Data Science,66,5,2.3,6.7,1.9,8.1,2.64,Low
+1705,Database Systems,85,8.2,3.4,8,3.8,0.6,3.26,High
+1706,Foundation of web technologies,70,7.3,0,7.8,4,4.9,2.75,Moderate
+1707,OOP,80,8,2.9,7.9,0.3,4.9,3.25,Moderate
+1708,Computer Networks,70,6.4,0.3,7.1,3.3,6.9,2.77,Moderate
+1709,DSA,75,6.6,2.9,8.2,2,4.3,3.14,Moderate
+1710,DSA,87,8.2,2.2,5.1,4.2,4.3,3.48,High
+1711,Computer Networks,73,6.9,3.8,9.1,2.5,1.7,2.88,Moderate
+1712,Foundation of web technologies,72,6.7,1.9,6.5,3.1,5.8,2.87,Moderate
+1713,DSA,73,5.8,3.9,5.5,5.6,3.2,2.88,High
+1714,Data Science,85,8.6,1.7,8.2,1.9,3.6,3.46,High
+1715,SAD,73,6.5,2.3,7.5,3.5,4.2,2.8,Moderate
+1716,MIS,69,5.4,0.2,6.3,0.4,11.7,2.53,Low
+1717,Fundamentals of Programming,69,5.5,3.3,5.2,4,6,2.95,High
+1718,DSA,72,7.4,1.2,7.6,2.3,5.5,3.03,Moderate
+1719,Computer Networks,86,7.8,0.5,10,2.4,3.3,3.43,Moderate
+1720,SAD,70,6.8,3.3,7.3,4.3,2.3,2.83,Moderate
+1721,Database Systems,74,5.5,3.4,8.7,1.3,5.1,2.74,Low
+1722,OOP,84,9.9,1,7.3,0.2,5.6,3.32,High
+1723,Computer Networks,81,7,2.3,9.8,2.5,2.4,3.09,Moderate
+1724,Data Science,70,5.2,1.3,7.9,5.7,3.9,3.04,Low
+1725,OOP,85,9.3,0.9,6.1,1.2,6.5,3.29,High
+1726,MIS,83,7.5,1.9,6.3,3,5.3,3.4,Moderate
+1727,MIS,70,5.2,0.5,9.4,4.5,4.4,2.9,Low
+1728,Foundation of web technologies,62,6.8,3,8.9,4,1.3,2.49,Moderate
+1729,Computer Organization,84,8.6,0.8,6.7,2.8,5.1,3.52,High
+1730,Foundation of web technologies,72,6.6,0.6,7,5.9,3.9,2.83,Moderate
+1731,SAD,83,6.1,2.4,7.2,0.4,7.9,3.29,Moderate
+1732,OOP,79,7.6,3.5,6.4,0.5,6,3.12,Moderate
+1733,Computer Organization,95,9.7,1.5,7.9,3.9,1,3.69,High
+1734,Database Systems,71,5.7,1.2,5.7,4.9,6.5,2.66,High
+1735,Data Science,61,6.1,2.9,9.7,2.8,2.5,2.5,Moderate
+1736,OOP,87,6.6,1.9,8,5.9,1.6,3.41,Moderate
+1737,Foundation of web technologies,91,9.7,3.4,9.4,0.7,0.8,3.6,High
+1738,Fundamentals of Programming,79,7,3.8,7.1,3.6,2.5,3.11,Moderate
+1739,Computer Organization,74,8.5,3.8,6.2,4.1,1.4,2.93,High
+1740,Computer Organization,89,8.9,2.2,8.3,1.5,3.1,3.37,High
+1741,Data Science,76,7.4,2.5,7,1.2,5.9,3.11,Moderate
+1742,DSA,81,8.7,1.6,6.8,2.4,4.5,3.42,High
+1743,MIS,74,7,2.2,7.7,3,4.1,3.05,Moderate
+1744,MIS,69,5.8,0.5,9.7,3.6,4.4,2.65,Low
+1745,Fundamentals of Programming,78,8.3,1.6,9.5,2.9,1.7,3.12,High
+1746,SAD,92,9.8,3.3,9.3,0.3,1.3,3.73,High
+1747,SAD,67,6.4,1.1,6.4,5.1,5,2.79,Moderate
+1748,Database Systems,71,6.2,3.2,7.8,0,6.8,2.8,Moderate
+1749,OOP,84,7.1,1.6,5.6,4.1,5.6,3.28,High
+1750,Computer Networks,88,8.6,0,9.8,4.6,1,3.48,High
+1751,DSA,88,9.5,0.1,9.7,3.8,0.9,3.57,High
+1752,Foundation of web technologies,96,9.7,1.8,8,2.1,2.4,3.82,High
+1753,Computer Networks,89,9.7,0.3,7.5,4.1,2.4,3.53,High
+1754,Computer Networks,93,9.5,3.8,5.3,2.2,3.2,3.7,High
+1755,Computer Organization,66,5.1,1.3,7.7,5.5,4.4,2.8,Low
+1756,Fundamentals of Programming,75,7.7,1.1,9.5,5.3,0.4,2.99,Moderate
+1757,MIS,70,7,3.6,6.9,4.4,2.1,2.84,Moderate
+1758,Database Systems,89,9.6,1.8,8.7,1.4,2.5,3.43,High
+1759,SAD,76,5.1,0.4,7.5,4.1,6.9,3.01,Low
+1760,Fundamentals of Programming,79,8.5,2.8,7.5,4.8,0.4,3.06,High
+1761,Computer Organization,77,7.4,1.8,6,1.8,7,3.13,Moderate
+1762,Foundation of web technologies,70,6.2,1.2,8.9,2,5.7,2.85,Moderate
+1763,Database Systems,80,6.2,0.7,8.9,0.8,7.4,3.02,Moderate
+1764,Computer Organization,68,8.4,2.5,9.1,0.2,3.8,2.65,High
+1765,MIS,73,6.5,1.1,5.7,1.7,9,3.02,High
+1766,MIS,74,8.3,1.5,8.6,1.9,3.7,2.86,High
+1767,MIS,76,6.5,2.2,5.1,0.5,9.7,3.1,High
+1768,Fundamentals of Programming,82,8.6,0.4,9.2,4.2,1.6,3.27,High
+1769,Fundamentals of Programming,100,8.1,3.3,7,1.2,4.4,3.8,High
+1770,SAD,78,7.7,2.3,9.7,3.9,0.4,3.3,Moderate
+1771,SAD,84,9.4,3.2,9.7,0.2,1.5,3.4,High
+1772,Foundation of web technologies,77,9.2,2,8.7,0.6,3.5,3.03,High
+1773,Database Systems,72,6.3,2.9,5.8,2.1,6.9,2.78,High
+1774,Data Science,72,8.5,1.5,7.8,0.6,5.6,3.02,High
+1775,Data Science,81,9,1.5,8.2,3.8,1.5,3.41,High
+1776,Computer Organization,83,8.1,1.7,5.9,5.7,2.6,3.17,High
+1777,MIS,86,8.8,0.8,6.7,4.9,2.8,3.53,High
+1778,Database Systems,78,7.2,2.9,6.9,1.3,5.7,3.23,Moderate
+1779,Computer Networks,88,8.2,3.9,6.6,2.4,2.9,3.32,High
+1780,Fundamentals of Programming,94,9.2,3,5.3,6,0.5,3.77,High
+1781,OOP,82,8.8,3.5,8.3,2.9,0.5,3.26,High
+1782,DSA,81,9.4,0.8,5.4,4.7,3.7,3.25,High
+1783,Foundation of web technologies,87,9.2,0.7,9.3,3.3,1.5,3.64,High
+1784,MIS,79,7.1,0.8,6.4,3,6.7,3.08,Moderate
+1785,MIS,77,7.7,3.2,9,2.4,1.7,3.03,Moderate
+1786,MIS,73,5.3,3.5,5.4,1.5,8.3,2.91,High
+1787,Fundamentals of Programming,72,8.5,1.6,9.4,1.3,3.2,2.9,High
+1788,Fundamentals of Programming,84,7.7,3.5,9.6,0.9,2.3,3.39,Moderate
+1789,DSA,84,7.3,2.2,9.7,4.8,0,3.25,Moderate
+1790,Computer Networks,71,6.9,0,5,2.8,9.3,2.85,High
+1791,Database Systems,69,7.4,0.1,8.4,1.8,6.3,2.75,Moderate
+1792,MIS,76,5.8,1.6,6.2,3.2,7.2,2.98,Low
+1793,Data Science,71,6,2,5.8,4,6.2,2.81,High
+1794,SAD,84,7.3,0.3,8,1.6,6.8,3.15,Moderate
+1795,Data Science,64,7.6,2.1,9.6,2.6,2.1,2.78,Moderate
+1796,Computer Organization,95,9.7,3.1,6.4,4.1,0.7,3.76,High
+1797,Data Science,70,7.2,3.3,9.1,0.8,3.6,2.87,Moderate
+1798,Computer Organization,77,6.5,1.2,8.6,1.4,6.3,3.18,Moderate
+1799,OOP,64,5,2.9,5.9,0.6,9.6,2.63,High
+1800,SAD,71,7.4,0.2,9.9,4.3,2.2,2.84,Moderate
+1801,Data Science,74,6.6,1.3,7.2,3.8,5.1,2.93,Moderate
+1802,OOP,78,9.3,1,6.9,5.2,1.6,3.32,High
+1803,Foundation of web technologies,79,8.3,1.4,8.4,0.1,5.8,3.23,High
+1804,Database Systems,94,9.1,3.8,9.6,1.4,0.1,3.71,High
+1805,OOP,75,7.6,1.4,7.3,4.1,3.6,3.09,Moderate
+1806,Database Systems,84,9.6,3.3,9.9,1.1,0.1,3.5,High
+1807,Data Science,73,6.4,0.4,5.6,1.7,9.9,3.21,High
+1808,Computer Networks,86,9.5,2.5,5,1.1,5.9,3.52,High
+1809,OOP,62,5.5,1.5,7.5,0.3,9.2,2.61,Low
+1810,SAD,75,8.2,1.9,7.5,2.6,3.8,3.13,High
+1811,Data Science,90,9.8,0.9,7.6,4.2,1.5,3.62,High
+1812,MIS,74,6.9,1.9,5.4,3.7,6.1,3.05,High
+1813,Fundamentals of Programming,72,6.4,0.6,7.7,3.2,6.1,3,Moderate
+1814,OOP,72,8.1,0.8,7.3,4.3,3.5,3.12,High
+1815,SAD,80,7.6,1.6,6.6,3.7,4.5,3.18,Moderate
+1816,Foundation of web technologies,75,5.4,1.8,9.5,0.6,6.7,2.9,Low
+1817,MIS,91,9.9,3.8,5.4,4.6,0.3,3.69,High
+1818,Foundation of web technologies,74,7.1,1.8,8.2,4.6,2.3,2.98,Moderate
+1819,Data Science,67,5.2,2.4,5.9,2.1,8.4,2.69,High
+1820,Fundamentals of Programming,69,6.7,0.4,5.7,0.2,11,2.58,High
+1821,OOP,77,7.4,3.8,5.6,5.7,1.5,3.27,High
+1822,OOP,86,8.2,3.3,5.5,3,4,3.5,High
+1823,Computer Networks,78,8.5,2.3,9.2,0.3,3.7,3.34,High
+1824,Computer Networks,87,6.9,1.4,8.1,5.3,2.3,3.42,Moderate
+1825,Data Science,70,7.5,3.3,7,0.6,5.6,2.82,Moderate
+1826,Data Science,77,8.6,3,5.3,1.3,5.8,3.06,High
+1827,Fundamentals of Programming,73,6.4,2.2,5.7,0.8,8.9,2.89,High
+1828,Computer Networks,72,6.8,3.2,7.6,0.8,5.6,2.78,Moderate
+1829,SAD,73,8.7,1.6,6.3,2.3,5.1,2.87,High
+1830,SAD,75,6.2,1.6,5.1,4.6,6.5,2.92,High
+1831,Fundamentals of Programming,69,5.9,0.2,8.3,4.6,5,2.88,Low
+1832,SAD,83,6,2.9,8.5,1.5,5.1,3.17,Moderate
+1833,Computer Organization,85,9.5,0.4,9.9,3.6,0.6,3.5,High
+1834,Database Systems,81,8.6,0.8,7.2,0.4,7,3.32,High
+1835,Fundamentals of Programming,82,6.9,3,6.9,2,5.2,3.23,Moderate
+1836,Fundamentals of Programming,72,5.2,1.5,5.8,4.2,7.3,2.83,High
+1837,DSA,66,5.5,2.7,6.4,1.2,8.2,2.75,Low
+1838,MIS,77,7.4,2,6.6,0.8,7.2,3.1,Moderate
+1839,MIS,74,6.9,2.7,8.9,2.9,2.6,2.77,Moderate
+1840,Computer Organization,72,6.4,0.6,6.2,1.3,9.5,3.04,Moderate
+1841,Computer Networks,88,7.6,2.3,9.7,0.9,3.5,3.36,Moderate
+1842,Data Science,81,7.8,1,6.3,0.2,8.7,3.27,Moderate
+1843,Data Science,72,6.5,3,5.2,1.3,8,3.17,High
+1844,Foundation of web technologies,77,7.3,2.8,6.9,1,6,3.24,Moderate
+1845,Computer Organization,63,7,2.3,9.7,0.3,4.7,2.64,Moderate
+1846,Fundamentals of Programming,77,7.5,0.1,6.6,4.9,4.9,3.14,Moderate
+1847,Computer Organization,84,7.8,1.8,6.4,1.8,6.2,3.39,Moderate
+1848,Computer Organization,77,9.8,1.8,7,4.6,0.8,3.39,High
+1849,Computer Organization,84,7.1,2.2,6.2,4.5,4,3.34,Moderate
+1850,MIS,81,8.9,0.9,8.6,4.5,1.1,3.36,High
+1851,Computer Organization,83,6.7,0.7,5,2.7,8.9,3.15,High
+1852,Database Systems,61,5.9,3.4,6.3,1.4,7,2.48,Low
+1853,Data Science,83,7.4,2,6.1,1.6,6.9,3.22,Moderate
+1854,Foundation of web technologies,83,8.9,1.8,8.6,3.5,1.2,3.17,High
+1855,Database Systems,73,5.7,3.9,9.1,1.1,4.2,2.81,Low
+1856,Foundation of web technologies,69,5.7,3,7.3,4.7,3.3,2.82,Low
+1857,DSA,86,8.7,2.4,8.4,0.1,4.4,3.51,High
+1858,Foundation of web technologies,61,5,0.1,9.3,4.1,5.5,2.47,Low
+1859,Data Science,72,6.3,2.8,9,1.8,4.1,2.79,Moderate
+1860,Data Science,75,7.5,3.1,6.1,1.6,5.7,3.07,Moderate
+1861,Computer Organization,72,6.2,4,6,3.5,4.3,2.88,Moderate
+1862,OOP,83,8.2,3,9.9,0.5,2.4,3.3,High
+1863,DSA,80,8.8,1.4,5.9,2.5,5.4,3.29,High
+1864,Fundamentals of Programming,83,7.7,4,7,3.3,2,3.44,Moderate
+1865,SAD,83,6.8,1.6,8.5,5.6,1.5,3.33,Moderate
+1866,Foundation of web technologies,71,5.4,0.8,7.5,0.1,10.2,2.86,Low
+1867,OOP,89,6.3,2.1,5.1,1.6,8.9,3.49,High
+1868,Computer Organization,91,9.6,2.6,7.1,4.4,0.3,3.54,High
+1869,MIS,87,8.9,0.8,5.7,4.1,4.5,3.62,High
+1870,Fundamentals of Programming,82,8.7,2.5,9.9,1.5,1.4,3.36,High
+1871,Computer Networks,68,5.6,3.3,6.3,4.7,4.1,2.85,Low
+1872,OOP,85,8,1.8,6.8,2.1,5.3,3.23,Moderate
+1873,MIS,88,8.2,3,8.4,0.9,3.5,3.52,High
+1874,DSA,78,7.4,2.1,8.9,3.7,1.9,3.1,Moderate
+1875,Computer Organization,75,7,3.6,5.8,6,1.6,2.99,High
+1876,Fundamentals of Programming,82,8.6,3.2,9.3,2.9,0,3.38,High
+1877,Fundamentals of Programming,77,6.5,2.8,5.6,2.4,6.7,2.9,High
+1878,Fundamentals of Programming,86,8,2,8.2,5.6,0.2,3.4,Moderate
+1879,DSA,71,5.3,2.3,9.3,2.9,4.2,2.82,Low
+1880,Foundation of web technologies,68,6.7,0.6,9.2,3.1,4.4,2.85,Moderate
+1881,Computer Networks,76,9.7,3.2,8.5,0,2.6,3.19,High
+1882,DSA,84,9.6,0.7,6.4,3.1,4.2,3.38,High
+1883,SAD,71,6.3,0.8,8,0.5,8.4,2.91,Moderate
+1884,Computer Networks,76,8.6,2.2,7.1,3.4,2.7,3.18,High
+1885,Data Science,75,6.8,3.7,5.3,4,4.2,3.04,High
+1886,Computer Organization,72,5.9,1.2,8.6,0.5,7.8,2.92,Low
+1887,DSA,89,9.1,2.9,8.6,0.3,3.1,3.56,High
+1888,MIS,89,9.2,0.2,5.1,2.2,7.3,3.61,High
+1889,Computer Networks,71,5.7,2.2,9.6,2.3,4.2,2.98,Low
+1890,SAD,66,5.5,2.4,7.3,5.6,3.2,2.77,Low
+1891,Data Science,78,5.6,0.8,5.1,2.6,9.9,2.97,High
+1892,Foundation of web technologies,74,8,2.5,7.7,0.5,5.3,3.12,Moderate
+1893,MIS,75,7.2,4,9.2,3.2,0.4,2.95,Moderate
+1894,Computer Networks,78,7.4,2.7,9.4,3.4,1.1,3.04,Moderate
+1895,Computer Organization,81,9.7,0.2,5.1,4,5,3.25,High
+1896,MIS,76,6.7,1.1,7.6,2.6,6,2.83,Moderate
+1897,Data Science,78,7.6,2.7,6.9,1.5,5.3,3.05,Moderate
+1898,MIS,83,8.7,3,8.3,0.9,3.1,3.1,High
+1899,Database Systems,92,7.9,2.3,7.4,3.3,3.1,3.75,Moderate
+1900,OOP,79,8.6,0.4,8.7,0.8,5.5,3.22,High
+1901,Foundation of web technologies,65,5.3,3.9,9.8,0.3,4.7,2.53,Low
+1902,Data Science,76,7.4,3.3,9.8,2.2,1.3,3.06,Moderate
+1903,MIS,81,6.8,2.4,6.6,5.5,2.7,3.05,Moderate
+1904,OOP,81,6.6,1.2,5.2,4.9,6.1,3.2,High
+1905,OOP,68,7.3,1.3,7.4,4.9,3.1,2.83,Moderate
+1906,MIS,68,6.9,1.3,5.9,3.6,6.3,2.94,High
+1907,Computer Organization,81,7.4,3.5,5.2,3.9,4,3.26,High
+1908,Database Systems,89,9.4,2.9,9.6,0.7,1.4,3.57,High
+1909,DSA,78,7.5,0.1,5,1.4,10,3.07,High
+1910,Database Systems,73,5.9,0.1,9.5,0,8.5,2.79,Low
+1911,MIS,92,8.7,0.6,9.6,4.6,0.5,3.57,High
+1912,Foundation of web technologies,73,5,3.9,9.4,5.1,0.6,2.98,Low
+1913,DSA,73,8.3,1.4,9.5,1.4,3.4,3.06,High
+1914,Data Science,83,9.6,0.6,6.1,3.3,4.4,3.47,High
+1915,Database Systems,80,8.8,2.5,6.2,0,6.5,3.29,High
+1916,MIS,91,9.5,1.6,7.6,2.5,2.8,3.7,High
+1917,Database Systems,71,7.2,3.1,7.6,1.9,4.2,2.79,Moderate
+1918,DSA,71,5.7,2.6,8.4,4.5,2.8,2.94,Low
+1919,SAD,72,7.5,3.6,9.7,2.6,0.6,2.84,Moderate
+1920,Computer Networks,93,9.9,1.1,6,2.7,4.3,3.68,High
+1921,Database Systems,70,5.3,3.9,7.9,3.3,3.6,2.79,Low
+1922,Data Science,77,5.2,2.4,8.6,2.5,5.3,3.21,Low
+1923,Data Science,90,8.8,0.9,6.1,1,7.2,3.53,High
+1924,Fundamentals of Programming,88,9.1,1.5,7.9,4,1.5,3.29,High
+1925,Database Systems,69,6.2,0.7,9.9,3.7,3.5,2.73,Moderate
+1926,Computer Networks,68,6.3,2,6.6,1,8.1,3.09,Moderate
+1927,Computer Organization,78,6.3,0.1,8.5,3,6.1,2.99,Moderate
+1928,OOP,64,5.5,3,5.1,1.5,8.9,2.66,High
+1929,Computer Networks,99,9.5,2.9,5.4,4.9,1.3,3.67,High
+1930,OOP,80,8,2.7,10,0.8,2.5,3.2,Moderate
+1931,OOP,77,8.1,1.8,5.2,0.1,8.8,3.28,High
+1932,SAD,69,7.8,2.2,5.2,2.8,6,3,High
+1933,Fundamentals of Programming,91,9.6,1.6,8.1,3.7,1,3.46,High
+1934,Computer Networks,96,9.3,1.6,9.4,0.9,2.8,3.69,High
+1935,Computer Networks,77,6.4,0.2,9,2.5,5.9,2.81,Moderate
+1936,SAD,82,9.5,3.3,7.8,2.1,1.3,3.28,High
+1937,Database Systems,69,7.4,1.6,9.6,0.7,4.7,2.75,Moderate
+1938,Database Systems,72,7.5,1.8,7.6,0.8,6.3,2.93,Moderate
+1939,Database Systems,75,7.6,1,5.9,0.4,9.1,3.06,High
+1940,Foundation of web technologies,87,8.1,2.9,8.4,2.2,2.4,3.52,High
+1941,OOP,75,6.9,1.5,8.2,3,4.4,2.99,Moderate
+1942,Foundation of web technologies,77,8.2,1.2,5.1,5.3,4.2,3.19,High
+1943,Fundamentals of Programming,65,6.1,3.7,8.6,4.3,1.3,2.79,Moderate
+1944,SAD,75,7.6,0.7,6.5,1.9,7.3,3,Moderate
+1945,Computer Networks,70,5.8,0.8,8.9,1,7.5,2.89,Low
+1946,OOP,76,9.9,1.3,5.6,3.4,3.8,3.43,High
+1947,Foundation of web technologies,83,9.5,3.1,8.1,1,2.3,3.25,High
+1948,Foundation of web technologies,79,8.4,2.9,9.8,0.8,2.1,3.28,High
+1949,MIS,68,5.1,2.2,8.5,4.7,3.5,2.64,Low
+1950,Foundation of web technologies,76,7.6,1.3,9.3,2.7,3.1,2.98,Moderate
+1951,Computer Organization,82,9,2.3,8.9,1.3,2.5,3.24,High
+1952,Computer Networks,90,7.7,0.9,7.4,1.9,6.1,3.31,Moderate
+1953,Computer Organization,68,6.3,3.9,5.8,4.7,3.3,2.73,High
+1954,Computer Networks,73,5.2,1.6,9.7,0.1,7.4,2.95,Low
+1955,SAD,88,7.9,2,9.4,0.4,4.3,3.42,Moderate
+1956,Computer Networks,87,8.3,3.8,9.1,0.1,2.7,3.48,High
+1957,Computer Organization,75,7.4,1.6,6.6,2.7,5.7,2.88,Moderate
+1958,Computer Networks,73,9.9,0.4,9.6,2,2.1,3.09,High
+1959,SAD,68,8.1,3.3,6.8,2.5,3.3,2.86,High
+1960,SAD,82,9.6,3.3,5.5,0.6,5,3.19,High
+1961,Fundamentals of Programming,72,7.1,0.4,8.1,0.9,7.5,3.02,Moderate
+1962,Computer Networks,77,6.6,2.7,7.4,5.9,1.4,2.99,Moderate
+1963,MIS,91,9.4,1.4,5.2,5.1,2.9,3.59,High
+1964,Database Systems,79,9.5,0.9,9.5,1.3,2.8,3.24,High
+1965,Data Science,90,9.9,1.1,9.8,0.2,3,3.54,High
+1966,SAD,83,7.4,0.9,8.5,1.1,6.1,3.48,Moderate
+1967,DSA,73,7.8,1,9.8,0.2,5.2,3.04,Moderate
+1968,Database Systems,72,7.1,0.9,7.5,5.2,3.3,2.92,Moderate
+1969,OOP,85,8.6,2.3,5.4,4.2,3.5,3.38,High
+1970,Computer Networks,70,6.3,1.7,6.8,5.2,4,2.84,Moderate
+1971,Computer Organization,72,5.6,2.3,5.7,4.2,6.2,2.81,High
+1972,Data Science,83,7.4,3.7,7.6,2.6,2.7,3.29,Moderate
+1973,DSA,80,7.9,2.8,5.5,4.9,2.9,3.03,High
+1974,Database Systems,82,8.9,1.5,5.5,3.8,4.3,3.31,High
+1975,Computer Networks,87,9.4,3.6,9.8,1,0.2,3.32,High
+1976,Fundamentals of Programming,88,8,2.4,6.8,5.4,1.4,3.42,Moderate
+1977,OOP,85,7.5,1.9,10,2.3,2.3,3.14,Moderate
+1978,Data Science,77,9.1,3.1,8.9,2.1,0.8,3.1,High
+1979,MIS,73,6.3,3.4,9.5,0.9,3.9,2.97,Moderate
+1980,Fundamentals of Programming,90,8.2,2.2,5.3,4.5,3.8,3.43,High
+1981,DSA,77,7.5,2.6,7.5,3,3.4,3.02,Moderate
+1982,Data Science,72,5.8,0.8,9.9,0.9,6.6,2.71,Low
+1983,Fundamentals of Programming,79,6.3,2.4,8.1,0.9,6.3,3.07,Moderate
+1984,OOP,70,6.2,1.2,9.7,5,1.9,3.06,Moderate
+1985,MIS,82,8.5,0.3,7.1,3.4,4.7,3.23,High
+1986,Fundamentals of Programming,74,8,1.3,8.9,4.9,0.9,2.93,Moderate
+1987,Foundation of web technologies,73,6.6,3.4,5.5,5,3.5,2.9,High
+1988,MIS,96,9.5,1.5,6.4,3,3.6,3.86,High
+1989,DSA,77,7.3,1.4,8.5,4.6,2.2,3.28,Moderate
+1990,OOP,74,7,2.7,7.4,6,0.9,2.85,Moderate
+1991,Computer Networks,83,8.6,3.8,9.2,2.2,0.2,3.26,High
+1992,Computer Organization,84,6.3,1.5,5.1,3.1,8,3.21,High
+1993,Computer Organization,71,7.5,2.1,9.9,4.1,0.4,3.04,Moderate
+1994,Computer Organization,73,7.1,1.4,9,3.1,3.4,2.85,Moderate
+1995,Data Science,76,7.9,3.4,9,0.5,3.2,3.08,Moderate
+1996,DSA,83,6.5,0.2,7.4,2.1,7.8,3.32,Moderate
+1997,OOP,66,6.3,2.8,8.8,1.5,4.6,2.65,Moderate
+1998,MIS,80,6.2,0,6.2,0.8,10.8,3.14,Moderate
+1999,Data Science,76,8.1,0.7,7.6,3.5,4.1,3.04,High
+2000,DSA,86,9,1.7,7.3,3.1,2.9,3.58,High

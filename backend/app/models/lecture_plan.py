@@ -1,6 +1,10 @@
 from pydantic import BaseModel
 from typing import List
 
+class LectureGenerateRequest(BaseModel):
+    topic: str
+    audience_level: str
+    duration: int
 
 class AgendaItem(BaseModel):
     minutes: int

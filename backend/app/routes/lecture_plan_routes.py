@@ -1,13 +1,16 @@
 from fastapi import APIRouter, HTTPException
+from app.models.lecture_plan import LecturePlanSchema, LectureGenerateRequest
 from app.services.lecture_plan_service import LecturePlanService
-from app.models.lecture_plan import LecturePlanSchema
 
 router = APIRouter(prefix="/lecture-plans", tags=["Lecture Plans"])
 
-
-@router.post("/validate", response_model=LecturePlanSchema)
-def validate_lecture_plan(payload: dict):
+@router.post("/generate", response_model=LecturePlanSchema)
+def generate_lecture(req: LectureGenerateRequest):
     try:
-        return LecturePlanService.validate_and_parse(payload)
+        return LecturePlanService.generate(
+            req.topic,
+            req.audience_level,
+            req.duration
+        )
     except Exception as e:
-        raise HTTPException(status_code=400, detail=str(e))
+        raise HTTPException(status_code=500, detail=str(e))

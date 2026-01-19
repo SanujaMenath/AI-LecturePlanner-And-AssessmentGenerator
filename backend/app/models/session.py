@@ -2,7 +2,8 @@
 from pydantic import BaseModel, Field
 from typing import Optional
 from datetime import datetime
-from app.models.object_id import PyObjectId, MongoBaseModel
+from app.models.object_id import PyObjectId
+
 
 class SessionCreate(BaseModel):
     course_id: PyObjectId
@@ -13,6 +14,7 @@ class SessionCreate(BaseModel):
     location: Optional[str] = None
     description: Optional[str] = None
 
+
 class SessionUpdate(BaseModel):
     topic: Optional[str] = None
     start_time: Optional[datetime] = None
@@ -20,7 +22,8 @@ class SessionUpdate(BaseModel):
     location: Optional[str] = None
     description: Optional[str] = None
 
-class SessionResponse(MongoBaseModel):
+
+class SessionResponse(BaseModel):
     id: PyObjectId = Field(..., alias="id")
     course_id: PyObjectId
     lecturer_id: PyObjectId
@@ -31,3 +34,9 @@ class SessionResponse(MongoBaseModel):
     description: Optional[str]
     created_at: datetime
     updated_at: datetime
+
+    model_config = {
+        "populate_by_name": True,
+        "arbitrary_types_allowed": True,
+        "json_encoders": {PyObjectId: str},
+    }

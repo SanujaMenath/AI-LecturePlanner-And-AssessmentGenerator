@@ -2,7 +2,7 @@
 from pydantic import BaseModel, Field
 from typing import Optional, List
 from datetime import datetime
-from app.models.object_id import PyObjectId, MongoBaseModel
+from app.models.object_id import PyObjectId
 
 class ExamCreate(BaseModel):
     course_id: PyObjectId
@@ -24,7 +24,7 @@ class ExamUpdate(BaseModel):
     duration_minutes: Optional[int] = None
     is_published: Optional[bool] = None
 
-class ExamResponse(MongoBaseModel):
+class ExamResponse(BaseModel):
     id: PyObjectId = Field(..., alias="id")
     course_id: PyObjectId
     module_id: Optional[PyObjectId]
@@ -37,3 +37,9 @@ class ExamResponse(MongoBaseModel):
     is_published: bool
     created_at: datetime
     updated_at: datetime
+
+    model_config = {
+        "populate_by_name": True,
+        "arbitrary_types_allowed": True,
+        "json_encoders": {PyObjectId: str},
+    }

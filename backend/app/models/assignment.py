@@ -1,7 +1,8 @@
 from pydantic import BaseModel, Field
 from typing import Optional, List
 from datetime import datetime
-from app.models.object_id import PyObjectId, MongoBaseModel
+from app.models.object_id import PyObjectId
+
 
 class AssignmentCreate(BaseModel):
     course_id: PyObjectId
@@ -12,6 +13,7 @@ class AssignmentCreate(BaseModel):
     is_auto_generated: Optional[bool] = False
     metadata: Optional[dict] = None  # e.g. {"difficulty":"medium", "type":"mcq"}
 
+
 class AssignmentUpdate(BaseModel):
     title: Optional[str] = None
     description: Optional[str] = None
@@ -19,7 +21,8 @@ class AssignmentUpdate(BaseModel):
     max_marks: Optional[int] = None
     metadata: Optional[dict] = None
 
-class AssignmentResponse(MongoBaseModel):
+
+class AssignmentResponse(BaseModel):
     id: PyObjectId = Field(..., alias="id")
     course_id: PyObjectId
     title: str
@@ -30,12 +33,19 @@ class AssignmentResponse(MongoBaseModel):
     metadata: Optional[dict]
     created_at: datetime
     updated_at: datetime
+    model_config = {
+        "populate_by_name": True,
+        "arbitrary_types_allowed": True,
+        "json_encoders": {PyObjectId: str},
+    }
+
 
 class SubmissionCreate(BaseModel):
     student_id: PyObjectId
     notes: Optional[str] = None
 
-class SubmissionResponse(MongoBaseModel):
+
+class SubmissionResponse(BaseModel):
     id: PyObjectId = Field(..., alias="id")
     assignment_id: PyObjectId
     student_id: PyObjectId
@@ -44,3 +54,8 @@ class SubmissionResponse(MongoBaseModel):
     submitted_at: datetime
     marks_obtained: Optional[float] = None
     grading_feedback: Optional[str] = None
+    model_config = {
+        "populate_by_name": True,
+        "arbitrary_types_allowed": True,
+        "json_encoders": {PyObjectId: str},
+    }
