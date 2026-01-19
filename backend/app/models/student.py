@@ -1,7 +1,8 @@
 from pydantic import BaseModel, EmailStr, Field
 from datetime import datetime, timezone
 from typing import Optional
-from app.models.object_id import PyObjectId, MongoBaseModel
+from app.models.object_id import PyObjectId
+
 
 class StudentCreate(BaseModel):
     full_name: str
@@ -11,12 +12,14 @@ class StudentCreate(BaseModel):
     year: int
     semester: int
 
+
 class StudentUpdate(BaseModel):
     department: Optional[str] = None
     year: Optional[int] = None
     semester: Optional[int] = None
 
-class StudentResponse(MongoBaseModel):
+
+class StudentResponse(BaseModel):
     user_id: PyObjectId
     full_name: str
     email: EmailStr
@@ -25,3 +28,9 @@ class StudentResponse(MongoBaseModel):
     semester: int
     created_at: datetime
     updated_at: datetime
+
+    model_config = {
+        "populate_by_name": True,
+        "arbitrary_types_allowed": True,
+        "json_encoders": {PyObjectId: str},
+    }

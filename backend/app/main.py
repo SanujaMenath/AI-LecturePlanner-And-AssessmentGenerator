@@ -11,7 +11,7 @@ from app.routes.course_routes import router as course_router
 from app.routes.module_routes import router as module_router
 from app.routes.topic_routes import router as topic_router
 from app.routes.outcome_routes import router as outcome_router
-from backend.app.routes.lecture_plan_routes import router as lecture_plan_router
+from app.routes.lecture_plan_routes import router as lecture_plan_router
 from app.routes.assignment_routes import router as assignment_routes
 from app.routes.question_routes import router as question_router
 from app.routes.timetable_routes import router as timetable_router

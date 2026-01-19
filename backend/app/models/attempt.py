@@ -2,14 +2,14 @@
 from pydantic import BaseModel, Field
 from typing import Optional, List
 from datetime import datetime
-from app.models.object_id import PyObjectId, MongoBaseModel
+from app.models.object_id import PyObjectId
 
 class AttemptCreate(BaseModel):
     assessment_id: PyObjectId
     student_id: PyObjectId
     answers: Optional[List[dict]] = None  # list of { "question_id": id, "answer": ... }
 
-class AttemptResponse(MongoBaseModel):
+class AttemptResponse(BaseModel):
     id: PyObjectId = Field(..., alias="id")
     assessment_id: PyObjectId
     student_id: PyObjectId
@@ -18,3 +18,9 @@ class AttemptResponse(MongoBaseModel):
     answers: Optional[List[dict]]
     marks_obtained: Optional[float]
     graded: bool = False
+
+    model_config = {
+        "populate_by_name": True,
+        "arbitrary_types_allowed": True,
+        "json_encoders": {PyObjectId: str},
+    }

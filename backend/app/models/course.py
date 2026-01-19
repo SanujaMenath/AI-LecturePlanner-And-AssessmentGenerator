@@ -2,7 +2,8 @@
 from pydantic import BaseModel, Field
 from typing import Optional
 from datetime import datetime, timezone
-from app.models.object_id import PyObjectId, MongoBaseModel
+from app.models.object_id import PyObjectId
+
 
 class CourseCreate(BaseModel):
     course_code: str
@@ -14,6 +15,7 @@ class CourseCreate(BaseModel):
     semester: Optional[int] = None
     lecturer_id: Optional[PyObjectId] = None
 
+
 class CourseUpdate(BaseModel):
     course_name: Optional[str] = None
     description: Optional[str] = None
@@ -23,6 +25,7 @@ class CourseUpdate(BaseModel):
     semester: Optional[int] = None
     lecturer_id: Optional[PyObjectId] = None
 
+
 class CourseListItem(BaseModel):
     id: str
     course_code: str
@@ -31,7 +34,7 @@ class CourseListItem(BaseModel):
     lecturer_id: Optional[str] = None
 
 
-class CourseResponse(MongoBaseModel):
+class CourseResponse(BaseModel):
     id: PyObjectId = Field(..., alias="id")
     course_code: str
     course_name: str
@@ -43,3 +46,9 @@ class CourseResponse(MongoBaseModel):
     lecturer_id: Optional[PyObjectId] = None
     created_at: datetime
     updated_at: datetime
+
+    model_config = {
+        "populate_by_name": True,
+        "arbitrary_types_allowed": True,
+        "json_encoders": {PyObjectId: str},
+    }

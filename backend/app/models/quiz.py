@@ -2,7 +2,7 @@
 from pydantic import BaseModel, Field
 from typing import Optional, List
 from datetime import datetime
-from app.models.object_id import PyObjectId, MongoBaseModel
+from app.models.object_id import PyObjectId
 
 class QuizCreate(BaseModel):
     course_id: PyObjectId
@@ -22,7 +22,7 @@ class QuizUpdate(BaseModel):
     due_date: Optional[datetime] = None
     is_published: Optional[bool] = None
 
-class QuizResponse(MongoBaseModel):
+class QuizResponse(BaseModel):
     id: PyObjectId = Field(..., alias="id")
     course_id: PyObjectId
     module_id: Optional[PyObjectId]
@@ -34,3 +34,11 @@ class QuizResponse(MongoBaseModel):
     is_published: bool
     created_at: datetime
     updated_at: datetime
+
+    model_config = {
+            "populate_by_name": True,
+            "arbitrary_types_allowed": True,
+            "json_encoders": {
+                PyObjectId: str
+            }
+        }

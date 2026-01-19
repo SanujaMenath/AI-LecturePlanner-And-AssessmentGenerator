@@ -1,7 +1,7 @@
 from typing import Optional
 from datetime import datetime, timezone
 from pydantic import BaseModel, Field
-from app.models.object_id import PyObjectId, MongoBaseModel
+from app.models.object_id import PyObjectId
 
 
 class GeneratedMaterialBase(BaseModel):
@@ -19,7 +19,7 @@ class GeneratedMaterialUpdate(BaseModel):
     content: Optional[str] = None
 
 
-class GeneratedMaterialResponse(MongoBaseModel):
+class GeneratedMaterialResponse(BaseModel):
     lesson_id: PyObjectId
     module_id: PyObjectId
     generated_type: str
@@ -27,3 +27,9 @@ class GeneratedMaterialResponse(MongoBaseModel):
     created_by: PyObjectId
     created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
     updated_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
+
+    model_config = {
+        "populate_by_name": True,
+        "arbitrary_types_allowed": True,
+        "json_encoders": {PyObjectId: str},
+    }

@@ -2,7 +2,8 @@
 from pydantic import BaseModel, Field
 from typing import Optional, List
 from datetime import datetime
-from app.models.object_id import PyObjectId, MongoBaseModel
+from app.models.object_id import PyObjectId
+
 
 class AssessmentCreate(BaseModel):
     course_id: PyObjectId
@@ -11,8 +12,11 @@ class AssessmentCreate(BaseModel):
     assessment_type: str  # quiz | exam | assignment (assignments handled separately but keep for generality)
     description: Optional[str] = None
     total_marks: int
-    settings: Optional[dict] = None  # e.g. {"time_limit_minutes": 30, "shuffle_questions": True}
+    settings: Optional[dict] = (
+        None  # e.g. {"time_limit_minutes": 30, "shuffle_questions": True}
+    )
     question_ids: Optional[List[PyObjectId]] = []
+
 
 class AssessmentUpdate(BaseModel):
     title: Optional[str] = None
@@ -21,7 +25,8 @@ class AssessmentUpdate(BaseModel):
     settings: Optional[dict] = None
     question_ids: Optional[List[PyObjectId]] = None
 
-class AssessmentResponse(MongoBaseModel):
+
+class AssessmentResponse(BaseModel):
     id: PyObjectId = Field(..., alias="id")
     course_id: PyObjectId
     module_id: Optional[PyObjectId]
@@ -33,3 +38,8 @@ class AssessmentResponse(MongoBaseModel):
     question_ids: Optional[List[PyObjectId]]
     created_at: datetime
     updated_at: datetime
+    model_config = {
+        "populate_by_name": True,
+        "arbitrary_types_allowed": True,
+        "json_encoders": {PyObjectId: str},
+    }
