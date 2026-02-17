@@ -4,9 +4,10 @@ import Button from "../../components/ui/Button";
 import { createUserService } from "../../services/userService";
 import { useAuth } from "../../context/AuthContext";
 import type { CreateUserPayload, UserRole } from "../../types/user";
+import { toast } from "react-hot-toast";
 
 const RegisterPage: React.FC = () => {
-  const { token, user } = useAuth();
+  const { user } = useAuth();
 
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
@@ -18,6 +19,7 @@ const RegisterPage: React.FC = () => {
   const [specialization, setSpecialization] = useState("");
   const [year, setYear] = useState("");
   const [semester, setSemester] = useState("");
+  const [loading, setLoading] = useState(false);
 
   if (!user || user.role !== "admin") {
     return <p className="text-center mt-20">Access denied</p>;
@@ -27,24 +29,24 @@ const RegisterPage: React.FC = () => {
     e.preventDefault();
 
     if (!fullName || !email || !password) {
-      alert("Required fields missing");
+      toast.error("Required fields missing");
       return;
     }
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
-      alert("Invalid email format");
+      toast.error("Invalid email format");
       return;
     }
 
     const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{6,}$/;
     if (!passwordRegex.test(password)) {
-      alert("Weak password");
+      toast.error("Weak password. Use at least 6 characters, including uppercase, lowercase, and a number.");
       return;
     }
 
     if (role === "admin" && password !== confirm) {
-      alert("Password confirmation mismatch");
+      toast.error("Password confirmation mismatch");
       return;
     }
 
@@ -78,9 +80,10 @@ const RegisterPage: React.FC = () => {
       };
     }
 
+    setLoading(true);
     try {
-      await createUserService(payload, token!);
-      alert("User created successfully");
+      await createUserService(payload);
+      toast.success("User created successfully");
 
       setFullName("");
       setEmail("");
@@ -92,10 +95,12 @@ const RegisterPage: React.FC = () => {
       setSemester("");
     } catch (err: unknown) {
       if (err instanceof Error) {
-        alert(err.message);
+        toast.error(err.message);
       } else {
-        alert("Creation failed");
+        toast.error("Creation failed");
       }
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -185,7 +190,7 @@ const RegisterPage: React.FC = () => {
             </>
           )}
 
-          <Button type="submit" className="btn-accent w-full mt-4">
+          <Button type="submit" loading={loading} className="btn-accent w-full mt-4">
             Create User
           </Button>
         </form>
