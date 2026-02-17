@@ -12,6 +12,7 @@ import StudentDashboard from "../pages/student/StudentDashboard";
 import RegisterPage from "../pages/admin/RegisterPage";
 import ProfilePage from "../pages/profile/ProfilePage";
 import CoursesPage from "../pages/course/CoursesPage";
+import AboutPage from "../pages/AboutPage";
 
 const AppRouter = () => {
   return (
@@ -19,6 +20,7 @@ const AppRouter = () => {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/about" element={<AboutPage />} />
 
         <Route
           path="/admin"
@@ -31,8 +33,8 @@ const AppRouter = () => {
           <Route index element={<AdminDashboard />} />
           <Route path="create-user" element={<RegisterPage />} />
           <Route path="users" element={<UsersPage />} />
-          <Route path="profile" element={<ProfilePage />}/>
-          <Route path="courses" element={<CoursesPage />}/>
+          <Route path="profile" element={<ProfilePage />} />
+          <Route path="courses" element={<CoursesPage />} />
         </Route>
 
         <Route
@@ -44,7 +46,7 @@ const AppRouter = () => {
           }
         >
           <Route index element={<LecturerDashboard />} />
-          <Route path="profile" element={<ProfilePage />}/>
+          <Route path="profile" element={<ProfilePage />} />
         </Route>
 
         <Route
@@ -56,7 +58,7 @@ const AppRouter = () => {
           }
         >
           <Route index element={<StudentDashboard />} />
-          <Route path="profile" element={<ProfilePage />}/>
+          <Route path="profile" element={<ProfilePage />} />
         </Route>
 
         <Route path="*" element={<HomePage />} />
