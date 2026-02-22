@@ -1,5 +1,5 @@
 import { Outlet } from "react-router-dom";
-import LecturerSidebar from "../components/ui/LecturerSidebar";
+import LecturerSidebar from "../pages/lecturer/components/LecturerSidebar";
 import TopNav from "../components/ui/TopNav";
 import Footer from "../components/ui/Footer";
 
