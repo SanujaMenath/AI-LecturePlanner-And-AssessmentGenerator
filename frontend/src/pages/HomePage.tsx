@@ -15,7 +15,6 @@ import {
   UserPlus,
   Zap,
   CheckCircle,
-  MessageSquare,
   Quote
 } from "lucide-react";
 

@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import InputValue from "../../components/ui/InputValue";
-import Button from "../../components/ui/Button";
-import { createUserService } from "../../services/userService";
-import { useAuth } from "../../context/AuthContext";
-import type { CreateUserPayload, UserRole } from "../../types/user";
+import InputValue from "../../../components/ui/InputValue";
+import Button from "../../../components/ui/Button";
+import { createUserService } from "../../../services/userService";
+import { useAuth } from "../../../context/AuthContext";
+import type { CreateUserPayload, UserRole } from "../../../types/user";
 import { toast } from "react-hot-toast";
 
 const RegisterPage: React.FC = () => {

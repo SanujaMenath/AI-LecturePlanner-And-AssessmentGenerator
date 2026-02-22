@@ -3,16 +3,17 @@ import Login from "../pages/auth/LoginPage";
 import ProtectedRoute from "./ProtectedRoute";
 import HomePage from "../pages/HomePage";
 import AdminLayout from "../layouts/AdminLayout";
-import AdminDashboard from "../pages/admin/AdminDashboard";
-import UsersPage from "../pages/admin/UsersPage";
+import AdminDashboard from "../pages/admin/pages/AdminDashboard";
+import UsersPage from "../pages/admin/pages/UsersPage";
 import LecturerLayout from "../layouts/LecturerLayout";
 import StudentLayout from "../layouts/StudentLayout";
-import LecturerDashboard from "../pages/lecturer/LecturerDashboard";
+import LecturerDashboard from "../pages/lecturer/pages/LecturerDashboard";
 import StudentDashboard from "../pages/student/StudentDashboard";
-import RegisterPage from "../pages/admin/RegisterPage";
+import RegisterPage from "../pages/admin/pages/RegisterPage";
 import ProfilePage from "../pages/profile/ProfilePage";
 import CoursesPage from "../pages/course/CoursesPage";
 import AboutPage from "../pages/AboutPage";
+import MaterialManagement from "../pages/lecturer/pages/Material_Management";
 
 const AppRouter = () => {
   return (
@@ -47,6 +48,8 @@ const AppRouter = () => {
         >
           <Route index element={<LecturerDashboard />} />
           <Route path="profile" element={<ProfilePage />} />
+          <Route path="courses" element={<CoursesPage />} />
+          <Route path="materials" element={<MaterialManagement />} />
         </Route>
 
         <Route
