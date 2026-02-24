@@ -15,6 +15,7 @@ import CoursesPage from "../pages/course/CoursesPage";
 import AboutPage from "../pages/AboutPage";
 import MaterialManagement from "../pages/lecturer/pages/Material_Management";
 import StudentCoursesPage from "../pages/student/pages/CoursesPage";
+import StudentAssignmentsPage from "../pages/student/pages/AssignmentsPage";
 
 const AppRouter = () => {
   return (
@@ -64,6 +65,7 @@ const AppRouter = () => {
           <Route index element={<StudentDashboard />} />
           <Route path="profile" element={<ProfilePage />} />
           <Route path="my-courses" element={<StudentCoursesPage />} />
+          <Route path="assignments" element={<StudentAssignmentsPage />} />
         </Route>
 
         <Route path="*" element={<HomePage />} />
