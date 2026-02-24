@@ -17,11 +17,11 @@ const AboutPage = () => {
                         <span className="text-2xl font-bold gradient-text">LMS</span>
                     </div>
                     <div className="flex items-center space-x-6">
-                        <Button className="bg-transparent text-gray-600 hover:text-primary !w-auto !py-2 px-4 flex items-center" onClick={() => navigate("/")}>
+                        <Button className="bg-transparent text-gray-600 hover:text-primary w-auto py-2 px-4 flex items-center" onClick={() => navigate("/")}>
                             <ArrowLeft className="w-4 h-4 mr-2" />
                             Back to Home
                         </Button>
-                        <Button className="btn-primary !py-2.5 px-6 !w-auto" onClick={() => navigate("/login")}>
+                        <Button className="btn-primary py-2.5 px-6 w-auto" onClick={() => navigate("/login")}>
                             Login
                         </Button>
                     </div>
@@ -137,7 +137,7 @@ const AboutPage = () => {
                         <p className="text-primary-100 text-lg mb-10 max-w-2xl mx-auto relative z-10">
                             Join thousands of students and educators who are already using our AI-Powered LMS to achieve their goals.
                         </p>
-                        <Button className="bg-white text-primary hover:bg-gray-50 !py-4 px-10 !w-auto text-lg font-bold shadow-xl relative z-10" onClick={() => navigate("/login")}>
+                        <Button className="bg-white text-primary hover:bg-gray-50 py-4 px-10 w-auto text-lg font-bold shadow-xl relative z-10" onClick={() => navigate("/login")}>
                             Get Started Now
                         </Button>
                     </div>
