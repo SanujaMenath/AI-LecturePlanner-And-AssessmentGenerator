@@ -17,6 +17,7 @@ import MaterialManagement from "../pages/lecturer/pages/Material_Management";
 import StudentCoursesPage from "../pages/student/pages/CoursesPage";
 import StudentAssignmentsPage from "../pages/student/pages/AssignmentsPage";
 import StudentGradesPage from "../pages/student/pages/GradesPage";
+import AssessmentCreation from "../pages/lecturer/pages/AssessmentCreation";
 
 const AppRouter = () => {
   return (
@@ -53,6 +54,7 @@ const AppRouter = () => {
           <Route path="profile" element={<ProfilePage />} />
           <Route path="courses" element={<CoursesPage />} />
           <Route path="materials" element={<MaterialManagement />} />
+           <Route path="assessment-creation" element={<AssessmentCreation />} />
         </Route>
 
         <Route
