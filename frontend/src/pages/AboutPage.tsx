@@ -53,7 +53,7 @@ const AboutPage = () => {
                             </div>
                         </div>
                         <div className="md:w-1/2 relative">
-                            <div className="aspect-square bg-gradient-to-br from-primary/10 to-accent/10 rounded-3xl overflow-hidden flex items-center justify-center p-12">
+                            <div className="aspect-square bg-linear-to-br from-primary/10 to-accent/10 rounded-3xl overflow-hidden flex items-center justify-center p-12">
                                 <Users className="w-48 h-48 text-primary/20 opacity-50" />
                                 {/* Floating cards */}
                                 <div className="absolute top-10 right-10 bg-white p-4 rounded-2xl shadow-xl border border-gray-50 flex items-center space-x-3 animate-bounce shadow-primary/5">
@@ -112,9 +112,9 @@ const AboutPage = () => {
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
                         {[1, 2, 3, 4].map((i) => (
                             <div key={i} className="text-center group">
-                                <div className="w-full aspect-[4/5] bg-gray-100 rounded-2xl mb-4 overflow-hidden grayscale group-hover:grayscale-0 transition-all">
+                                <div className="w-full aspect-4/5 bg-gray-100 rounded-2xl mb-4 overflow-hidden grayscale group-hover:grayscale-0 transition-all">
                                     {/* Placeholder for images */}
-                                    <div className="w-full h-full flex items-center justify-center bg-gradient-to-b from-gray-50 to-gray-200">
+                                    <div className="w-full h-full flex items-center justify-center bg-linear-to-b from-gray-50 to-gray-200">
                                         <Users className="w-12 h-12 text-gray-300" />
                                     </div>
                                 </div>
