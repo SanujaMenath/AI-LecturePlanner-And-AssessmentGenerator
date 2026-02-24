@@ -13,7 +13,7 @@ import { useAuth } from "../../../context/AuthContext";
 const links = [
   { label: "Dashboard", to: "/student", icon: <LayoutDashboard size={20} /> },
   { label: "Profile", to: "/student/profile", icon: <UserCircle size={20} /> },
-  { label: "My Courses", to: "/student/courses", icon: <GraduationCap size={20} /> },
+  { label: "My Courses", to: "/student/my-courses", icon: <GraduationCap size={20} /> },
   { label: "Assignments", to: "/student/assignments", icon: <ClipboardList size={20} /> },
   { label: "Grades", to: "/student/grades", icon: <Trophy size={20} /> },
 ];

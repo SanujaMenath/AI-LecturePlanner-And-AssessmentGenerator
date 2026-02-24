@@ -239,7 +239,10 @@ class CourseService:
             raise HTTPException(status_code=400, detail="Invalid student id")
 
         pipeline = [
+            # 1. Find the student's enrollments
             {"$match": {"student_id": ObjectId(student_id)}},
+            
+            # 2. Join the course details
             {
                 "$lookup": {
                     "from": "courses",
@@ -249,6 +252,26 @@ class CourseService:
                 }
             },
             {"$unwind": "$course_info"},
+            
+            # 3. Join the lecturer details
+            {
+                "$lookup": {
+                    "from": "users",
+                    "localField": "course_info.lecturer_id",
+                    "foreignField": "_id",
+                    "as": "lecturer_info",
+                }
+            },
+            # used preserveNullAndEmptyArrays, so the course still shows up 
+            # even if an admin hasn't assigned a lecturer yet!
+            {
+                "$unwind": {
+                    "path": "$lecturer_info",
+                    "preserveNullAndEmptyArrays": True 
+                }
+            },
+            
+            # 4. final output
             {
                 "$project": {
                     "_id": 0,
@@ -258,6 +281,13 @@ class CourseService:
                     "description": "$course_info.description",
                     "credits": "$course_info.credits",
                     "semester": "$course_info.semester",
+                    
+                    # Fallback to "TBA" if lecturer_info is null
+                    "lecturer_name": {"$ifNull": ["$lecturer_info.full_name", "TBA"]},
+                    
+                    # If they don't exist yet, it defaults to 0 and "Never".
+                    "progress": {"$ifNull": ["$progress", 0]},
+                    "last_accessed": {"$ifNull": ["$last_accessed", "Never"]},
                 }
             },
         ]
