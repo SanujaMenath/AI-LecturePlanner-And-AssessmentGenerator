@@ -11,7 +11,7 @@ import {
   FileText
 } from "lucide-react";
 
-// Types for our frontend
+// Types for frontend
 type AssignmentStatus = 'pending' | 'submitted' | 'graded' | 'overdue';
 
 interface Assignment {
@@ -34,7 +34,7 @@ const StudentAssignmentsPage = () => {
   // Simulated API Fetch
   useEffect(() => {
     const fetchAssignments = async () => {
-      await new Promise(resolve => setTimeout(resolve, 800)); // Simulate delay
+      await new Promise(resolve => setTimeout(resolve, 300)); 
       
       const mockData: Assignment[] = [
         { id: "1", title: "Build a REST API with FastAPI", courseName: "Advanced Web Development", courseCode: "WD301", dueDate: "2026-03-01T23:59:00", status: "pending", maxScore: 100 },

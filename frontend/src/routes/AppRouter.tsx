@@ -16,6 +16,7 @@ import AboutPage from "../pages/AboutPage";
 import MaterialManagement from "../pages/lecturer/pages/Material_Management";
 import StudentCoursesPage from "../pages/student/pages/CoursesPage";
 import StudentAssignmentsPage from "../pages/student/pages/AssignmentsPage";
+import StudentGradesPage from "../pages/student/pages/GradesPage";
 
 const AppRouter = () => {
   return (
@@ -66,6 +67,7 @@ const AppRouter = () => {
           <Route path="profile" element={<ProfilePage />} />
           <Route path="my-courses" element={<StudentCoursesPage />} />
           <Route path="assignments" element={<StudentAssignmentsPage />} />
+          <Route path="grades" element={<StudentGradesPage />} />
         </Route>
 
         <Route path="*" element={<HomePage />} />
