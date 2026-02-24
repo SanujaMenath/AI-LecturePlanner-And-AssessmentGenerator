@@ -34,7 +34,7 @@ const CourseForm = ({ onSuccess }: Props) => {
   return (
     <form
       onSubmit={submit}
-      className="card-hover border border-primary/10 bg-gradient-to-br from-white to-primary/5"
+      className="card-hover border border-primary/10 bg-linear-to-br from-white to-primary/5"
     >
       <div className="flex items-center gap-2 mb-6 pb-4 border-b border-gray-50">
         <div className="p-2 bg-primary/10 rounded-lg text-primary">
@@ -80,7 +80,7 @@ const CourseForm = ({ onSuccess }: Props) => {
         <Button
           type="submit"
           loading={loading}
-          className="max-w-[240px] shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 transform transition-all duration-300 active:scale-95"
+          className="max-w-60 shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 transform transition-all duration-300 active:scale-95"
         >
           {!loading && <Sparkles size={18} className="mr-1" />}
           {loading ? "Generating..." : "Finalize Course Creation"}

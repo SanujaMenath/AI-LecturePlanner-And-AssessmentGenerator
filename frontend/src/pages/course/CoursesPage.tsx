@@ -19,7 +19,7 @@ import {
   GraduationCap,
   Users2,
   ChevronRight,
-  MoreHorizontal
+  MoreHorizontal,
 } from "lucide-react";
 import { toast } from "react-hot-toast";
 
@@ -58,9 +58,7 @@ const CoursesPage = () => {
     try {
       await enrollCourse(courseId);
       setCourses((prev) =>
-        prev.map((c) =>
-          c.id === courseId ? { ...c, isEnrolled: true } : c
-        )
+        prev.map((c) => (c.id === courseId ? { ...c, isEnrolled: true } : c)),
       );
       toast.success("Successfully enrolled in the course!");
     } catch (err) {
@@ -76,9 +74,7 @@ const CoursesPage = () => {
     try {
       await assignLecturer(courseId, lecturerId);
       setCourses((prev) =>
-        prev.map((c) =>
-          c.id === courseId ? { ...c, lecturerId } : c
-        )
+        prev.map((c) => (c.id === courseId ? { ...c, lecturerId } : c)),
       );
       toast.success("Lecturer assigned successfully");
     } catch (err) {
@@ -87,16 +83,19 @@ const CoursesPage = () => {
     }
   };
 
-  const filteredCourses = courses.filter(course =>
-    course.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    course.code.toLowerCase().includes(searchQuery.toLowerCase())
+  const filteredCourses = courses.filter(
+    (course) =>
+      course.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      course.code.toLowerCase().includes(searchQuery.toLowerCase()),
   );
 
   if (loading) {
     return (
       <div className="flex flex-col items-center justify-center min-h-[400px] space-y-4">
         <div className="w-12 h-12 border-4 border-primary/20 border-t-primary rounded-full animate-spin" />
-        <p className="text-gray-500 font-bold animate-pulse">Organizing courses...</p>
+        <p className="text-gray-500 font-bold animate-pulse">
+          Organizing courses...
+        </p>
       </div>
     );
   }
@@ -110,8 +109,12 @@ const CoursesPage = () => {
             <BookOpen size={28} />
           </div>
           <div>
-            <h1 className="text-3xl font-extrabold tracking-tight text-gray-900">Academic Courses</h1>
-            <p className="text-gray-500 font-medium mt-1">Explore and manage your educational curriculum</p>
+            <h1 className="text-3xl font-extrabold tracking-tight text-gray-900">
+              Academic Courses
+            </h1>
+            <p className="text-gray-500 font-medium mt-1">
+              Explore and manage your educational curriculum
+            </p>
           </div>
         </div>
       </div>
@@ -126,7 +129,10 @@ const CoursesPage = () => {
       {/* Search and Filters */}
       <div className="flex flex-col sm:flex-row gap-4">
         <div className="relative flex-1 group">
-          <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-primary transition-colors" size={18} />
+          <Search
+            className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-primary transition-colors"
+            size={18}
+          />
           <input
             type="text"
             placeholder="Search courses by name or code..."
@@ -145,9 +151,12 @@ const CoursesPage = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {filteredCourses.length > 0 ? (
           filteredCourses.map((course) => (
-            <div key={course.id} className="card-hover group relative flex flex-col h-full border border-gray-100 bg-white">
+            <div
+              key={course.id}
+              className="card-hover group relative flex flex-col h-full border border-gray-100 bg-white"
+            >
               {/* Card Top Decorative Edge */}
-              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary/50 to-primary rounded-t-2xl opacity-0 group-hover:opacity-100 transition-opacity" />
+              <div className="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-primary/50 to-primary rounded-t-2xl opacity-0 group-hover:opacity-100 transition-opacity" />
 
               <div className="p-6 space-y-4 flex-1">
                 <div className="flex items-start justify-between">
@@ -187,11 +196,13 @@ const CoursesPage = () => {
                       <select
                         className="w-full bg-gray-50 border border-gray-100 rounded-xl p-2.5 text-xs font-bold text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary/10 transition-all appearance-none cursor-pointer"
                         value={course.lecturerId || ""}
-                        onChange={(e) => handleAssign(course.id, e.target.value)}
+                        onChange={(e) =>
+                          handleAssign(course.id, e.target.value)
+                        }
                       >
                         <option value="">Choose Lecturer...</option>
-                        {lecturers.map((l) => (
-                          <option key={l.id} value={l.id}>
+                        {lecturers.map((l, index) => (
+                          <option key={l.id || index} value={l.id}>
                             {l.name}
                           </option>
                         ))}
@@ -207,16 +218,23 @@ const CoursesPage = () => {
                   <Button
                     loading={enrollLoadingId === course.id}
                     disabled={course.isEnrolled}
-                    className={`text-xs h-10 shadow-none hover:shadow-lg hover:shadow-primary/10 ${course.isEnrolled ? "bg-gray-100 text-gray-400" : ""
-                      }`}
+                    className={`text-xs h-10 shadow-none hover:shadow-lg hover:shadow-primary/10 ${
+                      course.isEnrolled ? "bg-gray-100 text-gray-400" : ""
+                    }`}
                     onClick={() => handleEnroll(course.id)}
                   >
-                    {course.isEnrolled ? "Access Material" : "Start Learning Now"}
-                    {!course.isEnrolled && !enrollLoadingId && <ChevronRight size={14} className="ml-1" />}
+                    {course.isEnrolled
+                      ? "Access Material"
+                      : "Start Learning Now"}
+                    {!course.isEnrolled && !enrollLoadingId && (
+                      <ChevronRight size={14} className="ml-1" />
+                    )}
                   </Button>
                 ) : (
                   <div className="flex items-center gap-2 w-full text-gray-400">
-                    <span className="text-[11px] font-bold italic flex-1">Active Academic Module</span>
+                    <span className="text-[11px] font-bold italic flex-1">
+                      Active Academic Module
+                    </span>
                     <button className="p-2 hover:bg-white hover:text-primary rounded-lg transition-colors shadow-sm">
                       <MoreHorizontal size={16} />
                     </button>
@@ -234,8 +252,12 @@ const CoursesPage = () => {
               <BookOpen size={48} className="text-gray-200" />
             </div>
             <div>
-              <h3 className="text-lg font-bold text-gray-900">No courses match your criteria</h3>
-              <p className="text-gray-500 font-medium">Try adjusting your search terms or check back later.</p>
+              <h3 className="text-lg font-bold text-gray-900">
+                No courses match your criteria
+              </h3>
+              <p className="text-gray-500 font-medium">
+                Try adjusting your search terms or check back later.
+              </p>
             </div>
             <button
               onClick={() => setSearchQuery("")}
