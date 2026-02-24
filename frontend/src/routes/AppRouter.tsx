@@ -8,12 +8,13 @@ import UsersPage from "../pages/admin/pages/UsersPage";
 import LecturerLayout from "../layouts/LecturerLayout";
 import StudentLayout from "../layouts/StudentLayout";
 import LecturerDashboard from "../pages/lecturer/pages/LecturerDashboard";
-import StudentDashboard from "../pages/student/StudentDashboard";
+import StudentDashboard from "../pages/student/pages/StudentDashboard";
 import RegisterPage from "../pages/admin/pages/RegisterPage";
 import ProfilePage from "../pages/profile/ProfilePage";
 import CoursesPage from "../pages/course/CoursesPage";
 import AboutPage from "../pages/AboutPage";
 import MaterialManagement from "../pages/lecturer/pages/Material_Management";
+import StudentCoursesPage from "../pages/student/pages/CoursesPage";
 
 const AppRouter = () => {
   return (
@@ -62,6 +63,7 @@ const AppRouter = () => {
         >
           <Route index element={<StudentDashboard />} />
           <Route path="profile" element={<ProfilePage />} />
+          <Route path="my-courses" element={<StudentCoursesPage />} />
         </Route>
 
         <Route path="*" element={<HomePage />} />
