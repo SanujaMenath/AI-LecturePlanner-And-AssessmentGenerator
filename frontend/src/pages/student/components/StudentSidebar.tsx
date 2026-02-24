@@ -22,7 +22,7 @@ const StudentSidebar = () => {
   const { user, logout } = useAuth();
 
   return (
-    <aside className="w-64 bg-white border-r border-gray-100 min-h-screen sticky top-0 flex flex-col shadow-sm">
+    <aside className="w-64 bg-white border-r border-gray-100 h-screen sticky top-0 flex flex-col shadow-sm">
       {/* Brand Header */}
       <div className="p-6 h-20 flex items-center gap-3 border-b border-gray-50">
         <div className="w-10 h-10 bg-emerald-600 rounded-xl flex items-center justify-center text-white shadow-lg shadow-emerald-100">
@@ -57,9 +57,9 @@ const StudentSidebar = () => {
         ))}
       </nav>
 
-      {/* Footer / User / Logout */}
-      <div className="p-4 border-t border-gray-50">
-        <div className="bg-gray-50/50 rounded-2xl p-4 mb-2">
+      {/* Logout */}
+      <div className="p-1 px-4 border-t border-gray-50">
+        <div className="bg-gray-50/50 rounded-2xl p-2 mb-2">
           <div className="flex items-center gap-3 mb-3">
             <div className="w-8 h-8 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-700 font-bold text-xs">
               {user?.full_name?.charAt(0) || "S"}

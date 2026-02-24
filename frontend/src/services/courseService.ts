@@ -66,7 +66,7 @@ export const assignLecturer = (courseId: string, lecturerId: string) =>
 
 // Optional: fetch all lecturers for dropdown
 export const getLecturers = async (): Promise<Lecturer[]> => {
-  const res = await api.get("/courses/lecturers");
+  const res = await api.get("/lecturers");
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   return res.data.map((l: any) => ({ id: l.id, name: l.name }));
 };
