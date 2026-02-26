@@ -1,0 +1,28 @@
+# app/routes/department_routes.py
+from fastapi import APIRouter, HTTPException, Depends
+from app.models.department import DepartmentCreate, DepartmentResponse
+from app.services.department_service import DepartmentService
+from bson import ObjectId
+
+router = APIRouter(prefix="/departments", tags=["Departments"])
+
+
+@router.post("/", response_model=DepartmentResponse)
+def create_department(dept: DepartmentCreate):
+    return DepartmentService.create_dept(dept)
+
+@router.get("/", response_model=list[DepartmentResponse])
+def list_departments():
+    return DepartmentService.get_all()
+
+@router.post("/{dept_id}/enroll/{student_id}")
+def enroll_student_to_dept(dept_id: str, student_id: str):
+    success = DepartmentService.enroll_student(dept_id, student_id)
+    if not success:
+        raise HTTPException(status_code=400, detail="Enrollment failed")
+    return {"message": "Student enrolled successfully"}
+
+@router.delete("/{dept_id}")
+def delete_department(dept_id: str):
+    DepartmentService.delete_dept(dept_id)
+    return {"message": "Department deleted"}

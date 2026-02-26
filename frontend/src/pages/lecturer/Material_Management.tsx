@@ -9,7 +9,7 @@ import {
   FileCode,
   File as FileIcon,
 } from "lucide-react";
-import UploadModal, { type UploadData } from "../components/UploadModal";
+import UploadModal, { type UploadData } from "./components/UploadModal";
 
 // 1. Define the Interface for TypeScript
 interface Material {

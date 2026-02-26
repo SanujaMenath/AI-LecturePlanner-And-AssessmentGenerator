@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { createCourse } from "../../services/courseService";
-import Button from "../../components/ui/Button";
+import { createCourse } from "../../../services/courseService";
+import Button from "../../../components/ui/Button";
 import { BookOpen, Code, Plus, Sparkles } from "lucide-react";
 import { toast } from "react-hot-toast";
 

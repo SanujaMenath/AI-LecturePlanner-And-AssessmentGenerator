@@ -8,6 +8,7 @@ from app.routes.user_routes import router as user_router
 from app.routes.lecturer_routes import router as lecturer_router
 from app.routes.student_routes import router as student_router
 from app.routes.course_routes import router as course_router
+from app.routes.department_routes import router as department_router
 from app.routes.module_routes import router as module_router
 from app.routes.topic_routes import router as topic_router
 from app.routes.outcome_routes import router as outcome_router
@@ -53,6 +54,7 @@ app.include_router(user_router)
 app.include_router(lecturer_router)
 app.include_router(student_router)
 app.include_router(course_router)
+app.include_router(department_router)
 app.include_router(module_router)
 app.include_router(topic_router)
 app.include_router(outcome_router)

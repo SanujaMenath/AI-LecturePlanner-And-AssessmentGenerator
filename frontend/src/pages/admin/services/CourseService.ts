@@ -17,21 +17,24 @@ type CourseResponse = {
   course_name: string;
   credits: number;
   semester: string;
+  progress?: number;
   lecturer_name?: string;
   last_accessed?: string;
 }
 
 
 export const fetchEnrolledCourses = async (studentId: string): Promise<EnrolledCourse[]> => {
-    const res = await api.get(`courses/student/${studentId}/courses`);
-    return res.data.map((c: CourseResponse) => ({
-        id: c.course_id,
-        code: c.course_code,
-        name: c.course_name,
-        credits: c.credits,
-        semester: c.semester,
-        lecturerName: c.lecturer_name || "Assigned Lecturer", 
-        progress: 0, 
-        lastAccessed: c.last_accessed || "Never",
-    }))  ;
+    // Pass the generic array type to api.get
+    const res = await api.get<CourseResponse[]>(`courses/student/${studentId}/courses`);
+    
+    return res.data.map((c) => ({
+      id: c.course_id,
+      code: c.course_code,
+      name: c.course_name,
+      credits: c.credits,
+      semester: String(c.semester),
+      lecturerName: c.lecturer_name || "TBA",
+      progress: c.progress || 0, 
+      lastAccessed: c.last_accessed || "Never",
+    }));
 };
