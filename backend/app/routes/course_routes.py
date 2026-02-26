@@ -10,10 +10,10 @@ from fastapi import HTTPException, status
 router = APIRouter(prefix="/courses", tags=["Courses"])
 
 
-# Admin only create/update/delete
+# Admin only 
 @router.post("/", response_model=CourseResponse, dependencies=[Depends(lambda: None)])
 def create_course(data: CourseCreate, current_user=Depends(get_current_user)):
-    # require admin
+    
     if current_user["role"] != "admin":
         raise HTTPException(status_code=status.HTTP_403_FORBIDDEN, detail="Admin only")
     return CourseService.create_course(data)

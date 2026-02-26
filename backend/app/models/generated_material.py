@@ -5,7 +5,7 @@ from app.models.object_id import PyObjectId
 
 
 class GeneratedMaterialBase(BaseModel):
-    generated_type: str  # notes | summary | ppt | quiz etc
+    generated_type: str 
     content: str
 
 
