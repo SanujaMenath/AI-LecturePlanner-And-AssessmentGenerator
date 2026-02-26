@@ -33,6 +33,16 @@ class CourseListItem(BaseModel):
     is_enrolled: Optional[bool] = None
     lecturer_id: Optional[str] = None
 
+class StudentEnrolledCourseResponse(BaseModel):
+    course_id: str
+    course_code: str
+    course_name: str
+    description: Optional[str] = None
+    credits: int
+    semester: Optional[int] = None
+    lecturer_name: str
+    progress: int
+    last_accessed: str
 
 class CourseResponse(BaseModel):
     id: PyObjectId = Field(..., alias="id")

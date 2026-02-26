@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { type UserDTO } from "../../../types/user";
-import { getUsersService } from "../../../services/userService";
+import { type UserDTO } from "../../types/user";
+import { getUsersService } from "../../services/userService";
 import {
   Users,
   Search,

@@ -8,7 +8,7 @@ import {
   type Lecturer,
 } from "../../services/courseService";
 import { useAuth } from "../../context/AuthContext";
-import CourseForm from "./CourseForm";
+import CourseForm from "./components/CourseForm";
 import Button from "../../components/ui/Button";
 import {
   BookOpen,

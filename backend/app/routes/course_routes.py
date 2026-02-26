@@ -1,7 +1,7 @@
 # backend/app/routes/course_routes.py
 from fastapi import APIRouter, Depends, Path
 from typing import List
-from app.models.course import CourseCreate, CourseUpdate, CourseResponse, CourseListItem
+from app.models.course import CourseCreate, CourseUpdate, StudentEnrolledCourseResponse, CourseResponse
 from app.models.enrollment import EnrollmentCreate
 from app.services.course_service import CourseService
 from app.dependencies.auth_dependencies import get_current_user
@@ -75,7 +75,7 @@ def get_students(course_id: str):
     return CourseService.get_students_in_course(course_id)
 
 
-@router.get("/student/{student_id}/courses", response_model=List[dict])
+@router.get("/student/{student_id}/courses", response_model=List[StudentEnrolledCourseResponse])
 def get_student_courses(student_id: str):
     return CourseService.get_courses_of_student(student_id)
 
