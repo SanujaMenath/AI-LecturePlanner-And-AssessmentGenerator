@@ -7,6 +7,7 @@ class DepartmentBase(BaseModel):
     name: str
     code: str  # e.g., "CS", "ENG"
     description: Optional[str] = None
+    faculty: Optional[str] = None
 
 class DepartmentCreate(DepartmentBase):
     pass
@@ -15,14 +16,16 @@ class DepartmentUpdate(BaseModel):
     name: Optional[str] = None
     code: Optional[str] = None
     description: Optional[str] = None
-    course_ids: Optional[List[PyObjectId]] = None
-    student_ids: Optional[List[PyObjectId]] = None
+    faculty: Optional[str] = None
 
 class DepartmentResponse(DepartmentBase):
     id: PyObjectId = Field(alias="_id")
-    course_ids: List[PyObjectId] = []
-    student_ids: List[PyObjectId] = []
-    created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
+    name: str
+    code: str
+    description: Optional[str]
+    faculty: Optional[str] = None 
+    created_at: datetime
+    updated_at: datetime
 
     class Config:
         populate_by_name = True
