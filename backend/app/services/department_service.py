@@ -13,8 +13,7 @@ class DepartmentService:
     @staticmethod
     def create_dept(dept: DepartmentCreate):
         new_dept = dept.model_dump()
-        new_dept["course_ids"] = []
-        new_dept["student_ids"] = []
+        new_dept["faculty"] = dept.faculty if dept.faculty else None
         new_dept["created_at"] = datetime.now(timezone.utc)
         new_dept["updated_at"] = datetime.now(timezone.utc)
         
@@ -52,6 +51,22 @@ class DepartmentService:
         )
         # Returns True if a document was actually modified
         return result.modified_count > 0
+    
+    @staticmethod
+    def update_dept(dept_id: str, update_data: dict):
+        if not ObjectId.is_valid(dept_id):
+            raise HTTPException(status_code=400, detail="Invalid department ID")
+            
+        # Add the updated timestamp
+        update_data["updated_at"] = datetime.now(timezone.utc)
+        
+        # $set tells MongoDB to only update the provided fields, leaving others alone
+        result = dept_col.update_one({"_id": ObjectId(dept_id)}, {"$set": update_data})
+        
+        if result.matched_count == 0:
+            raise HTTPException(status_code=404, detail="Department not found")
+            
+        return DepartmentService.get_dept(dept_id)
 
     @staticmethod
     def delete_dept(dept_id: str):
