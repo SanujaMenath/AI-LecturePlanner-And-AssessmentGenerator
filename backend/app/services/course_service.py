@@ -13,7 +13,6 @@ class CourseService:
 
     @staticmethod
     def create_course(data):
-        # uniqueness on course_code
         if courses_col.find_one({"course_code": data.course_code}):
             raise HTTPException(status_code=400, detail="course_code already exists")
 
@@ -28,6 +27,7 @@ class CourseService:
             "semester": data.semester,
             "created_at": now,
             "updated_at": now,
+            "lecturer_id": data.lecturer_id 
         }
         res = courses_col.insert_one(doc)
         doc["_id"] = res.inserted_id
@@ -79,13 +79,19 @@ class CourseService:
     def update_course(course_id: str, data):
         if not ObjectId.is_valid(course_id):
             raise HTTPException(status_code=400, detail="Invalid course id")
-        update_doc = {k: v for k, v in data.dict(exclude_unset=True).items()}
+            
+        # CHANGE .dict() to .model_dump()
+        update_doc = {k: v for k, v in data.model_dump(exclude_unset=True).items()}
+        
         if not update_doc:
             raise HTTPException(status_code=400, detail="No fields to update")
+            
         update_doc["updated_at"] = datetime.now(timezone.utc)
         res = courses_col.update_one({"_id": ObjectId(course_id)}, {"$set": update_doc})
+        
         if res.matched_count == 0:
             raise HTTPException(status_code=404, detail="Course not found")
+            
         return CourseService.get_course(course_id)
 
     @staticmethod

@@ -8,7 +8,7 @@ import {
   Code,
   UserCircle,
 } from "lucide-react";
-import { fetchEnrolledCourses, type EnrolledCourse } from "../admin/services/CourseService";
+import { fetchEnrolledCourses, type EnrolledCourse } from "./services/CourseService";
 import { useAuth } from "../../context/AuthContext";
 import { toast } from "react-hot-toast";
 
