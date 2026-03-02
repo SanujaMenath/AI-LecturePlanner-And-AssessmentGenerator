@@ -26,7 +26,7 @@ export interface BackendCourseResponse {
 export interface Course extends CreateCoursePayload {
   _id?: string;
   id?: string;
-  lecturerName?: string; // Optional: If backend returns joined name
+  lecturerName?: string;
 }
 
 export type Department = { _id?: string; id?: string; name: string; code?: string; };

@@ -19,7 +19,6 @@ import api from "../../services/api";
 
 const CoursesPage: React.FC = () => {
   const [courses, setCourses] = useState<Course[]>([]);
-  // We will store departments as a map of { [id]: "Department Name" } for ultra-fast lookups
   const [departmentMap, setDepartmentMap] = useState<Record<string, string>>(
     {},
   );
