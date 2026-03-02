@@ -1,7 +1,7 @@
 # backend/app/models/course.py
 from pydantic import BaseModel, Field
 from typing import Optional
-from datetime import datetime, timezone
+from datetime import datetime
 from app.models.object_id import PyObjectId
 
 
@@ -18,6 +18,7 @@ class CourseCreate(BaseModel):
 
 class CourseUpdate(BaseModel):
     course_name: Optional[str] = None
+    course_code: Optional[str] = None
     description: Optional[str] = None
     department: Optional[str] = None
     credits: Optional[int] = None
@@ -48,11 +49,11 @@ class CourseResponse(BaseModel):
     id: PyObjectId = Field(..., alias="id")
     course_code: str
     course_name: str
-    description: Optional[str]
-    department: Optional[str]
+    description: Optional[str] = None
+    department: Optional[str] = None
     credits: int
-    year: Optional[int]
-    semester: Optional[int]
+    year: Optional[int] = None
+    semester: Optional[int] = None
     lecturer_id: Optional[PyObjectId] = None
     created_at: datetime
     updated_at: datetime
