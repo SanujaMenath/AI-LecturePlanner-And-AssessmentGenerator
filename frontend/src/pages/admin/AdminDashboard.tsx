@@ -1,3 +1,5 @@
+// src/pages/admin/AdminDashboard.tsx
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import {
   Users,
@@ -9,33 +11,91 @@ import {
   LayoutDashboard,
   ArrowRight,
   TrendingUp,
-  Clock
+  Clock,
+  Loader2
 } from "lucide-react";
+import { toast } from "react-hot-toast";
+import { getAdminDashboardData, type DashboardStats, type RecentUser } from "./services/dashboardService";
 
-const AdminDashboard = () => {
+// Helper function to calculate "time ago"
+const timeAgo = (dateString: string) => {
+  const date = new Date(dateString);
+  const now = new Date();
+  const seconds = Math.floor((now.getTime() - date.getTime()) / 1000);
+
+  let interval = seconds / 31536000;
+  if (interval > 1) return Math.floor(interval) + "y ago";
+  interval = seconds / 2592000;
+  if (interval > 1) return Math.floor(interval) + "m ago";
+  interval = seconds / 86400;
+  if (interval > 1) return Math.floor(interval) + "d ago";
+  interval = seconds / 3600;
+  if (interval > 1) return Math.floor(interval) + "h ago";
+  interval = seconds / 60;
+  if (interval > 1) return Math.floor(interval) + " min ago";
+  return "Just now";
+};
+
+const AdminDashboard: React.FC = () => {
   const navigate = useNavigate();
 
-  const stats = [
-    { label: "Total Students", value: 120, icon: <Users size={24} />, color: "bg-blue-50 text-blue-600", trend: "+12% this month" },
-    { label: "Lecturers", value: 18, icon: <GraduationCap size={24} />, color: "bg-purple-50 text-purple-600", trend: "+2 new joined" },
-    { label: "Courses", value: 32, icon: <BookOpen size={24} />, color: "bg-emerald-50 text-emerald-600", trend: "4 active tracks" },
-    { label: "Departments", value: 6, icon: <Building2 size={24} />, color: "bg-orange-50 text-orange-600", trend: "All active" },
-  ];
+  const [loading, setLoading] = useState(true);
+  const [lastUpdated, setLastUpdated] = useState<string>("");
+  
+  // Clean Data States
+  const [counts, setCounts] = useState<DashboardStats>({ students: 0, lecturers: 0, courses: 0, departments: 0 });
+  const [recentUsers, setRecentUsers] = useState<RecentUser[]>([]);
 
-  const recentUsers = [
-    { name: "Student A", role: "Student", email: "stud@gmail.com", status: "Active", time: "2h ago" },
-    { name: "Lecturer One", role: "Lecturer", email: "lec@gmail.com", status: "Active", time: "4h ago" },
-    { name: "Admin One", role: "Admin", email: "admin@gmail.com", status: "Online", time: "Now" },
+  useEffect(() => {
+    const fetchDashboardData = async () => {
+      try {
+        setLoading(true);
+        
+        // Fetch processed data directly from our new service
+        const data = await getAdminDashboardData();
+        
+        setCounts(data.stats);
+        setRecentUsers(data.recentUsers);
+
+        // Set Last Updated Time
+        const now = new Date();
+        setLastUpdated(now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) + ' - ' + now.toLocaleDateString());
+
+      } catch (error) {
+        console.error("Failed to fetch dashboard data:", error);
+        toast.error("Failed to load dashboard metrics.");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchDashboardData();
+  }, []);
+
+  const stats = [
+    { label: "Total Students", value: counts.students, icon: <Users size={24} />, color: "bg-blue-50 text-blue-600", trend: "Active learners" },
+    { label: "Lecturers", value: counts.lecturers, icon: <GraduationCap size={24} />, color: "bg-purple-50 text-purple-600", trend: "Faculty members" },
+    { label: "Courses", value: counts.courses, icon: <BookOpen size={24} />, color: "bg-emerald-50 text-emerald-600", trend: "Academic modules" },
+    { label: "Departments", value: counts.departments, icon: <Building2 size={24} />, color: "bg-orange-50 text-orange-600", trend: "Active units" },
   ];
 
   const quickActions = [
     { label: "Add User", icon: <UserPlus size={20} />, onClick: () => navigate("/admin/create-user"), description: "Register new students or staff" },
-    { label: "Add Course", icon: <PlusCircle size={20} />, onClick: () => { }, description: "Create new learning modules" },
-    { label: "Add Department", icon: <Building2 size={20} />, onClick: () => { }, description: "Configure academic units" },
+    { label: "Manage Courses", icon: <PlusCircle size={20} />, onClick: () => navigate("/admin/courses"), description: "Create new learning modules" },
+    { label: "Manage Departments", icon: <Building2 size={20} />, onClick: () => navigate("/admin/departments"), description: "Configure academic units" },
   ];
 
+  if (loading) {
+    return (
+      <div className="flex flex-col items-center justify-center min-h-[60vh] space-y-4">
+        <Loader2 className="w-10 h-10 text-primary animate-spin" />
+        <p className="text-gray-500 font-bold animate-pulse">Gathering system metrics...</p>
+      </div>
+    );
+  }
+
   return (
-    <div className="max-w-7xl mx-auto space-y-8 animate-in fade-in duration-500">
+    <div className="max-w-7xl mx-auto space-y-8 animate-in fade-in duration-500 p-8">
       {/* Header */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
@@ -49,30 +109,27 @@ const AdminDashboard = () => {
             Welcome back! Here's what's happening in your system today.
           </p>
         </div>
-        <div className="flex items-center gap-3 text-sm font-medium text-gray-500 bg-white px-4 py-2 rounded-lg shadow-sm border border-gray-100">
-          <Clock size={16} />
-          <span>Last Updated: Jan 22, 22:52</span>
+        <div className="flex items-center gap-3 text-sm font-medium text-gray-500 bg-white px-4 py-2.5 rounded-xl shadow-sm border border-gray-100">
+          <Clock size={16} className="text-primary" />
+          <span>Last Updated: {lastUpdated}</span>
         </div>
       </div>
 
       {/* Stats Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {stats.map((item) => (
-          <div
-            key={item.label}
-            className="card-hover group relative overflow-hidden"
-          >
+          <div key={item.label} className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-lg hover:border-primary/20 transition-all group relative overflow-hidden">
             <div className="flex justify-between items-start mb-4">
               <div className={`p-3 rounded-xl ${item.color} transition-transform group-hover:scale-110 duration-300`}>
                 {item.icon}
               </div>
-              <div className="flex items-center gap-1 text-xs font-semibold text-emerald-600 bg-emerald-50 px-2 py-1 rounded-full">
+              <div className="flex items-center gap-1 text-xs font-bold text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-full">
                 <TrendingUp size={12} />
                 {item.trend}
               </div>
             </div>
-            <p className="text-gray-500 text-sm font-medium">{item.label}</p>
-            <p className="text-3xl font-bold mt-1 text-gray-900">{item.value}</p>
+            <p className="text-gray-500 text-sm font-bold">{item.label}</p>
+            <p className="text-3xl font-black mt-1 text-gray-900">{item.value}</p>
           </div>
         ))}
       </div>
@@ -82,8 +139,8 @@ const AdminDashboard = () => {
         <div className="lg:col-span-2 space-y-6">
           <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
             <div className="p-6 border-b border-gray-50 flex items-center justify-between">
-              <h2 className="text-xl font-bold text-gray-900">Recent Users</h2>
-              <button className="text-sm font-semibold text-primary hover:text-primary-600 transition flex items-center gap-1">
+              <h2 className="text-xl font-bold text-gray-900">Recently Registered Users</h2>
+              <button onClick={() => navigate("/admin/users")} className="text-sm font-bold text-primary hover:text-primary/80 transition flex items-center gap-1 bg-primary/5 px-3 py-1.5 rounded-lg">
                 View All <ArrowRight size={14} />
               </button>
             </div>
@@ -91,42 +148,48 @@ const AdminDashboard = () => {
             <div className="overflow-x-auto">
               <table className="w-full text-left">
                 <thead>
-                  <tr className="text-gray-400 text-xs uppercase tracking-wider font-bold">
+                  <tr className="bg-gray-50/50 text-gray-400 text-[11px] uppercase tracking-widest font-bold">
                     <th className="px-6 py-4">User Details</th>
                     <th className="px-6 py-4">Role</th>
                     <th className="px-6 py-4">Status</th>
-                    <th className="px-6 py-4">Time</th>
+                    <th className="px-6 py-4">Joined</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-gray-50">
                   {recentUsers.map((user, i) => (
-                    <tr key={i} className="hover:bg-gray-50/50 transition">
+                    <tr key={user._id || user.id || i} className="hover:bg-gray-50/50 transition duration-200">
                       <td className="px-6 py-4">
                         <div className="flex items-center gap-3">
-                          <div className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center font-bold text-gray-400 text-sm">
-                            {user.name.charAt(0)}
+                          <div className="w-10 h-10 rounded-xl bg-linear-to-br from-gray-100 to-gray-50 border border-gray-200 flex items-center justify-center font-bold text-gray-500 shadow-sm">
+                            {user.full_name ? user.full_name.charAt(0) : "?"}
                           </div>
                           <div>
-                            <p className="font-bold text-gray-900">{user.name}</p>
-                            <p className="text-sm text-gray-500">{user.email}</p>
+                            <p className="font-bold text-gray-900">{user.full_name || "Unknown User"}</p>
+                            <p className="text-xs font-medium text-gray-500 mt-0.5">{user.email}</p>
                           </div>
                         </div>
                       </td>
                       <td className="px-6 py-4">
-                        <span className="text-sm font-medium text-gray-700">{user.role}</span>
+                        <span className="text-xs font-bold text-gray-600 uppercase tracking-wider">{user.role}</span>
                       </td>
                       <td className="px-6 py-4">
-                        <span className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold ${user.status === 'Online' ? 'bg-emerald-100 text-emerald-700' : 'bg-blue-100 text-blue-700'
-                          }`}>
-                          <span className={`w-1.5 h-1.5 rounded-full ${user.status === 'Online' ? 'bg-emerald-500' : 'bg-blue-500'}`} />
-                          {user.status}
+                        <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-emerald-50 text-emerald-600 border border-emerald-100">
+                          <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+                          Active
                         </span>
                       </td>
-                      <td className="px-6 py-4 text-sm text-gray-400 font-medium">
-                        {user.time}
+                      <td className="px-6 py-4 text-xs text-gray-400 font-bold">
+                        {user.created_at ? timeAgo(user.created_at) : "Unknown"}
                       </td>
                     </tr>
                   ))}
+                  {recentUsers.length === 0 && (
+                    <tr>
+                      <td colSpan={4} className="px-6 py-8 text-center text-gray-400 font-medium">
+                        No recent users found.
+                      </td>
+                    </tr>
+                  )}
                 </tbody>
               </table>
             </div>
@@ -142,34 +205,32 @@ const AdminDashboard = () => {
                 <button
                   key={action.label}
                   onClick={action.onClick}
-                  className="w-full flex items-center gap-4 p-4 rounded-xl border border-gray-50 hover:border-primary/20 hover:bg-primary/5 transition text-left group"
+                  className="w-full flex items-center gap-4 p-4 rounded-xl border border-gray-100 hover:border-primary/30 hover:bg-primary/5 hover:shadow-md transition-all text-left group"
                 >
-                  <div className="p-2 bg-gray-50 rounded-lg text-gray-400 group-hover:bg-primary/10 group-hover:text-primary transition">
+                  <div className="p-2.5 bg-gray-50 rounded-lg text-gray-500 group-hover:bg-primary/10 group-hover:text-primary transition-colors">
                     {action.icon}
                   </div>
                   <div>
-                    <p className="font-bold text-gray-900 text-sm">{action.label}</p>
-                    <p className="text-xs text-gray-500 mt-0.5">{action.description}</p>
+                    <p className="font-bold text-gray-900 text-sm group-hover:text-primary transition-colors">{action.label}</p>
+                    <p className="text-xs text-gray-500 mt-0.5 font-medium">{action.description}</p>
                   </div>
                 </button>
               ))}
             </div>
           </div>
 
-          <div className="bg-indigo-600 p-6 rounded-2xl text-white shadow-lg shadow-indigo-200 relative overflow-hidden">
+          <div className="bg-linear-to-br from-indigo-600 to-indigo-700 p-6 rounded-2xl text-white shadow-xl shadow-indigo-200 relative overflow-hidden">
             <div className="relative z-10">
-              <h2 className="text-lg font-bold mb-2">System Insight</h2>
-              <p className="text-indigo-100 text-sm leading-relaxed opacity-90">
-                AI-driven analysis shows a 15% increase in course engagement this week.
-                Consider reviewing new department proposals.
+              <h2 className="text-lg font-bold mb-2 flex items-center gap-2">
+                <TrendingUp size={18} /> System Insight
+              </h2>
+              <p className="text-indigo-100 text-sm leading-relaxed font-medium">
+                Your platform currently manages {counts.students} students across {counts.courses} active courses. System performance is optimal.
               </p>
-              <button className="mt-4 text-xs font-bold bg-white/20 hover:bg-white/30 px-3 py-2 rounded-lg transition">
-                View Full Report
-              </button>
             </div>
             {/* Background Decoration */}
-            <div className="absolute -right-4 -bottom-4 opacity-10">
-              <GraduationCap size={120} />
+            <div className="absolute -right-6 -bottom-6 opacity-10 rotate-12 transition-transform hover:rotate-0 duration-500">
+              <GraduationCap size={140} />
             </div>
           </div>
         </div>

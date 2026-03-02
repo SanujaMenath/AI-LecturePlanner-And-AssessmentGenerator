@@ -128,8 +128,8 @@ const UsersPage = () => {
             </thead>
             <tbody className="divide-y divide-gray-50">
               {filteredUsers.length > 0 ? (
-                filteredUsers.map((u) => (
-                  <tr key={u.id} className="group hover:bg-gray-50/50 transition-all duration-200">
+                filteredUsers.map((u,index) => (
+                  <tr key={u.id || index } className="group hover:bg-gray-50/50 transition-all duration-200">
                     <td className="px-8 py-5">
                       <div className="flex items-center gap-4">
                         <div className="w-12 h-12 rounded-2xl bg-linear-to-br from-gray-100 to-gray-50 flex items-center justify-center font-extrabold text-gray-400 shadow-inner group-hover:from-primary/10 group-hover:to-primary/5 group-hover:text-primary transition-all duration-300">
