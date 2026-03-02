@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Building2, Plus, Trash2, Users, Search, Loader2, Edit2, X, GraduationCap } from "lucide-react";
+import { Building2, Plus, Trash2, Search, Loader2, Edit2, X, GraduationCap } from "lucide-react";
 import { toast } from "react-hot-toast";
 import { 
   fetchDepartments, 
@@ -300,12 +300,6 @@ const DepartmentPage: React.FC = () => {
                     )}
                     
                     <p className="text-sm text-gray-500 mt-3 line-clamp-2">{dept.description || "No description provided."}</p>
-                  </div>
-
-                  <div className="mt-6 pt-4 border-t border-gray-50">
-                    <button className="flex items-center gap-2 text-sm font-bold text-primary hover:text-primary/80 transition-colors w-full justify-center bg-primary/5 py-2 rounded-xl">
-                      <Users size={16} /> Manage Enrollment
-                    </button>
                   </div>
                 </div>
               ))

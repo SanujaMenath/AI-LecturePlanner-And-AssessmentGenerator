@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useAuth } from "../../context/AuthContext";
-import { updateProfile } from "../../services/userService";
+import { updateProfile } from "../admin/services/userService";
 import ChangePassword from "./ChangePassword";
 import Button from "../../components/ui/Button";
 import { User, Mail, Settings, ShieldCheck, Save, PenLine } from "lucide-react";

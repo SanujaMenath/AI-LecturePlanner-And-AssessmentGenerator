@@ -1,10 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import InputValue from "../../components/ui/InputValue";
 import Button from "../../components/ui/Button";
-import { createUserService } from "../../services/userService";
+import { createUserService } from "./services/userService";
 import { useAuth } from "../../context/AuthContext";
+import api from "../../services/api";
 import type { CreateUserPayload, UserRole } from "../../types/user";
 import { toast } from "react-hot-toast";
+
+interface Department {
+  _id?: string;
+  id?: string;
+  name: string;
+}
 
 const RegisterPage: React.FC = () => {
   const { user } = useAuth();
@@ -19,10 +26,27 @@ const RegisterPage: React.FC = () => {
   const [specialization, setSpecialization] = useState("");
   const [year, setYear] = useState("");
   const [semester, setSemester] = useState("");
+  const [studentId, setStudentId] = useState("");
+  
   const [loading, setLoading] = useState(false);
+  const [departments, setDepartments] = useState<Department[]>([]);
+
+  useEffect(() => {
+    const fetchDepartments = async () => {
+      try {
+        const res = await api.get<{ data?: Department[] } | Department[]>("/departments");
+        const data = Array.isArray(res.data) ? res.data : (res.data && !Array.isArray(res.data) ? res.data.data : []) || [];
+        setDepartments(data);
+      } catch (error) {
+        console.error("Failed to load departments", error);
+        toast.error("Failed to load department list.");
+      }
+    };
+    fetchDepartments();
+  }, []);
 
   if (!user || user.role !== "admin") {
-    return <p className="text-center mt-20">Access denied</p>;
+    return <p className="text-center mt-20 font-bold text-red-500">Access denied</p>;
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -70,6 +94,7 @@ const RegisterPage: React.FC = () => {
         department,
         year: Number(year),
         semester: Number(semester),
+        student_id: studentId.trim().toUpperCase(),
       };
     } else {
       payload = {
@@ -93,6 +118,7 @@ const RegisterPage: React.FC = () => {
       setSpecialization("");
       setYear("");
       setSemester("");
+      setStudentId("");
     } catch (err: unknown) {
       if (err instanceof Error) {
         toast.error(err.message);
@@ -106,8 +132,8 @@ const RegisterPage: React.FC = () => {
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-50 p-4">
-      <div className="w-full max-w-lg bg-white px-8 py-10 rounded-xl shadow-lg">
-        <h1 className="text-3xl font-bold mb-6 text-center gradient-text">
+      <div className="w-full max-w-lg bg-white px-8 py-10 rounded-xl shadow-lg border border-gray-100">
+        <h1 className="text-3xl font-bold mb-6 text-center text-gray-900">
           Create User
         </h1>
 
@@ -140,9 +166,9 @@ const RegisterPage: React.FC = () => {
           )}
 
           <div>
-            <label className="font-medium">Role</label>
+            <label className="font-medium text-sm text-gray-700 ml-1">Role</label>
             <select
-              className="w-full border rounded px-3 py-2"
+              className="w-full border border-gray-200 bg-gray-50 rounded-xl px-4 py-3 outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
               value={role}
               onChange={(e) => setRole(e.target.value as UserRole)}
             >
@@ -154,11 +180,20 @@ const RegisterPage: React.FC = () => {
 
           {role === "lecturer" && (
             <>
-              <InputValue
-                label="Department"
-                value={department}
-                onChange={(e) => setDepartment(e.target.value)}
-              />
+              <div>
+                <label className="font-medium text-sm text-gray-700 ml-1">Department</label>
+                <select
+                  className="w-full border border-gray-200 bg-gray-50 rounded-xl px-4 py-3 outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
+                  value={department}
+                  onChange={(e) => setDepartment(e.target.value)}
+                  required
+                >
+                  <option value="" disabled>Select Department...</option>
+                  {departments.map(dept => (
+                    <option key={dept._id || dept.id} value={dept._id || dept.id}>{dept.name}</option>
+                  ))}
+                </select>
+              </div>
               <InputValue
                 label="Specialization"
                 value={specialization}
@@ -170,13 +205,30 @@ const RegisterPage: React.FC = () => {
           {role === "student" && (
             <>
               <InputValue
-                label="Department"
-                value={department}
-                onChange={(e) => setDepartment(e.target.value)}
+                label="Student Registration Number"
+                placeholder="e.g. st26010345"
+                value={studentId}
+                onChange={(e) => setStudentId(e.target.value.toLowerCase())}
               />
+              <div>
+                <label className="font-medium text-sm text-gray-700 ml-1">Department</label>
+                <select
+                  className="w-full border border-gray-200 bg-gray-50 rounded-xl px-4 py-3 outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
+                  value={department}
+                  onChange={(e) => setDepartment(e.target.value)}
+                  required
+                >
+                  <option value="" disabled>Select Department...</option>
+                  {departments.map(dept => (
+                    <option key={dept._id || dept.id} value={dept._id || dept.id}>{dept.name}</option>
+                  ))}
+                </select>
+              </div>
               <InputValue
                 label="Year"
                 type="number"
+                min={1}
+                max={6}
                 value={year}
                 onChange={(e) => setYear(e.target.value)}
               />
@@ -184,14 +236,16 @@ const RegisterPage: React.FC = () => {
               <InputValue
                 label="Semester"
                 type="number"
+                min={1}
+                max={12}
                 value={semester}
                 onChange={(e) => setSemester(e.target.value)}
               />
             </>
           )}
 
-          <Button type="submit" loading={loading} className="btn-accent w-full mt-4">
-            Create User
+          <Button type="submit" loading={loading} className="w-full mt-4 py-3">
+            Register {role.charAt(0).toUpperCase() + role.slice(1)}
           </Button>
         </form>
       </div>

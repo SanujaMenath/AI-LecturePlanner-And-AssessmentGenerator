@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { type UserDTO } from "../../types/user";
-import { getUsersService } from "../../services/userService";
+import { getUsersService } from "./services/userService";
 import {
   Users,
   Search,
@@ -10,7 +10,8 @@ import {
   Filter,
   MoreVertical,
   ChevronRight,
-  User as UserIcon
+  User as UserIcon,
+  Hash
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
@@ -37,7 +38,8 @@ const UsersPage = () => {
 
   const filteredUsers = users.filter(user =>
     user.full_name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    user.email.toLowerCase().includes(searchQuery.toLowerCase())
+    user.email.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    (user.student_id && user.student_id.toLowerCase().includes(searchQuery.toLowerCase()))
   );
 
   if (loading) {
@@ -70,7 +72,7 @@ const UsersPage = () => {
   }
 
   return (
-    <div className="max-w-7xl mx-auto space-y-8 animate-in fade-in duration-500">
+    <div className="max-w-7xl mx-auto space-y-8 animate-in fade-in duration-500 p-8">
       {/* Header Section */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
         <div className="flex items-center gap-3">
@@ -87,7 +89,7 @@ const UsersPage = () => {
 
         <button
           onClick={() => navigate("/admin/create-user")}
-          className="flex items-center gap-2 px-6 py-3 bg-primary text-white font-bold rounded-xl hover:bg-primary-600 shadow-lg shadow-primary/20 transition-all active:scale-95 whitespace-nowrap"
+          className="flex items-center gap-2 px-6 py-3 bg-primary text-white font-bold rounded-xl hover:bg-primary/90 shadow-lg shadow-primary/20 transition-all active:scale-95 whitespace-nowrap"
         >
           <UserPlus size={20} />
           Add New User
@@ -100,7 +102,7 @@ const UsersPage = () => {
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-primary transition-colors" size={18} />
           <input
             type="text"
-            placeholder="Search by name or email..."
+            placeholder="Search by name, email, or Student ID..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             className="w-full bg-white border border-gray-100 rounded-xl py-3 pl-10 pr-4 text-sm font-medium focus:outline-none focus:ring-4 focus:ring-primary/5 focus:border-primary/20 shadow-sm transition-all"
@@ -137,23 +139,33 @@ const UsersPage = () => {
                           <p className="font-bold text-gray-900 group-hover:text-primary transition-colors">
                             {u.full_name}
                           </p>
-                          <div className="flex items-center gap-1.5 mt-0.5 text-gray-500 font-medium text-xs">
-                            <Mail size={12} className="opacity-60" />
-                            {u.email}
+                          <div className="flex items-center gap-3 mt-1">
+                            <div className="flex items-center gap-1 text-gray-500 font-medium text-xs">
+                              <Mail size={12} className="opacity-60" />
+                              {u.email}
+                            </div>
+                            
+                            {/* Display Student ID if available */}
+                            {u.student_id && (
+                              <div className="flex items-center gap-1 text-emerald-600 font-bold text-xs bg-emerald-50 px-2 py-0.5 rounded-md">
+                                <Hash size={12} />
+                                {u.student_id}
+                              </div>
+                            )}
                           </div>
                         </div>
                       </div>
                     </td>
                     <td className="px-8 py-5">
                       <div className="flex justify-center">
-                        <span className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-[11px] font-extrabold uppercase tracking-wider ${u.role === 'admin'
-                            ? 'bg-purple-100 text-purple-700 border border-purple-200/50'
-                            : u.role === 'lecturer'
-                              ? 'bg-blue-100 text-blue-700 border border-blue-200/50'
-                              : 'bg-emerald-100 text-emerald-700 border border-emerald-200/50'
+                        <span className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-[11px] font-extrabold uppercase tracking-wider ${
+                            u.role === 'admin'
+                              ? 'bg-purple-100 text-purple-700 border border-purple-200/50'
+                              : u.role === 'lecturer'
+                                ? 'bg-blue-100 text-blue-700 border border-blue-200/50'
+                                : 'bg-emerald-100 text-emerald-700 border border-emerald-200/50'
                           }`}>
-                          <div className={`w-1.5 h-1.5 rounded-full ${u.role === 'admin' ? 'bg-purple-500' : u.role === 'lecturer' ? 'bg-blue-500' : 'bg-emerald-500'
-                            }`} />
+                          <div className={`w-1.5 h-1.5 rounded-full ${u.role === 'admin' ? 'bg-purple-500' : u.role === 'lecturer' ? 'bg-blue-500' : 'bg-emerald-500'}`} />
                           {u.role}
                         </span>
                       </div>

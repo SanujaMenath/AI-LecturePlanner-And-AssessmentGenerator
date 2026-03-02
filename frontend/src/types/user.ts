@@ -12,6 +12,8 @@ export interface UserDTO {
   full_name: string;
   email: string;
   role: UserRole;
+  department_id?: string;
+  student_id?: string;
 }
 
 export interface AdminCreate extends BaseUserCreate {
@@ -29,6 +31,7 @@ export interface StudentCreate extends BaseUserCreate {
   department: string;
   year: number;
   semester: number;
+  student_id: string;
 }
 
 export type CreateUserPayload = AdminCreate | LecturerCreate | StudentCreate;

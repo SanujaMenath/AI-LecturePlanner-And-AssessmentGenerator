@@ -16,7 +16,6 @@ const links = [
   { label: "Users", to: "/admin/users", icon: <Users size={20} /> },
   { label: "Courses", to: "/admin/courses", icon: <BookOpen size={20} /> },
   { label: "Departments", to: "/admin/departments", icon: <Building2 size={20} /> },
-  { label: "Enrollment", to: "/admin/enrollment", icon: <Building2 size={20} /> },
 ];
 
 const AdminSidebar = () => {

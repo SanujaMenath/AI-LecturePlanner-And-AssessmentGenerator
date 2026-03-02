@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { changePassword } from "../../services/userService";
+import { changePassword } from "../admin/services/userService";
 import { useAuth } from "../../context/AuthContext";
 import Button from "../../components/ui/Button";
 import { Lock, Shield, Eye, EyeOff, RefreshCcw } from "lucide-react";
