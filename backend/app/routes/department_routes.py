@@ -15,13 +15,6 @@ def create_department(dept: DepartmentCreate):
 def list_departments():
     return DepartmentService.get_all()
 
-@router.post("/{dept_id}/enroll/{student_id}")
-def enroll_student_to_dept(dept_id: str, student_id: str):
-    success = DepartmentService.enroll_student(dept_id, student_id)
-    if not success:
-        raise HTTPException(status_code=400, detail="Enrollment failed")
-    return {"message": "Student enrolled successfully"}
-
 @router.put("/{dept_id}", response_model=DepartmentResponse)
 def update_department(dept_id: str, dept: DepartmentUpdate):
     update_data = dept.model_dump(exclude_unset=True) 

@@ -17,6 +17,7 @@ class LecturerCreate(BaseUser):
 
 
 class StudentCreate(BaseUser):
+    student_id: str
     department: str
     year: int
     semester: int
@@ -38,9 +39,11 @@ class ChangePasswordPayload(BaseModel):
 
 class UserResponse(BaseModel):
     id: PyObjectId = Field(alias="_id")
+    student_id: Optional[str] = None
     full_name: str
     email: EmailStr
     role: str
+    department_id: Optional[PyObjectId] = None
     created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
     updated_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
 

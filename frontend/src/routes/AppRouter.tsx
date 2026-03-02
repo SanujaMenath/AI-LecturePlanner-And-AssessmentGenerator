@@ -19,7 +19,6 @@ import StudentAssignmentsPage from "../pages/student/AssignmentsPage";
 import StudentGradesPage from "../pages/student/GradesPage";
 import AssessmentCreation from "../pages/lecturer/AssessmentCreation";
 import DepartmentPage from "../pages/admin/DepartmentPage";
-import DepartmentEnrollmentPage from "../pages/admin/EnrollmentPage";
 
 const AppRouter = () => {
   return (
@@ -43,7 +42,6 @@ const AppRouter = () => {
           <Route path="profile" element={<ProfilePage />} />
           <Route path="courses" element={<CoursesPage />} />
           <Route path="departments" element={<DepartmentPage />} />
-          <Route path="enrollment" element={<DepartmentEnrollmentPage />} />
         </Route>
 
         <Route
