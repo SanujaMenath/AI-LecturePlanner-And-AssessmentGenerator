@@ -46,22 +46,38 @@ class CourseService:
 
     @staticmethod
     def list_courses_for_user(user):
-        courses = CourseService.list_courses()
+        # 1. Admin sees everything
+        if user["role"] == "admin":
+            return CourseService.list_courses()
 
-        if user["role"] != "student":
-            return courses
+        # 2. Lecturer sees only their assigned courses
+        elif user["role"] == "lecturer":
+            docs = courses_col.find({"lecturer_id": ObjectId(user["id"])})
+            out = []
+            for d in docs:
+                # Convert the main _id
+                d["id"] = str(d["_id"])
+                d["course_id"] = str(d["_id"])
+                d.pop("_id", None)
+                
+                # Convert inner ObjectIds to Strings
+                if "lecturer_id" in d and d["lecturer_id"]:
+                    d["lecturer_id"] = str(d["lecturer_id"])
+                
+                if "department" in d and d["department"]:
+                    d["department"] = str(d["department"])
+                
+                enrolled_count = course_students_col.count_documents({"course_id": ObjectId(d["id"])})
+                d["enrolled_students"] = enrolled_count
+                
+                out.append(d)
+            return out
 
-        enrolled = course_students_col.find(
-            {"student_id": ObjectId(user["id"])},
-            {"course_id": 1}
-        )
-
-        enrolled_ids = {str(e["course_id"]) for e in enrolled}
-
-        for c in courses:
-            c["is_enrolled"] = c["id"] in enrolled_ids
-
-        return courses
+        # 3. Student uses the smart auto-enrollment pipeline
+        elif user["role"] == "student":
+            return CourseService.get_courses_of_student(user["id"])
+            
+        return []
 
 
     @staticmethod

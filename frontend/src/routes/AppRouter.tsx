@@ -19,6 +19,7 @@ import StudentAssignmentsPage from "../pages/student/AssignmentsPage";
 import StudentGradesPage from "../pages/student/GradesPage";
 import AssessmentCreation from "../pages/lecturer/AssessmentCreation";
 import DepartmentPage from "../pages/admin/DepartmentPage";
+import LecturerCoursesPage from "../pages/lecturer/LecturerCoursesPage";
 
 const AppRouter = () => {
   return (
@@ -54,9 +55,9 @@ const AppRouter = () => {
         >
           <Route index element={<LecturerDashboard />} />
           <Route path="profile" element={<ProfilePage />} />
-          <Route path="courses" element={<CoursesPage />} />
+          <Route path="courses" element={<LecturerCoursesPage />} />
           <Route path="materials" element={<MaterialManagement />} />
-           <Route path="assessment-creation" element={<AssessmentCreation />} />
+          <Route path="assessment-creation" element={<AssessmentCreation />} />
         </Route>
 
         <Route
