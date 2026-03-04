@@ -1,69 +1,88 @@
 import { useState, useEffect } from "react";
-import { 
-  ClipboardList, 
-  Search, 
-  Filter, 
-  Clock, 
-  CheckCircle2, 
-  AlertCircle, 
-  ChevronRight, 
+import {
+  ClipboardList,
+  Search,
+  Filter,
+  Clock,
+  CheckCircle2,
+  AlertCircle,
+  ChevronRight,
   BookOpen,
-  FileText
+  FileText,
 } from "lucide-react";
-
-// Types for frontend
-type AssignmentStatus = 'pending' | 'submitted' | 'graded' | 'overdue';
-
-interface Assignment {
-  id: string;
-  title: string;
-  courseName: string;
-  courseCode: string;
-  dueDate: string;
-  status: AssignmentStatus;
-  score?: number;
-  maxScore: number;
-}
+import { useAuth } from "../../context/AuthContext";
+import {
+  fetchStudentAssignments,
+  type Assignment,
+  type AssignmentStatus,
+} from "./services/studentAssignmentService";
+import { toast } from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 
 const StudentAssignmentsPage = () => {
+  const { user } = useAuth(); // Get the logged-in student
   const [assignments, setAssignments] = useState<Assignment[]>([]);
   const [loading, setLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState("");
   const [statusFilter, setStatusFilter] = useState<string>("all");
+  const navigate = useNavigate();
 
-  // Simulated API Fetch
   useEffect(() => {
-    const fetchAssignments = async () => {
-      await new Promise(resolve => setTimeout(resolve, 300)); 
-      
-      const mockData: Assignment[] = [
-        { id: "1", title: "Build a REST API with FastAPI", courseName: "Advanced Web Development", courseCode: "WD301", dueDate: "2026-03-01T23:59:00", status: "pending", maxScore: 100 },
-        { id: "2", title: "Database Normalization Quiz", courseName: "Database Systems Architecture", courseCode: "DB202", dueDate: "2026-02-28T12:00:00", status: "submitted", maxScore: 50 },
-        { id: "3", title: "Binary Search Tree Implementation", courseName: "Introduction to Computer Science", courseCode: "CS101", dueDate: "2026-02-15T23:59:00", status: "graded", score: 95, maxScore: 100 },
-        { id: "4", title: "Weekly Reflection Essay", courseName: "Advanced Web Development", courseCode: "WD301", dueDate: "2026-02-20T23:59:00", status: "overdue", maxScore: 20 },
-      ];
-      setAssignments(mockData);
-      setLoading(false);
+    const loadAssignments = async () => {
+      if (!user?.id) return;
+
+      try {
+        setLoading(true);
+        const data = await fetchStudentAssignments(user.id);
+        setAssignments(data);
+      } catch (error) {
+        console.error("Failed to load assignments", error);
+        toast.error("Could not load your assignments.");
+      } finally {
+        setLoading(false);
+      }
     };
 
-    fetchAssignments();
-  }, []);
+    loadAssignments();
+  }, [user?.id]);
 
   // Filter Logic
-  const filteredAssignments = assignments.filter(assignment => {
-    const matchesSearch = assignment.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
-                          assignment.courseName.toLowerCase().includes(searchQuery.toLowerCase());
-    const matchesStatus = statusFilter === "all" || assignment.status === statusFilter;
+  const filteredAssignments = assignments.filter((assignment) => {
+    const matchesSearch =
+      assignment.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      assignment.courseName.toLowerCase().includes(searchQuery.toLowerCase());
+    const matchesStatus =
+      statusFilter === "all" || assignment.status === statusFilter;
     return matchesSearch && matchesStatus;
   });
 
   // Helper function for status styling
   const getStatusDisplay = (status: AssignmentStatus) => {
     switch (status) {
-      case 'pending': return { color: 'text-amber-600 bg-amber-50 border-amber-200', icon: <Clock size={14} />, label: 'To Do' };
-      case 'submitted': return { color: 'text-blue-600 bg-blue-50 border-blue-200', icon: <FileText size={14} />, label: 'Submitted' };
-      case 'graded': return { color: 'text-emerald-600 bg-emerald-50 border-emerald-200', icon: <CheckCircle2 size={14} />, label: 'Graded' };
-      case 'overdue': return { color: 'text-red-600 bg-red-50 border-red-200', icon: <AlertCircle size={14} />, label: 'Overdue' };
+      case "pending":
+        return {
+          color: "text-amber-600 bg-amber-50 border-amber-200",
+          icon: <Clock size={14} />,
+          label: "To Do",
+        };
+      case "submitted":
+        return {
+          color: "text-blue-600 bg-blue-50 border-blue-200",
+          icon: <FileText size={14} />,
+          label: "Submitted",
+        };
+      case "graded":
+        return {
+          color: "text-emerald-600 bg-emerald-50 border-emerald-200",
+          icon: <CheckCircle2 size={14} />,
+          label: "Graded",
+        };
+      case "overdue":
+        return {
+          color: "text-red-600 bg-red-50 border-red-200",
+          icon: <AlertCircle size={14} />,
+          label: "Overdue",
+        };
     }
   };
 
@@ -71,7 +90,9 @@ const StudentAssignmentsPage = () => {
     return (
       <div className="flex flex-col items-center justify-center min-h-[400px] space-y-4">
         <div className="w-12 h-12 border-4 border-emerald-500/20 border-t-emerald-500 rounded-full animate-spin" />
-        <p className="text-gray-500 font-bold animate-pulse">Loading assignments...</p>
+        <p className="text-gray-500 font-bold animate-pulse">
+          Loading assignments...
+        </p>
       </div>
     );
   }
@@ -85,8 +106,12 @@ const StudentAssignmentsPage = () => {
             <ClipboardList size={28} />
           </div>
           <div>
-            <h1 className="text-3xl font-extrabold tracking-tight text-gray-900">Assignments</h1>
-            <p className="text-gray-500 font-medium mt-1">Track and submit your coursework</p>
+            <h1 className="text-3xl font-extrabold tracking-tight text-gray-900">
+              Assignments
+            </h1>
+            <p className="text-gray-500 font-medium mt-1">
+              Track and submit your coursework
+            </p>
           </div>
         </div>
       </div>
@@ -94,7 +119,10 @@ const StudentAssignmentsPage = () => {
       {/* Controls: Search & Filter */}
       <div className="flex flex-col sm:flex-row gap-4">
         <div className="relative flex-1 group">
-          <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-emerald-500 transition-colors" size={18} />
+          <Search
+            className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-emerald-500 transition-colors"
+            size={18}
+          />
           <input
             type="text"
             placeholder="Search assignments by title or course..."
@@ -104,7 +132,7 @@ const StudentAssignmentsPage = () => {
           />
         </div>
         <div className="relative">
-          <select 
+          <select
             className="w-full sm:w-48 bg-white border border-gray-100 rounded-xl py-3 pl-4 pr-10 text-sm font-bold text-gray-700 focus:outline-none focus:ring-4 focus:ring-emerald-500/10 focus:border-emerald-500/30 shadow-sm transition-all appearance-none cursor-pointer"
             value={statusFilter}
             onChange={(e) => setStatusFilter(e.target.value)}
@@ -115,21 +143,29 @@ const StudentAssignmentsPage = () => {
             <option value="graded">Graded</option>
             <option value="overdue">Overdue</option>
           </select>
-          <Filter className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none" size={16} />
+          <Filter
+            className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none"
+            size={16}
+          />
         </div>
       </div>
 
       {/* Assignments Grid */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {filteredAssignments.length > 0 ? (
-          filteredAssignments.map((assignment) => {
+          filteredAssignments.map((assignment,index) => {
             const statusConfig = getStatusDisplay(assignment.status);
-            
+
             return (
-              <div key={assignment.id} className="group flex flex-col sm:flex-row bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-lg hover:shadow-emerald-500/5 transition-all overflow-hidden">
+              <div
+                key={assignment.id || `fallback-key-${index}`}
+                className="group flex flex-col sm:flex-row bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-lg hover:shadow-emerald-500/5 transition-all overflow-hidden"
+              >
                 {/* Status Indicator Bar (Left side) */}
-                <div className={`w-1.5 sm:w-2 shrink-0 ${statusConfig.color.split(' ')[0].replace('text-', 'bg-')}`} />
-                
+                <div
+                  className={`w-1.5 sm:w-2 shrink-0 ${statusConfig.color.split(" ")[0].replace("text-", "bg-")}`}
+                />
+
                 <div className="p-6 flex-1 flex flex-col justify-between">
                   <div>
                     <div className="flex items-start justify-between mb-2">
@@ -137,12 +173,14 @@ const StudentAssignmentsPage = () => {
                         <BookOpen size={14} />
                         {assignment.courseCode}
                       </div>
-                      <div className={`flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold border ${statusConfig.color}`}>
+                      <div
+                        className={`flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold border ${statusConfig.color}`}
+                      >
                         {statusConfig.icon}
                         {statusConfig.label}
                       </div>
                     </div>
-                    
+
                     <h2 className="text-lg font-bold text-gray-900 leading-tight group-hover:text-emerald-600 transition-colors mb-1">
                       {assignment.title}
                     </h2>
@@ -153,25 +191,52 @@ const StudentAssignmentsPage = () => {
 
                   <div className="flex items-center justify-between pt-4 border-t border-gray-50 mt-auto">
                     <div className="flex flex-col">
-                      <span className="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Due Date</span>
-                      <span className={`text-sm font-semibold ${assignment.status === 'overdue' ? 'text-red-600' : 'text-gray-700'}`}>
-                        {new Date(assignment.dueDate).toLocaleDateString('en-US', { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' })}
+                      <span className="text-[10px] font-bold text-gray-400 uppercase tracking-wider">
+                        Due Date
+                      </span>
+                      <span
+                        className={`text-sm font-semibold ${assignment.status === "overdue" ? "text-red-600" : "text-gray-700"}`}
+                      >
+                        {new Date(assignment.dueDate).toLocaleDateString(
+                          "en-US",
+                          {
+                            month: "short",
+                            day: "numeric",
+                            hour: "2-digit",
+                            minute: "2-digit",
+                          },
+                        )}
                       </span>
                     </div>
 
                     {/* Dynamic Action Area based on status */}
-                    {assignment.status === 'graded' ? (
+                    {assignment.status === "graded" ? (
                       <div className="text-right">
-                        <span className="text-[10px] font-bold text-gray-400 uppercase tracking-wider block">Score</span>
-                        <span className="text-lg font-black text-emerald-600">{assignment.score}<span className="text-sm text-gray-400 font-bold">/{assignment.maxScore}</span></span>
+                        <span className="text-[10px] font-bold text-gray-400 uppercase tracking-wider block">
+                          Score
+                        </span>
+                        <span className="text-lg font-black text-emerald-600">
+                          {assignment.score || 0}
+                          <span className="text-sm text-gray-400 font-bold">
+                            /{assignment.maxScore}
+                          </span>
+                        </span>
                       </div>
                     ) : (
-                      <button className={`flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-bold transition-all ${
-                        assignment.status === 'pending' 
-                          ? 'bg-emerald-50 text-emerald-700 hover:bg-emerald-600 hover:text-white' 
-                          : 'bg-gray-50 text-gray-600 hover:bg-gray-100'
-                      }`}>
-                        {assignment.status === 'pending' || assignment.status === 'overdue' ? 'Submit Work' : 'View Submission'}
+                      <button
+                        onClick={() =>
+                          navigate(`/student/assignments/${assignment.id}`)
+                        }
+                        className={`flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-bold transition-all ${
+                          assignment.status === "pending"
+                            ? "bg-emerald-50 text-emerald-700 hover:bg-emerald-600 hover:text-white"
+                            : "bg-gray-50 text-gray-600 hover:bg-gray-100"
+                        }`}
+                      >
+                        {assignment.status === "pending" ||
+                        assignment.status === "overdue"
+                          ? "Submit Work"
+                          : "View Submission"}
                         <ChevronRight size={16} />
                       </button>
                     )}
@@ -186,8 +251,12 @@ const StudentAssignmentsPage = () => {
               <ClipboardList size={48} className="text-gray-200" />
             </div>
             <div>
-              <h3 className="text-lg font-bold text-gray-900">No assignments found</h3>
-              <p className="text-gray-500 font-medium mt-1">You're all caught up for this filter criteria!</p>
+              <h3 className="text-lg font-bold text-gray-900">
+                No assignments found
+              </h3>
+              <p className="text-gray-500 font-medium mt-1">
+                You're all caught up for this filter criteria!
+              </p>
             </div>
           </div>
         )}
