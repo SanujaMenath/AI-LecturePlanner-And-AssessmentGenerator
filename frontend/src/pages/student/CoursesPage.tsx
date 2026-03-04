@@ -11,12 +11,14 @@ import {
 import { fetchEnrolledCourses, type EnrolledCourse } from "./services/CourseService";
 import { useAuth } from "../../context/AuthContext";
 import { toast } from "react-hot-toast";
+import { useNavigate } from 'react-router-dom';
 
 const StudentCoursesPage = () => {
   const { user } = useAuth();
   const [courses, setCourses] = useState<EnrolledCourse[]>([]);
   const [loading, setLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState("");
+   const navigate = useNavigate();
 
 useEffect(() => {
     const fetchMyCourses = async () => {
@@ -54,6 +56,9 @@ useEffect(() => {
       </div>
     );
   }
+
+
+ 
 
   return (
     <div className="max-w-7xl mx-auto space-y-8 animate-in fade-in duration-500 p-8">
@@ -97,6 +102,7 @@ useEffect(() => {
           filteredCourses.map((course) => (
             <div
               key={course.id}
+              onClick={() => navigate(`/student/courses/${course.id}`)}
               className="group relative flex flex-col h-full border border-gray-100 bg-white rounded-2xl shadow-sm hover:shadow-lg hover:shadow-emerald-500/5 transition-all duration-300 overflow-hidden cursor-pointer"
             >
               {/* Top Decorative Edge */}

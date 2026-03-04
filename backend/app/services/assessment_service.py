@@ -2,7 +2,8 @@
 from app.database.connection import get_database
 from bson import ObjectId
 from datetime import datetime, timezone
-from fastapi import HTTPException, status
+from fastapi import HTTPException
+from app.models.assessment import AssessmentCreate
 
 db = get_database()
 assessments_col = db["assessments"]
@@ -27,27 +28,25 @@ class AssessmentService:
             raise HTTPException(status_code=404, detail="Course not found")
 
     @staticmethod
-    def create_assessment(payload):
-        course_oid = ObjectId(str(payload.course_id))
-        AssessmentService._ensure_course(course_oid)
+    def create_assessment(data: AssessmentCreate, lecturer_id: str):
+        doc = data.model_dump()
+        
+        doc["lecturer_id"] = ObjectId(lecturer_id)
+        doc["course_id"] = ObjectId(data.course_id)
+        
+        doc["created_at"] = datetime.now(timezone.utc)
+        doc["updated_at"] = datetime.now(timezone.utc)
 
-        now = AssessmentService._now()
-        doc = {
-            "course_id": course_oid,
-            "module_id": ObjectId(str(payload.module_id)) if payload.module_id else None,
-            "title": payload.title,
-            "assessment_type": payload.assessment_type,
-            "description": payload.description,
-            "total_marks": payload.total_marks,
-            "settings": payload.settings or {},
-            "question_ids": [ObjectId(str(q)) for q in (payload.question_ids or [])],
-            "created_at": now,
-            "updated_at": now
-        }
-        res = assessments_col.insert_one(doc)
-        doc["_id"] = res.inserted_id
-        return AssessmentService._to_str_id(doc)
-
+        result = db["assessments"].insert_one(doc)
+        # Return saved document (convert ObjectId to string for FastAPI response)
+        saved_doc = db["assessments"].find_one({"_id": result.inserted_id})
+        saved_doc["id"] = str(saved_doc["_id"])
+        saved_doc.pop("_id", None)
+        saved_doc["course_id"] = str(saved_doc["course_id"])
+        saved_doc["lecturer_id"] = str(saved_doc["lecturer_id"])
+        
+        return saved_doc
+    
     @staticmethod
     def list_assessments(course_id: str = None, skip=0, limit=100):
         q = {}

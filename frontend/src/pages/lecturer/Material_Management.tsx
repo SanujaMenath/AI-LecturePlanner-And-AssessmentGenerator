@@ -9,9 +9,9 @@ import {
   FileCode,
   File as FileIcon,
   Loader2,
-  Edit2, // NEW: Import Edit Icon
+  Edit2, 
 } from "lucide-react";
-import MaterialModal, { type CourseOption } from "./components/MaterialModal"; // NEW: Changed Import
+import MaterialModal, { type CourseOption } from "./components/MaterialModal"; 
 import { useAuth } from "../../context/AuthContext";
 import { fetchLecturerCourses } from "./services/lecturerCourseService";
 import {
@@ -49,7 +49,6 @@ const MaterialManagement: React.FC = () => {
   };
 
   const loadData = useCallback(async () => {
-    // ... (Keep existing loadData logic exactly as is) ...
     if (!user?.id) return;
 
     try {
@@ -97,19 +96,18 @@ const MaterialManagement: React.FC = () => {
     loadData();
   }, [loadData]);
 
-  // NEW: Unified Save Handler
   const handleSave = async (payload: FormData | Partial<MaterialDTO>) => {
     if (!user?.id) return;
     try {
       if (editingMaterial) {
-        // Handle Update (Sending JSON metadata)
+        // Handle Update 
         const id = editingMaterial._id || editingMaterial.id;
         if (!id) throw new Error("Material ID missing");
         
         await updateMaterialService(id, payload as Partial<MaterialDTO>);
         toast.success("Material updated successfully!");
       } else {
-        // Handle Create (Sending FormData)
+        // Handle Create
         await uploadMaterialService(payload as FormData, user.id);
         toast.success("Material uploaded successfully!");
       }
@@ -123,7 +121,6 @@ const MaterialManagement: React.FC = () => {
   };
 
   const handleDelete = async (id: string | undefined) => {
-    // ... (Keep existing handleDelete logic exactly as is) ...
     if (!id) return;
     if (window.confirm("Are you sure you want to delete this material?")) {
       try {
@@ -142,7 +139,6 @@ const MaterialManagement: React.FC = () => {
       m.course_name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
-  // ... (Keep existing Loading screen) ...
   if (loading) {
     return (
       <div className="flex flex-col items-center justify-center min-h-[60vh] space-y-4">
@@ -162,7 +158,7 @@ const MaterialManagement: React.FC = () => {
         </div>
         <button
           onClick={() => {
-            setEditingMaterial(null); // Ensure clean state for new upload
+            setEditingMaterial(null); 
             setIsModalOpen(true);
           }}
           className="flex items-center justify-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-xl font-bold transition-all shadow-lg shadow-indigo-200 active:scale-95"
@@ -171,7 +167,6 @@ const MaterialManagement: React.FC = () => {
         </button>
       </div>
 
-      {/* NEW: Updated Modal Implementation */}
       <MaterialModal
         isOpen={isModalOpen}
         onClose={() => {
@@ -183,7 +178,6 @@ const MaterialManagement: React.FC = () => {
         courses={courses}
       />
 
-      {/* ... (Keep existing Search UI) ... */}
       <div className="bg-white p-4 rounded-2xl shadow-sm border border-gray-100 mb-6">
         <div className="relative w-full md:max-w-md group">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-indigo-600 transition-colors" size={18} />
@@ -213,7 +207,6 @@ const MaterialManagement: React.FC = () => {
               {filteredMaterials.length > 0 ? (
                 filteredMaterials.map((item) => (
                   <tr key={item._id || item.id} className="hover:bg-gray-50/50 transition-colors group">
-                    {/* ... (Keep existing Name/Course/Date Columns) ... */}
                     <td className="px-6 py-4">
                       <div className="flex items-center gap-4">
                         <div className="p-3 bg-gray-100 rounded-xl group-hover:bg-white transition-colors shadow-sm">
@@ -239,7 +232,7 @@ const MaterialManagement: React.FC = () => {
                           <Download size={18} />
                         </button>
 
-                        {/* NEW: Edit Button */}
+                        {/* Edit Button */}
                         <button
                           onClick={() => {
                             setEditingMaterial(item);
@@ -260,7 +253,7 @@ const MaterialManagement: React.FC = () => {
                   </tr>
                 ))
               ) : (
-                // ... Empty State ...
+     
                 <tr>
                   <td colSpan={4} className="px-6 py-16 text-center">
                     <div className="flex flex-col items-center justify-center gap-3">
