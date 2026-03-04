@@ -12,7 +12,8 @@ class AssessmentCreate(BaseModel):
     
     description: Optional[str] = None
     total_marks: Optional[int] = 0
-    settings: Optional[Dict[str, Any]] = {}
+    # FIX 1: Use default_factory for mutable objects
+    settings: Optional[Dict[str, Any]] = Field(default_factory=dict)
     module_id: Optional[str] = None
 
 class AssessmentUpdate(BaseModel):
@@ -23,7 +24,8 @@ class AssessmentUpdate(BaseModel):
     total_marks: Optional[int] = None
 
 class AssessmentResponse(BaseModel):
-    id: str = Field(alias="_id", default=None) 
+    # FIX 2: Added Optional so it matches default=None
+    id: Optional[str] = Field(alias="_id", default=None) 
     title: str
     course_id: str
     assessment_type: str
@@ -37,8 +39,9 @@ class AssessmentResponse(BaseModel):
     module_id: Optional[str] = None
     description: Optional[str] = None
     total_marks: Optional[int] = 0
-    settings: Optional[Dict[str, Any]] = {}
-    question_ids: Optional[List[str]] = []
+    # FIX 3: Use default_factory for mutable objects
+    settings: Optional[Dict[str, Any]] = Field(default_factory=dict)
+    question_ids: Optional[List[str]] = Field(default_factory=list)
 
     model_config = {
         "populate_by_name": True,
