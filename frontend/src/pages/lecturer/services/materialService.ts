@@ -7,6 +7,8 @@ export interface MaterialDTO {
   course_id: string;
   material_type: string;
   description?: string;
+  file_url?: string;
+  file_size?: number;
   created_at?: string;
 }
 

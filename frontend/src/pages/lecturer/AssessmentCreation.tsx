@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { 
   FileText, 
   ListTodo, 
@@ -8,8 +8,13 @@ import {
   Trash2,
   Plus,
   CheckCircle2,
+  Loader2
 } from "lucide-react";
 import { toast } from "react-hot-toast";
+import { useAuth } from "../../context/AuthContext";
+import { fetchLecturerCourses } from "./services/lecturerCourseService";
+import { createAssessmentService } from "./services/assessmentService";
+import { useNavigate } from "react-router-dom";
 
 // --- Types ---
 type AssessmentType = 'select' | 'mcq' | 'pdf' | 'short_answer' | 'ai';
@@ -28,9 +33,14 @@ interface ShortAnswer {
 }
 
 const AssessmentCreation = () => {
+  const { user } = useAuth();
+  const navigate = useNavigate();
+
   // --- State ---
-  const [step, setStep] = useState<1 | 2>(1); // 1: Basic Info & Type, 2: Builder
+  const [step, setStep] = useState<1 | 2>(1);
   const [assessmentType, setAssessmentType] = useState<AssessmentType>('select');
+  const [courses, setCourses] = useState<{ id: string; name: string }[]>([]);
+  const [isPublishing, setIsPublishing] = useState(false);
   
   // Basic Details
   const [title, setTitle] = useState("");
@@ -40,11 +50,24 @@ const AssessmentCreation = () => {
   // Builders State
   const [mcqs, setMcqs] = useState<MCQ[]>([]);
   const [shortAnswers, setShortAnswers] = useState<ShortAnswer[]>([]);
-//   const [pdfFile, setPdfFile] = useState<File | null>(null);
+  const [pdfFile, setPdfFile] = useState<File | null>(null);
   
   // AI State
   const [isGenerating, setIsGenerating] = useState(false);
   const [aiSourceFile, setAiSourceFile] = useState<File | null>(null);
+
+  // Fetch Courses on Mount
+  useEffect(() => {
+    const loadCourses = async () => {
+      try {
+        const data = await fetchLecturerCourses();
+        setCourses(data.map(c => ({ id: c.course_id || c.id, name: c.course_name })));
+      } catch {
+        toast.error("Failed to load courses.");
+      }
+    };
+    loadCourses();
+  }, []);
 
   // --- Handlers ---
   const handleNext = (type: AssessmentType) => {
@@ -54,7 +77,6 @@ const AssessmentCreation = () => {
     }
     setAssessmentType(type);
     
-    // Initialize with one empty question if manual
     if (type === 'mcq' && mcqs.length === 0) {
       setMcqs([{ id: Date.now().toString(), question: "", options: ["", "", "", ""], correctIndex: 0 }]);
     }
@@ -75,7 +97,6 @@ const AssessmentCreation = () => {
     // Simulate AI API Call
     await new Promise(resolve => setTimeout(resolve, 3000));
     
-    // Mock AI Response
     const generatedQuestions: MCQ[] = [
       { id: "ai1", question: "What is the primary function of a Convolutional Neural Network (CNN)?", options: ["Text generation", "Image recognition", "Database querying", "Sorting arrays"], correctIndex: 1 },
       { id: "ai2", question: "Which activation function is commonly used in the hidden layers of a deep neural network?", options: ["Sigmoid", "Linear", "ReLU", "Step"], correctIndex: 2 },
@@ -84,18 +105,48 @@ const AssessmentCreation = () => {
     setMcqs(generatedQuestions);
     setIsGenerating(false);
     toast.success("AI successfully generated questions!");
-    
-    // Smoothly transition them into the MCQ builder to review/edit
     setAssessmentType('mcq'); 
   };
 
-  const handlePublish = () => {
-    // Here you will collect all state and send to your FastAPI backend
-    toast.success(`${title} published successfully!`);
-    // Reset or redirect
+  const handlePublish = async () => {
+    if (!user?.id) return;
+    
+    if (assessmentType === 'pdf' && !pdfFile) {
+      toast.error("Please upload the assignment PDF.");
+      return;
+    }
+
+    setIsPublishing(true);
+    try {
+      const formData = new FormData();
+      formData.append('title', title);
+      formData.append('course_id', course);
+      
+      // Convert local datetime to UTC ISO string for backend
+      const utcDate = new Date(dueDate).toISOString();
+      formData.append('due_date', utcDate);
+      formData.append('assessment_type', assessmentType);
+
+      // Package content based on type
+      if (assessmentType === 'mcq') {
+        formData.append('content', JSON.stringify(mcqs));
+      } else if (assessmentType === 'short_answer') {
+        formData.append('content', JSON.stringify(shortAnswers));
+      } else if (assessmentType === 'pdf' && pdfFile) {
+        formData.append('file', pdfFile);
+      }
+
+      await createAssessmentService(formData, user.id);
+      toast.success(`${title} published successfully!`);
+      navigate('/lecturer/courses');
+    } catch (error) {
+      console.error(error);
+      toast.error("Failed to publish assessment.");
+    } finally {
+      setIsPublishing(false);
+    }
   };
 
-  // --- Sub-components for Builders ---
 
   const renderMCQBuilder = () => (
     <div className="space-y-6 animate-in fade-in slide-in-from-bottom-4">
@@ -241,9 +292,11 @@ const AssessmentCreation = () => {
             </button>
             <button 
               onClick={handlePublish}
-              className="px-6 py-2.5 bg-indigo-600 text-white font-bold rounded-xl hover:bg-indigo-700 shadow-md shadow-indigo-200 transition-all flex items-center gap-2"
+              disabled={isPublishing}
+              className="px-6 py-2.5 bg-indigo-600 text-white font-bold rounded-xl hover:bg-indigo-700 shadow-md shadow-indigo-200 transition-all flex items-center gap-2 disabled:opacity-70"
             >
-              <CheckCircle2 size={18} /> Publish Assessment
+              {isPublishing ? <Loader2 className="animate-spin" size={18} /> : <CheckCircle2 size={18} />} 
+              {isPublishing ? "Publishing..." : "Publish Assessment"}
             </button>
           </div>
         )}
@@ -272,9 +325,10 @@ const AssessmentCreation = () => {
                   value={course} onChange={(e) => setCourse(e.target.value)}
                   className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 outline-none transition-all appearance-none"
                 >
-                  <option value="">Select Course...</option>
-                  <option value="cs101">Computer Science 101</option>
-                  <option value="db202">Database Systems</option>
+                  <option value="" disabled>Select Course...</option>
+                  {courses.map(c => (
+                    <option key={c.id} value={c.id}>{c.name}</option>
+                  ))}
                 </select>
               </div>
               <div className="space-y-1.5">
@@ -296,7 +350,6 @@ const AssessmentCreation = () => {
             </h2>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {/* Manual Options */}
               <button onClick={() => handleNext('mcq')} className="p-6 bg-white border border-gray-100 rounded-2xl hover:border-indigo-300 hover:shadow-lg hover:shadow-indigo-500/5 transition-all text-left group">
                 <div className="w-12 h-12 bg-indigo-50 rounded-xl flex items-center justify-center text-indigo-600 mb-4 group-hover:scale-110 transition-transform">
                   <ListTodo size={24} />
@@ -336,17 +389,28 @@ const AssessmentCreation = () => {
           </div>
         </div>
       ) : (
-        // --- Step 2: Show Selected Builder ---
+        // Step 2: Show Selected Builder
         <div className="max-w-5xl">
           {assessmentType === 'ai' && renderAIGenerator()}
           {assessmentType === 'mcq' && renderMCQBuilder()}
           
-          {/* Placeholders for PDF and Short Answer to keep code concise */}
           {assessmentType === 'pdf' && (
-             <div className="bg-white p-12 rounded-2xl border-2 border-dashed border-gray-200 text-center">
-                <UploadCloud size={48} className="mx-auto text-gray-300 mb-4" />
+             <div className="bg-white p-12 rounded-2xl border-2 border-dashed border-gray-200 text-center flex flex-col items-center justify-center">
+                <div className="w-16 h-16 bg-indigo-50 rounded-2xl flex items-center justify-center mb-4">
+                  <UploadCloud size={32} className="text-indigo-600" />
+                </div>
                 <h3 className="text-lg font-bold text-gray-900">Upload Assignment PDF</h3>
-                <p className="text-gray-500 mt-1">Students will download this file and submit their work as a PDF.</p>
+                <p className="text-gray-500 mt-1 mb-6">Students will download this file and submit their work.</p>
+                <input 
+                  type="file" 
+                  id="pdf-upload" 
+                  className="hidden" 
+                  accept=".pdf"
+                  onChange={(e) => setPdfFile(e.target.files?.[0] || null)}
+                />
+                <label htmlFor="pdf-upload" className="px-6 py-2.5 bg-indigo-600 text-white font-bold rounded-xl hover:bg-indigo-700 cursor-pointer transition-all shadow-md shadow-indigo-200">
+                  {pdfFile ? pdfFile.name : "Select PDF File"}
+                </label>
              </div>
           )}
           {assessmentType === 'short_answer' && (

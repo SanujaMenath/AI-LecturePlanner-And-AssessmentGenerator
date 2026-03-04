@@ -1,5 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+import os
+from fastapi.staticfiles import StaticFiles
 
 from app.routes.test_db import router as test_db_router
 from app.routes.auth_routes import router as auth_router
@@ -10,6 +12,7 @@ from app.routes.student_routes import router as student_router
 from app.routes.course_routes import router as course_router
 from app.routes.department_routes import router as department_router
 from app.routes.material_routes import router as material_router
+from app.routes.assessment_routes import router as assessment_router
 from app.routes.module_routes import router as module_router
 from app.routes.topic_routes import router as topic_router
 from app.routes.outcome_routes import router as outcome_router
@@ -28,6 +31,11 @@ from app.config.settings import settings
 
 app = FastAPI(title=settings.PROJECT_NAME)
 
+# 1. Ensure the directory actually exists so FastAPI doesn't crash on startup
+os.makedirs("uploads/materials", exist_ok=True)
+
+# 2. FastAPI serve files from the "uploads" folder whenever a URL starts with "/uploads"
+app.mount("/uploads", StaticFiles(directory="uploads"), name="uploads")
 
 @app.get("/")
 def root():
@@ -58,6 +66,7 @@ app.include_router(course_router)
 app.include_router(department_router)
 app.include_router(material_router)
 app.include_router(module_router)
+app.include_router(assessment_router)
 
 app.include_router(topic_router)
 app.include_router(outcome_router)
