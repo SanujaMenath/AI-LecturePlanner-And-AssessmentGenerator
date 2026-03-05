@@ -212,3 +212,8 @@ package.json
 
 
 backend/uploads/
+
+orchestrator_server/.env
+orchestrator_server/data/uploads/
+orchestrator_server/data/chroma
+
