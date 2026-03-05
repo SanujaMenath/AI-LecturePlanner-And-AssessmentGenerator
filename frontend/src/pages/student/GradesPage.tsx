@@ -1,53 +1,51 @@
 import { useState, useEffect } from "react";
-import { 
-  Trophy, 
-  TrendingUp, 
-  Award, 
-  BookOpen, 
-  GraduationCap,
-  Calendar
-} from "lucide-react";
+import { Trophy, TrendingUp, Award, BookOpen, GraduationCap, Calendar } from "lucide-react";
+import { useAuth } from "../../context/AuthContext";
+import api from "../../services/api";
 
-// Types
-interface CourseGrade {
+export interface CourseGrade {
   id: string;
   courseCode: string;
   courseName: string;
   credits: number;
-  score: number; // Percentage 0-100
+  score: number;
   letterGrade: string;
   term: string;
   feedback?: string;
 }
 
 const StudentGradesPage = () => {
+  const { user } = useAuth();
   const [grades, setGrades] = useState<CourseGrade[]>([]);
   const [loading, setLoading] = useState(true);
-  const [selectedTerm, setSelectedTerm] = useState("Spring 2026");
+  const [selectedTerm, setSelectedTerm] = useState("");
+  const [terms, setTerms] = useState<string[]>([]);
 
-  // Simulated API Fetch
+  // Fetch real data from our new backend endpoint!
   useEffect(() => {
     const fetchGrades = async () => {
-      await new Promise(resolve => setTimeout(resolve, 200)); 
-      
-      const mockData: CourseGrade[] = [
-        { id: "1", courseCode: "CS101", courseName: "Introduction to Computer Science", credits: 3, score: 92, letterGrade: "A", term: "Semester II", feedback: "Excellent grasp of core concepts." },
-        { id: "2", courseCode: "DB202", courseName: "Database Systems Architecture", credits: 4, score: 85, letterGrade: "B+", term: "Semester II" },
-        { id: "3", courseCode: "WD301", courseName: "Advanced Web Development", credits: 3, score: 98, letterGrade: "A+", term: "Semester II", feedback: "Outstanding final project." },
-        { id: "4", courseCode: "MA105", courseName: "Discrete Mathematics", credits: 3, score: 76, letterGrade: "C+", term: "Semester I" },
-      ];
-      setGrades(mockData);
-      setLoading(false);
+      if (!user?.id) return;
+      try {
+        const res = await api.get<CourseGrade[]>(`/assessments/students/${user.id}/grades`);
+        setGrades(res.data);
+        
+        const uniqueTerms = Array.from(new Set(res.data.map(g => g.term)));
+        setTerms(uniqueTerms);
+        if (uniqueTerms.length > 0) {
+          setSelectedTerm(uniqueTerms[0]);
+        }
+      } catch (error) {
+        console.error("Failed to load grades", error);
+      } finally {
+        setLoading(false);
+      }
     };
 
     fetchGrades();
-  }, []);
+  }, [user?.id]);
 
-  // Filter grades by selected term
   const filteredGrades = grades.filter(g => g.term === selectedTerm);
-  const terms = Array.from(new Set(grades.map(g => g.term)));
 
-  // Calculate GPA for the selected term
   const calculateTermGPA = () => {
     if (filteredGrades.length === 0) return "0.00";
     const gradePoints: Record<string, number> = { "A+": 4.0, "A": 4.0, "A-": 3.7, "B+": 3.3, "B": 3.0, "C+": 2.3, "C": 2.0, "D": 1.0, "F": 0.0 };
@@ -60,7 +58,6 @@ const StudentGradesPage = () => {
     return (totalPoints / totalCredits).toFixed(2);
   };
 
-  // Helper for grade badge colors
   const getGradeColor = (grade: string) => {
     if (grade.includes('A')) return 'bg-emerald-100 text-emerald-700 border-emerald-200';
     if (grade.includes('B')) return 'bg-blue-100 text-blue-700 border-blue-200';
@@ -92,18 +89,20 @@ const StudentGradesPage = () => {
         </div>
         
         {/* Semester Selector */}
-        <div className="relative">
-          <Calendar className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={16} />
-          <select 
-            className="w-full sm:w-48 bg-white border border-gray-200 rounded-xl py-2.5 pl-10 pr-4 text-sm font-bold text-gray-700 focus:outline-none focus:ring-4 focus:ring-emerald-500/10 focus:border-emerald-500/30 shadow-sm appearance-none cursor-pointer"
-            value={selectedTerm}
-            onChange={(e) => setSelectedTerm(e.target.value)}
-          >
-            {terms.map(term => (
-              <option key={term} value={term}>{term}</option>
-            ))}
-          </select>
-        </div>
+        {terms.length > 0 && (
+          <div className="relative">
+            <Calendar className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={16} />
+            <select 
+              className="w-full sm:w-48 bg-white border border-gray-200 rounded-xl py-2.5 pl-10 pr-4 text-sm font-bold text-gray-700 focus:outline-none focus:ring-4 focus:ring-emerald-500/10 focus:border-emerald-500/30 shadow-sm appearance-none cursor-pointer"
+              value={selectedTerm}
+              onChange={(e) => setSelectedTerm(e.target.value)}
+            >
+              {terms.map(term => (
+                <option key={term} value={term}>{term}</option>
+              ))}
+            </select>
+          </div>
+        )}
       </div>
 
       {/* Performance Overview Cards */}
@@ -147,7 +146,7 @@ const StudentGradesPage = () => {
       <div className="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
         <div className="px-6 py-5 border-b border-gray-50 flex items-center justify-between bg-gray-50/50">
           <h3 className="text-lg font-bold text-gray-900">Course Breakdown</h3>
-          <span className="text-xs font-bold text-gray-400 uppercase tracking-wider">{selectedTerm}</span>
+          <span className="text-xs font-bold text-gray-400 uppercase tracking-wider">{selectedTerm || "All Terms"}</span>
         </div>
         
         <div className="divide-y divide-gray-50">
@@ -188,8 +187,12 @@ const StudentGradesPage = () => {
               </div>
             ))
           ) : (
-            <div className="p-12 text-center text-gray-500 font-medium">
-              No grades recorded for this term yet.
+            <div className="p-12 text-center flex flex-col items-center justify-center text-gray-500">
+              <div className="p-4 bg-gray-50 rounded-full mb-4 text-gray-300">
+                <Award size={48} />
+              </div>
+              <p className="font-medium">No grades have been finalized for this term yet.</p>
+              <p className="text-sm mt-1">Complete your assignments and wait for your lecturer to grade them!</p>
             </div>
           )}
         </div>

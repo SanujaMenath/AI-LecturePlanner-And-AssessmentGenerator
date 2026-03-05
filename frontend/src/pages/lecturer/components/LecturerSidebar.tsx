@@ -5,7 +5,6 @@ import {
   FileText,
   PlusSquare,
   ClipboardCheck,
-  Users2,
   UserCircle,
   Sparkles,
   LogOut,
@@ -19,7 +18,6 @@ const links = [
   { label: "Material Management", to: "/lecturer/materials", icon: <FileText size={20} /> },
   { label: "Assessment Creation", to: "/lecturer/assessment-creation", icon: <PlusSquare size={20} /> },
   { label: "Submissions & Grading", to: "/lecturer/assessments", icon: <ClipboardCheck size={20} /> },
-  { label: "Attendance", to: "/lecturer/attendance", icon: <Users2 size={20} /> },
   { label: "Profile Management", to: "/lecturer/profile", icon: <UserCircle size={20} /> },
   { label: "AI Tools", to: "/lecturer/ai-tools", icon: <Sparkles size={20} className="text-amber-500" /> },
 ];
