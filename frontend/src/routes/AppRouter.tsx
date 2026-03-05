@@ -25,6 +25,7 @@ import StudentCourseMaterials from "../pages/student/StudentCourseMaterials";
 import StudentAssessmentView from "../pages/student/StudentAssessmentView";
 import LecturerGradingView from "../pages/lecturer/LecturerGradingView";
 import LecturerAssessmentsPage from "../pages/lecturer/LecturerAssessmentsPage";
+import AIToolsPage from "../pages/lecturer/AIToolsPage";
 
 const AppRouter = () => {
   useInactivityTimeout();
@@ -65,6 +66,7 @@ const AppRouter = () => {
           <Route path="materials" element={<MaterialManagement />} />
           <Route path="assessment-creation" element={<AssessmentCreation />} />
           <Route path="assessments" element={<LecturerAssessmentsPage />} />
+          <Route path="ai-tools" element={<AIToolsPage />} />
           <Route path="assessments/:assessmentId/grade" element={<LecturerGradingView />} />
         </Route>
 
