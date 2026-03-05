@@ -114,3 +114,12 @@ def grade_submission(submission_id: str, payload: GradePayload, current_user=Dep
         return AssessmentService.grade_submission(submission_id, payload.score)
     except ValueError as ve:
         raise HTTPException(status_code=400, detail=str(ve))
+    
+@router.get("/students/{student_id}/grades")
+def get_student_course_grades(student_id: str):
+    try:
+        return AssessmentService.get_student_course_grades(student_id)
+    except ValueError as ve:
+        raise HTTPException(status_code=400, detail=str(ve))
+    except Exception as e:
+        raise HTTPException(status_code=500, detail="Failed to calculate grades.")

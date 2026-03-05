@@ -262,3 +262,71 @@ class AssessmentService:
 
         cursor = submissions_col.find({"student_id": ObjectId(student_id)})
         return [AssessmentService._format_doc(sub) for sub in cursor]
+
+    @staticmethod
+    def get_student_course_grades(student_id: str):
+        if not ObjectId.is_valid(student_id):
+            raise ValueError("Invalid student ID")
+            
+        # Find all graded submissions for a specific student
+        submissions = list(submissions_col.find({
+            "student_id": ObjectId(student_id), 
+            "status": "graded"
+        }))
+
+        # Group scores by course
+        course_totals = {} 
+
+        for sub in submissions:
+            assessment = assessments_col.find_one({"_id": sub["assessment_id"]})
+            if not assessment:
+                continue
+
+            c_id = str(assessment["course_id"])
+            
+            # Safely fetch total marks.
+            raw_max = assessment.get("total_marks")
+            max_score = int(raw_max) if raw_max else 100
+            
+            # Safely fetch the score the lecturer inputted
+            obtained_score = int(sub.get("score", 0))
+
+            if c_id not in course_totals:
+                course_totals[c_id] = {"obtained": 0, "max": 0}
+
+            course_totals[c_id]["obtained"] += obtained_score
+            course_totals[c_id]["max"] += max_score
+
+        # Format the output and calculate letter grades
+        results = []
+        for c_id, totals in course_totals.items():
+            course = courses_col.find_one({"_id": ObjectId(c_id)})
+            if not course:
+                continue
+
+            # Calculate percentage accurately
+            percentage = (totals["obtained"] / totals["max"]) * 100 if totals["max"] > 0 else 0
+            
+            # Simple grading scale
+            if percentage >= 90: letter = "A+"
+            elif percentage >= 85: letter = "A"
+            elif percentage >= 80: letter = "A-"
+            elif percentage >= 75: letter = "B+"
+            elif percentage >= 70: letter = "B"
+            elif percentage >= 65: letter = "C+"
+            elif percentage >= 60: letter = "C"
+            elif percentage >= 50: letter = "D"
+            else: letter = "F"
+
+            # Use the correct database keys
+            results.append({
+                "id": c_id,
+                "courseCode": course.get("course_code", course.get("code", "Unknown")),
+                "courseName": course.get("course_name", course.get("name", "Unknown Course")),
+                "credits": int(course.get("credits", 4)), 
+                "score": round(percentage),
+                "letterGrade": letter,
+                "term": course.get("semester", course.get("term", "Semester 1"))
+            })
+
+        return results
