@@ -1,4 +1,6 @@
-# AI-Driven Lecture Planning and Assessment Generation System
+# Lumina LMS  
+
+## AI-Driven Lecture Planning and Assessment Generation System
 
 ### 🎯 Project Overview
 This project is an AI-powered platform designed to help universities automate lecture planning, generate academic materials, monitor teaching progress, and evaluate student performance. The system supports students, lecturers, and administrators through intelligent automation and data-driven insights.  
