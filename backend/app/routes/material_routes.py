@@ -13,24 +13,22 @@ os.makedirs(UPLOAD_DIR, exist_ok=True)
 
 @router.post("/", response_model=MaterialResponse)
 async def create_material(
-    lecturer_id: str,
-    # Receive fields as Form data
+    lecturer_id: str = Form(...),
     title: str = Form(...),
     course_id: str = Form(...),
     material_type: str = Form(...),
     description: Optional[str] = Form(None),
-    # Receive the file object
     file: UploadFile = File(...),
 ):
     try:
-        # Save file to disk
+        # 1. Save file to disk (HTTP/File IO logic stays in the router)
         file_location = f"{UPLOAD_DIR}/{file.filename}"
         with open(file_location, "wb+") as file_object:
             shutil.copyfileobj(file.file, file_object)
 
         file_size = os.path.getsize(file_location)
 
-        # Build data object
+        # 2. Build data object
         data = MaterialCreate(
             title=title,
             course_id=course_id,
@@ -41,7 +39,9 @@ async def create_material(
             tags=[],
         )
 
-        return MaterialService.create_material(data, lecturer_id)
+        # 3. Pass to Service Layer
+        return await MaterialService.create_material(data, lecturer_id, file.filename)
+        
     except Exception as e:
         raise HTTPException(status_code=400, detail=str(e))
 

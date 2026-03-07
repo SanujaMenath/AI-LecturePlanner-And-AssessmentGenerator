@@ -7,6 +7,7 @@ from app.services.lecturer_service import LecturerService
 from app.services.student_service import StudentService
 from app.services.auth_service import AuthService
 from app.models.user import BaseUser, UserUpdate
+from app.services.audit import log_action, notify_user
 
 db = get_database()
 users_col = db["users"]
@@ -19,8 +20,8 @@ class UserService:
         return [UserService._clean_user(doc) for doc in docs]
 
     @staticmethod
-    def create_user(data: BaseUser):
-        # Email check
+    async def create_user(data: BaseUser, current_admin_id: str = "System"):
+
         if db["users"].find_one({"email": data.email}):
             raise HTTPException(status_code=400, detail="Email already exists")
 
@@ -38,14 +39,42 @@ class UserService:
 
         user_id = db["users"].insert_one(user_doc).inserted_id
 
-        # Role branching
+  
         if data.role == "lecturer":
             LecturerService._create_lecturer_profile(user_id, data)
 
         elif data.role == "student":
             StudentService._create_student_profile(user_id, data)
 
-        # admin has no separate profile
+        # A. Log the creation for the System Audit Trail
+        await log_action(
+            actor_id=current_admin_id,
+            actor_name="Admin", # Can be customized if you pass the full admin dict
+            role="admin",
+            action="USER_CREATED",
+            details=f"Created new {data.role} account for {data.full_name} ({data.email})"
+        )
+
+        # Send a Welcome Notification to the NEW user
+        await notify_user(
+            recipient_id=str(user_id),
+            target_role=data.role,
+            title="Welcome to Lumina LMS!",
+            message=f"Hello {data.full_name}, your {data.role} account has been successfully provisioned.",
+            link=f"/{data.role}/profile"
+        )
+        
+        # Notify all Admins that a new user was added to the system
+        admins = db["users"].find({"role": "admin"})
+        for admin in admins:
+            await notify_user(
+                recipient_id=str(admin["_id"]),
+                target_role="admin",
+                title="New User Registered",
+                message=f"A new {data.role} ({data.full_name}) has been added to the system.",
+                link="/admin/users"
+            )
+
         return {
             "user_id": str(user_id),
             "full_name": data.full_name,

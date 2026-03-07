@@ -9,7 +9,7 @@ router = APIRouter(prefix="/users", tags=["Users"])
 
 
 @router.post("/create")
-def create_user(payload: dict):
+async def create_user(payload: dict):
     role = payload.get("role")
 
     if role == "lecturer":
@@ -24,7 +24,7 @@ def create_user(payload: dict):
     else:
         raise HTTPException(status_code=400, detail="Invalid role")
 
-    return UserService.create_user(data)
+    return await UserService.create_user(data)
 
 
 # List users (admin only)

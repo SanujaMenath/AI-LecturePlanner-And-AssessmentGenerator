@@ -14,7 +14,7 @@ const AboutPage = () => {
                         <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center">
                             <BookOpen className="text-white w-6 h-6" />
                         </div>
-                        <span className="text-2xl font-bold gradient-text">LMS</span>
+                        <span className="text-2xl font-bold gradient-text">Lumina LMS</span>
                     </div>
                     <div className="flex items-center space-x-6">
                         <Button className="bg-transparent text-gray-600 hover:text-primary w-auto py-2 px-4 flex items-center" onClick={() => navigate("/")}>
@@ -149,7 +149,7 @@ const AboutPage = () => {
                 <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
                     <div className="flex items-center space-x-2 grayscale opacity-70">
                         <BookOpen className="w-5 h-5" />
-                        <span className="text-xl font-bold">LMS</span>
+                        <span className="text-xl font-bold">Lumina LMS</span>
                     </div>
                     <p className="text-gray-400 text-sm">
                         © 2025 AI-Powered LMS. All rights reserved. Designed for Excellence.
