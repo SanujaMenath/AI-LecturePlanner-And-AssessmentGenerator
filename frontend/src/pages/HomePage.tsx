@@ -71,12 +71,12 @@ const HomePage = () => {
             <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center">
               <BookOpen className="text-white w-6 h-6" />
             </div>
-            <span className="text-2xl font-bold gradient-text">LMS</span>
+            <span className="text-2xl font-bold gradient-text">Lumina LMS</span>
           </div>
           <div className="hidden md:flex items-center space-x-8">
             <a href="#features" className="font-medium text-gray-600 hover:text-primary transition-colors">Features</a>
             <button onClick={() => navigate("/about")} className="font-medium text-gray-600 hover:text-primary transition-colors">About</button>
-            <Button className="btn-primary !py-2.5 px-6 !w-auto" onClick={() => navigate("/login")}>
+            <Button className="btn-primary py-2.5! px-6 w-auto!" onClick={() => navigate("/login")}>
               Login
             </Button>
           </div>
@@ -94,22 +94,22 @@ const HomePage = () => {
             <div className="lg:w-3/5 text-center lg:text-left">
               <div className="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-6">
                 <Sparkles className="w-4 h-4 mr-2" />
-                AI-Driven Education for the Future
+                AI-Powered Education for the Future
               </div>
               <h1 className="text-5xl lg:text-7xl font-extrabold text-gray-900 leading-[1.1] mb-8">
                 Learn Smarter with the <span className="gradient-text">Power of AI</span>
               </h1>
               <p className="text-xl text-gray-600 max-w-2xl lg:mx-0 mx-auto mb-10 leading-relaxed font-light">
-                Smart lesson planning, automated assessments, and intelligent analytics
+                Smart lesson planning, automated assessments, and analytics
                 seamlessly integrated into one powerful platform.
               </p>
 
               <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
-                <Button className="btn-primary !py-4 px-8 !w-auto text-lg flex items-center justify-center group" onClick={() => navigate("/login")}>
+                <Button className="btn-primary py-4! px-8 w-auto! text-lg flex items-center justify-center group" onClick={() => navigate("/login")}>
                   Get Started
                   <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
-                <Button className="bg-white text-gray-900 border border-gray-200 !py-4 px-8 !w-auto text-lg hover:bg-gray-50" onClick={() => navigate("/about")}>
+                <Button className="bg-white text-gray-900 border border-gray-200 py-4! px-8 w-auto! text-lg hover:bg-gray-50" onClick={() => navigate("/about")}>
                   Learn More
                 </Button>
               </div>
@@ -117,7 +117,7 @@ const HomePage = () => {
 
             <div className="lg:w-2/5 w-full max-w-[400px] lg:max-w-none">
               <div className="relative">
-                <div className="absolute -inset-4 bg-gradient-to-tr from-primary/20 to-accent/20 rounded-3xl blur-2xl opacity-50 animate-pulse"></div>
+                <div className="absolute -inset-4 bg-linear-to-tr from-primary/20 to-accent/20 rounded-3xl blur-2xl opacity-50 animate-pulse"></div>
                 <div className="relative bg-white p-8 rounded-3xl shadow-2xl border border-gray-100">
                   {/* Mock UI snippet for visual interest */}
                   <div className="space-y-4">
@@ -341,18 +341,15 @@ const HomePage = () => {
       <section className="pb-24 bg-white relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
           <div className="bg-gray-900 rounded-[3rem] p-12 lg:p-20 text-center relative overflow-hidden">
-            <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-primary/20 to-accent/20 opacity-50 blur-3xl"></div>
+            <div className="absolute top-0 left-0 w-full h-full bg-linear-to-br from-primary/20 to-accent/20 opacity-50 blur-3xl"></div>
             <div className="relative z-10">
               <h2 className="text-4xl lg:text-5xl font-bold text-white mb-8">Ready to Start Learning?</h2>
               <p className="text-gray-400 text-lg mb-12 max-w-2xl mx-auto font-light">
                 Join the community of forward-thinking educators and students who are reshaping the future of learning together.
               </p>
               <div className="flex flex-col sm:flex-row justify-center gap-4">
-                <Button className="btn-primary !py-4 px-10 !w-auto text-lg" onClick={() => navigate("/login")}>
-                  Create Free Account
-                </Button>
-                <Button className="bg-white/10 text-white border border-white/10 !py-4 px-10 !w-auto text-lg hover:bg-white/20" onClick={() => navigate("/about")}>
-                  Contact Sales
+                <Button className="btn-primary text-white border border-white/10 py-4! px-10 w-auto! text-lg hover:bg-white/20" onClick={() => navigate("/about")}>
+                  Contact Us
                 </Button>
               </div>
             </div>
@@ -365,7 +362,7 @@ const HomePage = () => {
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center space-x-2 grayscale opacity-70 cursor-pointer" onClick={() => navigate("/")}>
             <BookOpen className="w-5 h-5" />
-            <span className="text-xl font-bold">LMS</span>
+            <span className="text-xl font-bold">Lumina LMS</span>
           </div>
           <p className="text-gray-400 text-sm">
             © 2025 AI-Powered LMS. All rights reserved. Designed for Excellence.

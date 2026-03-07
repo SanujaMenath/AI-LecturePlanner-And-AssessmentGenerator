@@ -3,6 +3,7 @@ from app.database.connection import get_database
 from bson import ObjectId
 from datetime import datetime, timezone
 from fastapi import HTTPException
+from app.services.audit import notify_user
 
 db = get_database()
 courses_col = db["courses"]
@@ -12,7 +13,7 @@ course_students_col = db["course_students"]
 class CourseService:
 
     @staticmethod
-    def create_course(data):
+    async def create_course(data, current_user: dict = None):
         if courses_col.find_one({"course_code": data.course_code}):
             raise HTTPException(status_code=400, detail="course_code already exists")
 
@@ -32,6 +33,24 @@ class CourseService:
         res = courses_col.insert_one(doc)
         doc["_id"] = res.inserted_id
         doc["id"] = str(res.inserted_id)
+
+        # ---------------------------------------------------------
+        # NOTIFICATION LOGIC: Alert all system administrators
+        # ---------------------------------------------------------
+        
+        # Find all users with the role of admin
+        admins = db["users"].find({"role": "admin"})
+        
+        # Loop through and instantly push the WebSocket event to them
+        for admin in admins:
+            await notify_user(
+                recipient_id=str(admin["_id"]),
+                target_role="admin",
+                title="New Course Created",
+                message=f"The course '{data.course_code}: {data.course_name}' has been added to the system.",
+                link="/admin/courses" # Route to your React admin course table
+            )
+
         return doc
 
     @staticmethod

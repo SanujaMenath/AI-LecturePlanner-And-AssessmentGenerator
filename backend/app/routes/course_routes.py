@@ -12,11 +12,11 @@ router = APIRouter(prefix="/courses", tags=["Courses"])
 
 # Admin only 
 @router.post("/", response_model=CourseResponse, dependencies=[Depends(lambda: None)])
-def create_course(data: CourseCreate, current_user=Depends(get_current_user)):
+async def create_course(data: CourseCreate, current_user=Depends(get_current_user)):
     
     if current_user["role"] != "admin":
         raise HTTPException(status_code=status.HTTP_403_FORBIDDEN, detail="Admin only")
-    return CourseService.create_course(data)
+    return await CourseService.create_course(data)
 
 
 @router.get("/", response_model=List[CourseResponse])

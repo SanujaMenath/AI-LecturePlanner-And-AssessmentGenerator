@@ -2,29 +2,73 @@ from datetime import datetime, timezone
 from bson import ObjectId
 from app.database.connection import get_database
 from app.models.material import MaterialCreate, MaterialUpdate
+from app.services.audit import notify_user, log_action
 
 db = get_database()
 
 class MaterialService:
 
     @staticmethod
-    def create_material(data: MaterialCreate, lecturer_id: str):
+    async def create_material(data: MaterialCreate, lecturer_id: str, original_filename: str):
+        # 1. Prepare and insert the material document
         material_doc = data.model_dump()
-        
         material_doc["lecturer_id"] = ObjectId(lecturer_id)
         material_doc["course_id"] = ObjectId(data.course_id) 
-        
         material_doc["created_at"] = datetime.now(timezone.utc)
         material_doc["updated_at"] = datetime.now(timezone.utc)
 
         result = db["materials"].insert_one(material_doc)
-        return MaterialService.get_by_id(str(result.inserted_id))
+        created_material = MaterialService.get_by_id(str(result.inserted_id))
+
+        # ---------------------------------------------------------
+        # 2. BUSINESS LOGIC: Audit Log & Notifications
+        # ---------------------------------------------------------
+        
+        # Fetch lecturer name for the logs
+        lecturer = db["users"].find_one({"_id": ObjectId(lecturer_id)})
+        lecturer_name = lecturer.get("full_name", "Lecturer") if lecturer else "Lecturer"
+
+        # Log the action asynchronously
+        await log_action(
+            actor_id=lecturer_id,
+            actor_name=lecturer_name,
+            role="lecturer",
+            action="MATERIAL_UPLOADED",
+            details=f"Uploaded '{data.title}' ({original_filename}) to course {data.course_id}"
+        )
+
+        # Fetch course name
+        course = db["courses"].find_one({"_id": ObjectId(data.course_id)})
+        course_name = course.get("name", "your course") if course else "your course"
+
+        # Find enrolled students
+        enrolled_students = db["users"].find({
+            "role": "student",
+            "enrolled_courses": ObjectId(data.course_id) 
+        })
+
+        # Broadcast the WebSocket notification to each enrolled student
+        for student in enrolled_students:
+            await notify_user(
+                recipient_id=str(student["_id"]),
+                target_role="student",
+                title="New Study Material",
+                message=f"Prof. {lecturer_name} uploaded '{data.title}' for {course_name}.",
+                link=f"/student/courses/{str(data.course_id)}"
+            )
+
+        return created_material
 
     @staticmethod
     def get_by_id(material_id: str):
         material = db["materials"].find_one({"_id": ObjectId(material_id)})
         if material:
-            material["_id"] = material["_id"] 
+            material["_id"] = str(material["_id"]) 
+            # Make sure ObjectIds are converted to strings for Pydantic response
+            if "lecturer_id" in material:
+                material["lecturer_id"] = str(material["lecturer_id"])
+            if "course_id" in material:
+                material["course_id"] = str(material["course_id"])
         return material
 
     @staticmethod
